@@ -1,0 +1,44 @@
+.welcomeSection {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.whiteWave img {
+    height: 100vh;
+    position: absolute;
+    right: 0px;
+    z-index: 4;
+}
+
+.smallWave img {
+    position: absolute;
+    bottom: -20px;
+    right: -100px;
+    z-index: 2;
+    height: 80vh;
+}
+
+.welcomeSection .content {
+    position: absolute;
+    height: 100vh;
+    width: 40vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.content .line {
+    width: 50px;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.welcomeSection .content img {
+    height: 50vh;
+    min-height: 300px;
+}
