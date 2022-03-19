@@ -2,13 +2,10 @@
     position: relative;
 }
 
-.hidden {
-    display: none;
-}
-
 .whiteWave img {
     height: 100vh;
     position: absolute;
-    left: -100px;
+    left: -97px;
     z-index: 4;
+   
 }
