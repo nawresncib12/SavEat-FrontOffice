@@ -1,12 +1,11 @@
 import classes from "./WelcomeSection.module.css";
 import { motion } from "framer-motion";
 const WelcomeSection = (props) => {
-  let delay
-  if(props.showForm===true){
-    delay=0;
-  }
-  else{
-delay=2;
+  let delay;
+  if (props.showForm === true) {
+    delay = 0;
+  } else {
+    delay = 2;
   }
   const imageVariants = {
     hidden: {
@@ -17,7 +16,7 @@ delay=2;
       },
     },
     visible: {
-      y: ["-10px","10px","-10px","10px","-10px","0px"],
+      y: ["-10px", "10px", "-10px", "10px", "-10px", "0px"],
       transition: {
         delay: delay,
         type: "tween",
@@ -27,20 +26,26 @@ delay=2;
   };
   return (
     <div className={classes.welcomeSection}>
-      <div className={classes.content}>
-        <motion.img
-          variants={imageVariants}
-          animate={props.submitted?"visible":""}
-          src="assets/welcomePic.png"
-          alt="food"
-        />
-        <motion.h3>Save it while saving on it</motion.h3>
-        <div className={classes.line}></div>
-        <motion.p>the number one anti food waste app in Tunisia</motion.p>
-        {!props.submitted && (
-          <button onClick={props.onShow}>Get started</button>
-        )}
-      </div>
+      {
+        <div
+          className={` ${
+            classes.content
+          }`}
+        >
+          <motion.img
+            variants={imageVariants}
+            animate={props.submitted ? "visible" : ""}
+            src="assets/welcomePic.png"
+            alt="food"
+          />
+          <motion.h3>Save it while saving on it</motion.h3>
+          <div className={classes.line}></div>
+          <motion.p>the number one anti food waste app in Tunisia</motion.p>
+          {!props.submitted && (
+            <button onClick={props.onShow}>Get started</button>
+          )}
+        </div>
+      }
     </div>
   );
 };
