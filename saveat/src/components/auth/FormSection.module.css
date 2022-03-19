@@ -1,11 +1,19 @@
 .formSection {
     position: relative;
+    height: 100vh;
+    padding: 1px 0 0 0;
+    margin: -1px auto 0 auto;
+    display: grid;
+    align-items: center;
+}
+
+.whiteWave {
+    height: 100vh;
+    position: absolute;
+    left: -100px;
+    z-index: -2;
 }
 
 .whiteWave img {
     height: 100vh;
-    position: absolute;
-    left: -100px;
-    z-index: 4;
-    border: 1px solid red;
 }

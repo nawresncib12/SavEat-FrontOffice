@@ -2,13 +2,8 @@
     background: #ffff;
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
     align-items: center;
-    z-index: 99;
-}
-
-.form {
-    width: 60%;
+    justify-content: center;
 }
 
 .header {
