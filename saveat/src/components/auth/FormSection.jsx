@@ -1,5 +1,5 @@
 import classes from "./FormSection.module.css";
-import {SignInForm} from "./SignInForm"
+import { SignInForm } from "./SignInForm";
 const FormSection = (props) => {
   return (
     <div className={classes.formSection}>
@@ -7,8 +7,6 @@ const FormSection = (props) => {
         <img src="assets/whitewave.png" alt="whitewave" />
       </div>
       <SignInForm></SignInForm>
-
-
     </div>
   );
 };

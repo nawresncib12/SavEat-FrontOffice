@@ -9,7 +9,7 @@ const Background = () => {
       x: 0,
     },
     visible: {
-      x: "-85vw",
+      x: "-80vw",
       transition: {
         type: "spring",
         bounce: 0.25,
