@@ -12,9 +12,20 @@
 
 .authHead {
     height: 50px;
+
     margin: 30px 50px;
+
+    padding: 30px;
+    position: absolute;
+    top: 0;
+
 }
 
 .authHead img {
     width: 100px;
+}
+
+.authBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
