@@ -5,10 +5,14 @@ const FormSection = (props) => {
     <div className={classes.formSection}>
       <div className={classes.whiteWave}>
         <img src="assets/whitewave.png" alt="whitewave" />
+        
       </div>
-      <SignInForm></SignInForm>
+
+      <SignInForm />
+
     </div>
+
   );
-};
+}
 
 export default FormSection;
