@@ -33,6 +33,9 @@ const Background = () => {
       <div className={classes.authHead}>
         <img src="assets/logo.png" alt="" />
       </div>
+
+
+
       <div className={classes.authBody}>
         <WelcomeSection showForm={showForm} onShow={onShow}></WelcomeSection>
         <motion.div
@@ -46,6 +49,7 @@ const Background = () => {
       </div>
     </div>
   );
+
 };
 
 export default Background;

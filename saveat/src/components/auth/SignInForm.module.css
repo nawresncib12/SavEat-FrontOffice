@@ -1,0 +1,43 @@
+.signInForm {
+    background: #ffff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+    z-index: 99;
+  
+}
+.form {
+    width: 60%;
+}
+
+.header {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #4DAAAA;
+    display: flex;
+    align-items: center;
+    
+}
+.headerIcon {
+    margin-right: 25px;
+    margin-top: 8px;
+    
+}
+
+
+
+.submit h5 {
+    
+    text-align: center;
+}
+.note {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 12px;
+
+    color: #A5A5A5;
+    cursor: pointer;
+}
