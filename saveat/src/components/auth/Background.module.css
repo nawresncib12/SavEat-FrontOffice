@@ -3,12 +3,16 @@
     width: 100vw;
     background: url(../../../public/assets/cool-background.png) no-repeat;
     background-size: cover;
-    padding: 30px 50px;
+
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+
 }
 
 .authHead {
     height: 50px;
+    margin: 30px 50px;
 }
 
 .authHead img {
