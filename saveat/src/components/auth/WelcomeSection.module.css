@@ -4,25 +4,15 @@
     height: 100vh;
 }
 
-.whiteWave img {
-    height: 100vh;
-    position: absolute;
-    right: 0px;
-    z-index: 4;
-}
-
 .smallWave img {
     position: absolute;
-    bottom: -20px;
-    right: -100px;
-    z-index: 2;
+    bottom: 0px;
+    right: -10px;
     height: 80vh;
 }
 
 .welcomeSection .content {
-    position: absolute;
     height: 100vh;
-    width: 40vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -41,4 +31,24 @@
 .welcomeSection .content img {
     height: 50vh;
     min-height: 300px;
+}
+
+.welcomeSection .content button {
+    display: none;
+    background-color: #4DAAAA;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 230px;
+    height: 40px;
+    border: none;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .welcomeSection .content button {
+        display: block;
+    }
 }

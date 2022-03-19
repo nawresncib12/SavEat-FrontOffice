@@ -1,12 +1,14 @@
 .formSection {
-    height: 100vh;
-    width: 100%;
-    background-color: white;
     position: relative;
+}
+
+.hidden {
+    display: none;
 }
 
 .whiteWave img {
     height: 100vh;
-    border: 1px solid red;
     position: absolute;
+    left: -100px;
+    z-index: 4;
 }
