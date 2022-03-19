@@ -7,11 +7,21 @@
     align-items: center;
 }
 
+.smallWave {
+    position: absolute;
+    bottom: 0px;
+    left: -80px;
+}
+
+.smallWave img {
+    height: 80vh;
+}
+
 .whiteWave {
     height: 100vh;
     position: absolute;
     left: -100px;
-    z-index: -2;
+    z-index: 5;
 }
 
 .whiteWave img {
