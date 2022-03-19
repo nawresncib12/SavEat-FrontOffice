@@ -42,7 +42,7 @@ export const SignInForm = () => {
                     <TextField label="Email" name="email" type="email" />
                     <TextField label="Password" name="password" type="password" />
                     <div className={classes.submit}>
-                        <Button color="#4DAAAA" content="SIGN IN " type="submit"/>
+                        <Button color="#4DAAAA" content="Sign In " type="submit"/>
                         <h5 className={classes.note}>Forgot your password ?</h5>
                     </div>
                     
