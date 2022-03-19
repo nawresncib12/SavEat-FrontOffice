@@ -5,8 +5,7 @@
     background-size: cover;
 
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
+  
 
 }
 
