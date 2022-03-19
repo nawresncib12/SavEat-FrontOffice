@@ -3,21 +3,16 @@
     width: 100vw;
     background: url(../../../public/assets/cool-background.png) no-repeat;
     background-size: cover;
-
     box-sizing: border-box;
-  
-
+    overflow-x: hidden;
 }
 
 .authHead {
     height: 50px;
-
     margin: 30px 50px;
-
     padding: 30px;
     position: absolute;
     top: 0;
-
 }
 
 .authHead img {
@@ -27,4 +22,16 @@
 .authBody {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.formWhite {
+    height: 100vh;
+    background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .authBody {
+        display: grid;
+        grid-template-columns: 100vw 100vw;
+    }
 }
