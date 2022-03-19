@@ -80,6 +80,7 @@ const Background = () => {
     if (window.innerWidth > 1000) {
       setshowForm(false);
     } else {
+      if(submitted)
       setshowForm(true);
     }
   };

@@ -39,11 +39,7 @@ export const SignInForm = (props) => {
               <TextField label="Email" name="email" type="email" />
               <TextField label="Password" name="password" type="password" />
               <div className={classes.submit}>
-                <Button
-                  color="#4DAAAA"
-                  content="Sign in "
-                  type="submit"
-                />
+                <Button color="#4DAAAA" content="Submit" type="submit" />
                 <h5 className={classes.note}>Forgot your password ?</h5>
               </div>
             </Form>

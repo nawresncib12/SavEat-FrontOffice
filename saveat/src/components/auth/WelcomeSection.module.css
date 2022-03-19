@@ -4,16 +4,6 @@
     height: 100vh;
 }
 
-.smallWave {
-    position: absolute;
-    bottom: 0px;
-    right: -10px;
-}
-
-.smallWave img {
-    height: 80vh;
-}
-
 .welcomeSection .content {
     height: 100vh;
     color: white;
