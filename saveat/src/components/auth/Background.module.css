@@ -4,7 +4,7 @@
     background: url(../../../public/assets/cool-background.png) no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .authHead {
@@ -22,6 +22,11 @@
 .authBody {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.authBackground .submitted {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .formWhite {
