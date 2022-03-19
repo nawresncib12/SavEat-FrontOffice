@@ -11,7 +11,7 @@
     height: 100vh;
     position: absolute;
     left: -100px;
-    z-index: -2;
+    z-index: 5;
 }
 
 .whiteWave img {
