@@ -28,7 +28,7 @@ const WelcomeSection = (props) => {
     <div className={classes.welcomeSection}>
       {
         <div
-          className={`${props.showForm ? classes.hidden :  classes.shown} ${
+          className={`${props.showForm&&!props.submitted ? classes.hidden :  classes.shown} ${
             classes.content
           }`}
         >
