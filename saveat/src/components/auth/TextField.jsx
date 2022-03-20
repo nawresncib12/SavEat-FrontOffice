@@ -9,6 +9,7 @@ export const TextField = ({ label, ...props }) => {
   let styleErrorInput;
   let styleErrorIcon;
   const [passVisible,setPassVisible] = useState(false);
+  const [labelColor,setLabelColor] = useState("#A5A5A5");
 
   if(meta.touched && meta.error) {
     styleError ={
@@ -27,19 +28,26 @@ export const TextField = ({ label, ...props }) => {
     setPassVisible(!passVisible);
 
   }
+  const changeColor = () => {
+    setLabelColor("#4DAAAA")
+    styleError = {
+      border: "3px solid #4DAAAA"
+
+    }
+  }
   return (
     <div className={classes.inputBox}>
-      <label htmlFor={field.name}>{label}</label>
-      <div className={classes.input} style={styleError}>
+      <label htmlFor={field.name} style={{color:labelColor}}>{label}</label>
+      <div className={classes.input} style={styleError} >
        
-        <input
+        <input onFocus={changeColor} 
           className={classes.formControl}
           {...field} {...props} 
           autoComplete="off" style={styleErrorInput} type={passVisible && props.type === "password" ? "text" : props.type }
         />
         { props.type === "password" && <span onClick={passwordVisible} className={classes.passIcon}><Icon icon="akar-icons:eye" /></span>}
-          <span style={styleErrorIcon} className={classes.errorIcon}><Icon icon="bx:error-circle" /></span>
-         
+        
+        { props.type === "email" && <span className={classes.passIcon}><Icon icon="fluent:mail-24-filled" /></span>}
       </div>
       
       <ErrorMessage component="div" name={field.name} className={classes.error} />
