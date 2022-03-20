@@ -7,7 +7,9 @@ const FormSection = (props) => {
         <img src="assets/whitewave.png" alt="whitewave" />
         
       </div>
+
       <SignInForm />
+
     </div>
 
   );

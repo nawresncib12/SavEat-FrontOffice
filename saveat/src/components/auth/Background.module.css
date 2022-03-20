@@ -32,6 +32,6 @@
 @media only screen and (max-width: 1000px) {
     .authBody {
         display: grid;
-        grid-template-columns: 100vw 100vw;
+        grid-template-columns: 100vw 80vw;
     }
 }
