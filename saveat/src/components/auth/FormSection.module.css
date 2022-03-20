@@ -7,9 +7,28 @@
     align-items: center;
 }
 
+.waves {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    z-index: 2;
+}
+
+.waves img {
+    height: 100vh;
+    width: 80vw;
+}
+
+.formContainer {
+    z-index: 5;
+}
+
+
+/*
+
 .smallWave {
     position: absolute;
-    bottom: 0px;
+    bottom: -5px;
     left: -80px;
 }
 
@@ -27,3 +46,84 @@
 .whiteWave img {
     height: 100vh;
 }
+
+@media only screen and (max-height: 500px) {
+    .whiteWave {
+        left: -60px;
+    }
+    .smallWave {
+        left: -50px;
+    }
+}
+
+@media only screen and (max-height: 650px) {
+    .whiteWave {
+        left: -80px;
+    }
+    .smallWave {
+        left: -70px;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .whiteWave {
+        left: -65px;
+    }
+    .smallWave {
+        left: -50px;
+    }
+}
+
+@media only screen and (max-height: 470px) {
+    .whiteWave {
+        left: -60px;
+    }
+    .smallWave {
+        left: -50px;
+    }
+}
+
+@media only screen and (max-height: 380px) {
+    .whiteWave {
+        left: -40px;
+    }
+    .smallWave {
+        left: -30px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .whiteWave {
+        left: -90px;
+    }
+    .smallWave {
+        left: -80px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .whiteWave {
+        left: -70px;
+    }
+    .smallWave {
+        left: -60px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .whiteWave {
+        display: none;
+    }
+    .smallWave {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 300px) {
+    .whiteWave {
+        display: none;
+    }
+    .smallWave {
+        display: none;
+    }
+}*/

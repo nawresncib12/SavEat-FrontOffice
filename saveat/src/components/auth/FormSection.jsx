@@ -1,50 +1,21 @@
 import classes from "./FormSection.module.css";
 import { SignInForm } from "./SignInForm";
-import { motion, AnimatePresence } from "framer-motion";
 const FormSection = (props) => {
-  const mVariants = {
-    hidden: {
-      x: 0,
-      transition: {
-        type: "tween",
-        duration: 1,
-      },
-    },
-    visible: {
-      x: "-80vw",
-      transition: {
-        type: "tween",
-        duration: 1,
-      },
-    },
-    exit: {
-      x: "80vw",
-      transition: {
-        type: "tween",
-        duration: 1,
-      },
-    },
-  };
   return (
     <div className={classes.formSection}>
-      <AnimatePresence>
-        {!props.submitted && (
-          <motion.div
-            className={classes.smallWave}
-            variants={mVariants}
-            initial="hidden"
-            exit="exit"
-            animate={props.showForm ? "visible" : ""}
-          >
-            <img src="assets/Vector.png" alt="whitewave" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* <motion.div className={classes.smallWave}>
+        <img src="assets/Vector.png" alt="whitewave" />
+      </motion.div>
       <div className={classes.whiteWave}>
         <img src="assets/whitewave.png" alt="whitewave" />
+      </div>*/}
+      <div className={classes.waves}>
+        <img src="assets/waves.png" alt="waves" />
       </div>
+      <div className={classes.formContainer}>
 
       <SignInForm onSubmitForm={props.onSubmitForm} />
+      </div>
     </div>
   );
 };
