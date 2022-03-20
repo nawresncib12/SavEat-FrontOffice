@@ -4,6 +4,16 @@
     height: 100vh;
 }
 
+.welcomeSection .hidden {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+
+.welcomeSection .shown {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+}
+
 .welcomeSection .content {
     height: 100vh;
     color: white;
