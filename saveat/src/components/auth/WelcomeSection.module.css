@@ -51,8 +51,19 @@
     cursor: pointer;
 }
 
+.welcomeSection .content p {
+    font-size: 25px;
+    width: 40%;
+    text-align: center;
+}
+
 @media only screen and (max-width: 1000px) {
     .welcomeSection .content button {
         display: block;
+    }
+    .welcomeSection .content p {
+        font-size: 25px;
+        width: 60%;
+        text-align: center;
     }
 }

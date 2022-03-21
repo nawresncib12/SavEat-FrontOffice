@@ -38,7 +38,7 @@ const WelcomeSection = (props) => {
             src="assets/welcomePic.png"
             alt="food"
           />
-          <motion.h3>Save it while saving on it</motion.h3>
+          <motion.h1>Save it while saving on it</motion.h1>
           <div className={classes.line}></div>
           <motion.p>the number one anti food waste app in Tunisia</motion.p>
           {!props.submitted && (
