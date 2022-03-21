@@ -5,6 +5,7 @@
     margin: -1px auto 0 auto;
     display: grid;
     align-items: center;
+    
 }
 
 .waves {
@@ -46,6 +47,7 @@
 .whiteWave img {
     height: 100vh;
 }
+
 */
 
 @media only screen and (max-width: 500px) {
@@ -130,3 +132,4 @@
         display: none;
     }
 }*/
+

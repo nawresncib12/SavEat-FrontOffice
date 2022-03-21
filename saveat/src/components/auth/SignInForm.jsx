@@ -3,9 +3,14 @@ import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
 import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
+import { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 export const SignInForm = (props) => {
+
+ 
+
+ 
   const validate = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
@@ -14,6 +19,7 @@ export const SignInForm = (props) => {
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !"),
   });
+
   return (
     <Formik
       initialValues={{
@@ -36,8 +42,8 @@ export const SignInForm = (props) => {
           </div>
           <div className={classes.form}>
             <Form>
-              <TextField label="Email" name="email" type="email" />
-              <TextField label="Password" name="password" type="password" />
+              <TextField  label="Email" name="email" type="email" />
+              <TextField  label="Password" name="password" type="password" />
               <div className={classes.submit}>
                 <Button color="#4DAAAA" content="Sign in " type="submit" />
                 <h5 className={classes.note}>Forgot your password ?</h5>
