@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/SavEat-FrontOffice/static/css/main.f4547814.css",
-    "main.js": "/SavEat-FrontOffice/static/js/main.0f17c714.js",
+    "main.css": "/SavEat-FrontOffice/static/css/main.ad3f2eb5.css",
+    "main.js": "/SavEat-FrontOffice/static/js/main.50b922df.js",
     "static/media/cool-background.png": "/SavEat-FrontOffice/static/media/cool-background.4d199fdb289d80b48779.png",
+    "static/media/welcomePic.png": "/SavEat-FrontOffice/static/media/welcomePic.087f825996bd33f62346.png",
+    "static/media/waves.png": "/SavEat-FrontOffice/static/media/waves.282db0abd7246ccf1edf.png",
     "index.html": "/SavEat-FrontOffice/index.html",
-    "main.f4547814.css.map": "/SavEat-FrontOffice/static/css/main.f4547814.css.map",
-    "main.0f17c714.js.map": "/SavEat-FrontOffice/static/js/main.0f17c714.js.map"
+    "main.ad3f2eb5.css.map": "/SavEat-FrontOffice/static/css/main.ad3f2eb5.css.map",
+    "main.50b922df.js.map": "/SavEat-FrontOffice/static/js/main.50b922df.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4547814.css",
-    "static/js/main.0f17c714.js"
+    "static/css/main.ad3f2eb5.css",
+    "static/js/main.50b922df.js"
   ]
 }
