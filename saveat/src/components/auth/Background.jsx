@@ -36,7 +36,7 @@ const Background = () => {
   return (
     <div className={classes.authBackground}>
       <div className={classes.authHead}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo" />
       </div>
 
       <div
