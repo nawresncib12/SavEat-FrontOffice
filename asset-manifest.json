@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SavEat-FrontOffice/static/css/main.d68c3abc.css",
-    "main.js": "/SavEat-FrontOffice/static/js/main.8cab2a8b.js",
+    "main.css": "/SavEat-FrontOffice/static/css/main.f4547814.css",
+    "main.js": "/SavEat-FrontOffice/static/js/main.0f17c714.js",
     "static/media/cool-background.png": "/SavEat-FrontOffice/static/media/cool-background.4d199fdb289d80b48779.png",
     "index.html": "/SavEat-FrontOffice/index.html",
-    "main.d68c3abc.css.map": "/SavEat-FrontOffice/static/css/main.d68c3abc.css.map",
-    "main.8cab2a8b.js.map": "/SavEat-FrontOffice/static/js/main.8cab2a8b.js.map"
+    "main.f4547814.css.map": "/SavEat-FrontOffice/static/css/main.f4547814.css.map",
+    "main.0f17c714.js.map": "/SavEat-FrontOffice/static/js/main.0f17c714.js.map"
   },
   "entrypoints": [
-    "static/css/main.d68c3abc.css",
-    "static/js/main.8cab2a8b.js"
+    "static/css/main.f4547814.css",
+    "static/js/main.0f17c714.js"
   ]
 }
