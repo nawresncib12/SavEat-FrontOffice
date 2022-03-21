@@ -40,11 +40,11 @@ export const TextField = ({ label, ...props }) => {
   }
 
 
-
  let style ;
  const getStyle = () =>  {
    if(meta.touched && meta.error) {
-     style=styleError
+     style=styleError;
+    
    } else 
    if(isFocus) {
      style={border:borderDiv}
@@ -56,14 +56,14 @@ export const TextField = ({ label, ...props }) => {
     <div className={classes.inputBox}>
       <label htmlFor={field.name} style={{color:labelColor}}>{label}</label>
       {getStyle()}
-      <div className={classes.input} style={style}  >
+      <div className={classes.input} style={style} >
         
         <input onFocus={changeColor} onBlur={resetColor}
           className={classes.formControl}
           {...field} {...props} 
           autoComplete="off" style={isFocus && !meta.touched && !meta.error ?  {borderTop:border,borderBottom:border} : styleErrorInput } type={passVisible && props.type === "password" ? "text" : props.type }
         />
-        { props.type === "password" && <span onClick={passwordVisible} className={classes.passIcon}><Icon icon="akar-icons:eye" /></span>}
+        { props.type === "password" && <span onClick={passwordVisible} className={classes.passIcon}>{!passVisible ? <Icon icon="akar-icons:eye" />: <Icon icon="bi:eye-slash" />}</span>}
         
         { props.type === "email" && <span className={classes.passIcon}><Icon icon="fluent:mail-24-filled" /></span>}
       </div>

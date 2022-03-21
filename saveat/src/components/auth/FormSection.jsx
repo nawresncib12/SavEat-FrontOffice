@@ -3,6 +3,26 @@ import { SignInForm } from "./SignInForm";
 import { ToggleBox } from "./ToggleBox";
 import { useState } from "react";
 import {SignUpForm} from './SignUpForm';
+import { AnimatePresence, motion } from "framer-motion";
+
+const formVariants = {
+  initial:{
+    opacity:0,
+    x:"200vw",
+    transitionDelay:5
+
+  },
+  animate:{
+    opacity:1,
+    x:0,
+    transitionDelay:5
+  },
+  exit:{
+    opacity:0,
+    x:"100vw",
+    transitionDelay:5
+  }
+}
 const FormSection = (props) => {
 
     const text = ["Are You New Here ? Join Us","Already A Member ? Sign In !"]
@@ -15,6 +35,7 @@ const FormSection = (props) => {
         note === text[0] ? setNote(text[1]) : setNote(text[0]);
         form === "SignInForm" ? setForm("SignUpForm") : setForm("SignInForm");
     }
+    
     
   return (
     <div className={classes.formSection}>
@@ -29,10 +50,14 @@ const FormSection = (props) => {
       </div>
 
       <div className={classes.formContainer}>
-          { form === "SignInForm" ? <SignInForm onSubmitForm={props.onSubmitForm} /> : <SignUpForm />}
-          
-          <ToggleBox note={note} isClicked={isClicked} handleClick={handleClick} />
+      <AnimatePresence>
+          { form === "SignInForm" ? 
+            <motion.div variants={formVariants} exit="exit" animate="animate" initial="intitial">
+               <SignInForm onSubmitForm={props.onSubmitForm} /> 
+            </motion.div> : null}
+      </AnimatePresence>
 
+      <div className={classes.toggleSection}><ToggleBox note={note} isClicked={isClicked} handleClick={handleClick} /></div>  
       
       </div>
 

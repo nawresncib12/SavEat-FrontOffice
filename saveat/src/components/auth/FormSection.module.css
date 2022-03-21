@@ -6,6 +6,7 @@
     display: grid;
     align-items: center;
     
+    
 }
 
 .waves {
@@ -22,9 +23,15 @@
 
 .formContainer {
     z-index: 5;
+    margin-top: -50px;
 }
 
-
+.toggleSection {
+    position: absolute;
+    bottom: -10;
+    right: 0;
+  
+}
 /*
 
 .smallWave {
