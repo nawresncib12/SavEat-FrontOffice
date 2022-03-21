@@ -4,14 +4,14 @@
     height: 100vh;
 }
 
-.smallWave {
-    position: absolute;
-    bottom: 0px;
-    right: -10px;
+.welcomeSection .hidden {
+    opacity: 0;
+    transition: opacity .5s ease-out;
 }
 
-.smallWave img {
-    height: 80vh;
+.welcomeSection .shown {
+    opacity: 1;
+    transition: opacity .5s ease-out;
 }
 
 .welcomeSection .content {

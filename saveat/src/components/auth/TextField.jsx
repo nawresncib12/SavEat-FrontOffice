@@ -49,8 +49,10 @@ export const TextField = ({ label, ...props }) => {
         
         { props.type === "email" && <span className={classes.passIcon}><Icon icon="fluent:mail-24-filled" /></span>}
       </div>
-      
-      <ErrorMessage component="div" name={field.name} className={classes.error} />
+      <div className={classes.error}>
+        <ErrorMessage name={field.name}  />
+      </div>
+     
     </div>
   )
 }

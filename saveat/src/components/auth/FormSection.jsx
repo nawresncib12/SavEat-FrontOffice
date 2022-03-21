@@ -18,23 +18,26 @@ const FormSection = (props) => {
     
   return (
     <div className={classes.formSection}>
+      {/* <motion.div className={classes.smallWave}>
+        <img src="assets/Vector.png" alt="whitewave" />
+      </motion.div>
       <div className={classes.whiteWave}>
         <img src="assets/whitewave.png" alt="whitewave" />
-        
+      </div>*/}
+      <div className={classes.waves}>
+        <img src="assets/waves.png" alt="waves" />
       </div>
-      <div>
-          { form === "SignInForm" ? <SignInForm /> : <SignUpForm />}
-        
+
+      <div className={classes.formContainer}>
+          { form === "SignInForm" ? <SignInForm onSubmitForm={props.onSubmitForm} /> : <SignUpForm />}
+          
           <ToggleBox note={note} isClicked={isClicked} handleClick={handleClick} />
-        
-        
+
+      
       </div>
-      
-      
 
     </div>
-
   );
-}
+};
 
 export default FormSection;

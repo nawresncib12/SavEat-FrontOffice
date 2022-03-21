@@ -49,11 +49,8 @@ export const SignUpForm = () => {
                         <Button color="#4DAAAA" content="Sign In " type="submit"/>
                         <h5 className={classes.note}>Forgot your password ?</h5>
                     </div>
-                    
-
                 </Form> 
             </div>
-               
         </div>
         )}
     </Formik>
