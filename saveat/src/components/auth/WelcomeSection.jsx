@@ -1,46 +1,30 @@
 import classes from "./WelcomeSection.module.css";
-import { motion } from "framer-motion";
+
 const WelcomeSection = (props) => {
-  let delay;
+  let animate;
   if (props.showForm === true) {
-    delay = 0;
+    animate = classes.animate1;
   } else {
-    delay = 2;
+    animate=classes.animate2;
   }
-  const imageVariants = {
-    hidden: {
-      y: 0,
-      transition: {
-        type: "tween",
-        duration: 1,
-      },
-    },
-    visible: {
-      y: ["-10px", "10px", "-10px", "10px", "-10px", "0px"],
-      transition: {
-        delay: delay,
-        type: "tween",
-        duration: 1,
-      },
-    },
-  };
   return (
     <div className={classes.welcomeSection}>
       {
         <div
-          className={`${props.showForm&&!props.submitted ? classes.hidden :  classes.shown} ${
-            classes.content
-          }`}
+          className={`${
+            props.showForm && !props.submitted ? classes.hidden : classes.shown
+          } ${classes.content}`}
         >
-          <motion.img
-            variants={imageVariants}
-            animate={props.submitted ? "visible" : ""}
+          <img
+            className={`${
+              props.submitted ? animate : classes.hide
+            }`}
             src="assets/welcomePic.png"
             alt="food"
           />
-          <motion.h1>Save it while saving on it</motion.h1>
+          <h1>Save it while saving on it</h1>
           <div className={classes.line}></div>
-          <motion.p>the number one anti food waste app in Tunisia</motion.p>
+          <p>the number one anti food waste app in Tunisia</p>
           {!props.submitted && (
             <button onClick={props.onShow}>Get started</button>
           )}
