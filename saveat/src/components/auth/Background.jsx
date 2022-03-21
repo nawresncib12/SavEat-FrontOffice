@@ -2,6 +2,7 @@ import { useState } from "react";
 import classes from "./Background.module.css";
 import FormSection from "./FormSection";
 import WelcomeSection from "./WelcomeSection";
+import logo from '../../assets/logo.png'
 const Background = () => {
 
   const [showForm, setshowForm] = useState(false);
@@ -35,7 +36,7 @@ const Background = () => {
   return (
     <div className={classes.authBackground}>
       <div className={classes.authHead}>
-        <img src="assets/logo.png" alt="" />
+        <img src={logo} alt="" />
       </div>
 
       <div
