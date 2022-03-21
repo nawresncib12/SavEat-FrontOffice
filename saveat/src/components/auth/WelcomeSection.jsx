@@ -1,5 +1,5 @@
 import classes from "./WelcomeSection.module.css";
-
+import food from '../../assets/welcomePic.png'
 const WelcomeSection = (props) => {
   let animate;
   if (props.showForm === true) {
@@ -19,7 +19,7 @@ const WelcomeSection = (props) => {
             className={`${
               props.submitted ? animate : classes.hide
             }`}
-            src="assets/welcomePic.png"
+            src={food}
             alt="food"
           />
           <h1>Save it while saving on it</h1>

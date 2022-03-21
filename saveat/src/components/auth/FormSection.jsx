@@ -4,7 +4,7 @@ import { ToggleBox } from "./ToggleBox";
 import { useState } from "react";
 import {SignUpForm} from './SignUpForm';
 import { AnimatePresence, motion } from "framer-motion";
-
+import waves from "../../assets/waves.png"
 const formVariants = {
   initial:{
     opacity:0,
@@ -46,7 +46,7 @@ const FormSection = (props) => {
         <img src="assets/whitewave.png" alt="whitewave" />
       </div>*/}
       <div className={classes.waves}>
-        <img src="assets/waves.png" alt="waves" />
+        <img src={waves} alt="waves" />
       </div>
 
       <div className={classes.formContainer}>
