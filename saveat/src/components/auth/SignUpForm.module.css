@@ -1,12 +1,13 @@
-.signInForm {
+.signUpForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     
+    
 }
 
 .header {
-    font-size: 1.5em;
+    font-size: 30px;
     font-weight: 600;
     color: #4DAAAA;
     display: flex;
@@ -19,7 +20,9 @@
     margin-right: 25px;
     margin-top: 8px;
 }
-
+.submit {
+    margin-top: 0px;
+}
 .submit h5 {
     text-align: center;
 }
@@ -27,8 +30,20 @@
 .note {
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 12px;
+    font-size: 15px;
+    line-height: 8px;
     color: #A5A5A5;
     cursor: pointer;
+}
+.stepContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.stepContainer .line {
+    width: 80px;
+    height: 0px;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 8px;
 }

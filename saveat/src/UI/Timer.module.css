@@ -1,0 +1,15 @@
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+ 
+} 
+.timer span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 8px;
+    color: #A5A5A5;
+    cursor: pointer;
+}
