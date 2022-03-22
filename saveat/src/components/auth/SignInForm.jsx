@@ -3,13 +3,12 @@ import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
 import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
-import { useState } from "react";
+
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 export const SignInForm = (props) => {
 
- 
-
+  
  
   const validate = Yup.object({
     email: Yup.string()
@@ -21,6 +20,7 @@ export const SignInForm = (props) => {
   });
 
   return (
+    
     <Formik
       initialValues={{
         email: "",
@@ -32,7 +32,9 @@ export const SignInForm = (props) => {
         console.log(values);
       }}
     >
+      
       {(formik) => (
+        
         <div className={classes.signInForm}>
           <div className={classes.header}>
             <div className={classes.headerIcon}>
@@ -51,7 +53,9 @@ export const SignInForm = (props) => {
             </Form>
           </div>
         </div>
+        
       )}
     </Formik>
+   
   );
 };

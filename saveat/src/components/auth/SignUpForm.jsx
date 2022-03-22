@@ -46,7 +46,7 @@ export const SignUpForm = () => {
                     <TextField label="Password" name="password" type="password" />
                  
                     <div className={classes.submit}>
-                        <Button color="#4DAAAA" content="Sign In " type="submit"/>
+                        <Button color="#4DAAAA" content="Sign Up " type="submit"/>
                         <h5 className={classes.note}>Forgot your password ?</h5>
                     </div>
                 </Form> 
