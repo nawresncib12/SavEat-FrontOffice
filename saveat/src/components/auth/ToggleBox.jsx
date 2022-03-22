@@ -3,7 +3,7 @@ import classes from './ToggleBox.module.css';
 import { Icon } from '@iconify/react';
 import { Circle } from './Circle';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+
 
 const CircleVariants = {
     initial: {
@@ -21,16 +21,16 @@ const CircleVariants = {
     }
 }
 const IconVariants = {
-    initial: {
+    initialIcon: {
         opacity: 0,
         x:"50%"
     },
-    animate: {
+    animateIcon: {
         opacity: 1,
         x:"-270%"
 
     },
-    exit: {
+    exitIcon: {
         opacity: 0
 
     }
@@ -67,14 +67,14 @@ export const ToggleBox = ({note,isClicked,handleClick}) => {
         { isClicked ?  <motion.div 
                 variants={IconVariants}
                 layout
-                initial="initial"
-                animate="animate"
-                exit="exit"
+                initial="initialIcon"
+                animate="animateIcon"
+                exit="exitIcon"
                 transition={spring}
                 className={classes.icon}>
                 <Icon color='#ffff' icon="teenyicons:signin-outline" />
             </motion.div> : <motion.div 
-                layout
+               
                 className={classes.icon}>
                 <Icon color='#ffff' icon="teenyicons:signin-outline" />
             </motion.div> }
