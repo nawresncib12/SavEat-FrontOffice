@@ -2,7 +2,7 @@ import React from 'react'
 import { useTimer } from 'react-timer-hook';
 import classes from './Timer.module.css';
 
-export const Timer = ({ expiryTimestamp }) => {
+const MyTimer = ({ expiryTimestamp }) => {
     const {
         seconds,
         minutes,
@@ -20,4 +20,13 @@ export const Timer = ({ expiryTimestamp }) => {
          <span>{minutes}</span>:<span>{seconds}</span>
     </div>
   )
+}
+export const Timer = () => {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
+  return (
+    <div>
+      <MyTimer expiryTimestamp={time} />
+    </div>
+  );
 }
