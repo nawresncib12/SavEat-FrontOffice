@@ -7,6 +7,9 @@ import { TextField } from './TextField';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Timer } from '../../UI/Timer';
+import { StepOne } from './StepOne';
+import { StepTwo } from './StepTwo';
+import Succes from './Succes';
 export const SignUpForm = () => {
 
     const validate = Yup.object({
@@ -67,34 +70,13 @@ export const SignUpForm = () => {
             </div>
             <div className={classes.form}>
                 <Form>
-                    {next===1 &&<div>
-                        
-                        <TextField label="Email" name="email" type="email" />
-                        <TextField label="Password" name="password" type="password" />
-                        <TextField label="Confirm Password" name="confirmPassword" type="password" />
-                    </div>}
-                    {next===2 && <div>
-                        <h5 className={classes.note}>We sent a verification code to *******@***.***</h5>
-                        <h5 className={classes.note} style={{marginTop:"-10px"}}>Please enter your code </h5>
-                        <TextField label="Verification Code" name="verificationCode" type="text" />
-                        <h5 className={classes.note} style={{display:"flex",marginTop:"0"}}>Code expires in <Timer expiryTimestamp={time} /> </h5>
-                        <h5 style={{marginTop:"-10px"}} className={classes.note}>Resend Code ?</h5>
-            
-                    </div>}
-                    {next===3 &&<div>
-                        <h2>Success</h2>
-            
-                    </div>}
+                    {next===1 && <StepOne nextHandler={nextHandler} /> }
+                    {next===2 && <StepTwo time={time} /> }
+                 
                    
                     
                  
-                    <div className={classes.submit} >
-                        {next===2 && <Button color="#4DAAAA" content="Sign Up " type="submit"/>}
-                       
-                        {next ===1 && <div className={classes.nextBtn} onClick={nextHandler}><Button type="button" color="#4DAAAA" content=" >>> "/></div>}
-                        
-                        {next ===3 && <div className={classes.nextBtn}><Button type="button" color="#4DAAAA" content=" Get To Home Page "/></div>}
-                    </div>
+                   
                 </Form> 
             </div>
         </div>

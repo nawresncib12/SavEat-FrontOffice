@@ -54,7 +54,7 @@ const FormSection = (props) => {
           { form === "SignInForm" ? 
             <motion.div variants={formVariants} exit="exit" animate="animate" initial="intitial">
                <SignInForm onSubmitForm={props.onSubmitForm} /> 
-            </motion.div> : <SignUpForm />}
+            </motion.div> : <SignUpForm onSubmitForm={props.onSubmitForm} submitted={props.submitted} />}
       </AnimatePresence>
 
       <div className={classes.toggleSection}><ToggleBox note={note} isClicked={isClicked} handleClick={handleClick} /></div>  
