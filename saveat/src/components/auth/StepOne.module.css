@@ -1,0 +1,22 @@
+
+.submit {
+    margin-top: 0px;
+}
+.submit h5 {
+    text-align: center;
+}
+
+.note {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 8px;
+    color: #A5A5A5;
+    cursor: pointer;
+}
+
+.nextSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
