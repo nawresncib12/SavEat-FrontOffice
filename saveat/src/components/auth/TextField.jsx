@@ -15,12 +15,9 @@ export const TextField = ({ label, ...props }) => {
   const changeColor = () => {
     setIsFocus(true);
     setLabelColor("#4DAAAA");
-    setBorder("1.5px solid #4DAAAA");
-    setBorderDiv("2px solid #4DAAAA");
   }
   const resetColor = () => {
     setIsFocus(false);
-    console.log('hello')
   }
   
   
@@ -28,10 +25,6 @@ export const TextField = ({ label, ...props }) => {
   if(meta.touched && meta.error) {
     styleError ={
       border: "2px solid red"
-    }
-    styleErrorInput ={
-      borderTop: "1.5px solid red",
-      borderBottom: "1.5px solid red"
     }
   }
   const passwordVisible = () => {

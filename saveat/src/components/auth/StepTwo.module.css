@@ -1,12 +1,12 @@
-
-.submit {
+.stepTwo .submit {
     margin-top: 0px;
 }
-.submit h5 {
+
+.stepTwo .submit h5 {
     text-align: center;
 }
 
-.note {
+.stepTwo .note {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -15,13 +15,18 @@
     cursor: pointer;
 }
 
+.stepTwo .note.resend:hover {
+    color: #4DAAAA;
+}
+
 .nextSection {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .nextBtn {
     position: absolute;
     align-items: center;
-    pointer-events:none;
+    pointer-events: none;
 }

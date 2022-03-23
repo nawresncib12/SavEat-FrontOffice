@@ -1,16 +1,13 @@
 import React from "react";
 import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
-import { SocialMediaBox } from './SocialMediaBox';
+import { SocialMediaBox } from "./SocialMediaBox";
 import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
 
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 export const SignInForm = (props) => {
-
-  
- 
   const validate = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
@@ -21,7 +18,6 @@ export const SignInForm = (props) => {
   });
 
   return (
-    
     <Formik
       initialValues={{
         email: "",
@@ -33,31 +29,24 @@ export const SignInForm = (props) => {
         console.log(values);
       }}
     >
-      
       {(formik) => (
-        
         <div className={classes.signInForm}>
           <div className={classes.header}>
-            <div className={classes.headerIcon}>
-              <Icon icon="teenyicons:signin-outline" />
-            </div>
-            <h2 className={classes.title}>Sign In</h2>
+            <h2 className={classes.title}>Sign in</h2>
           </div>
           <div className={classes.form}>
             <Form>
-              <TextField  label="Email" name="email" type="email" />
-              <TextField  label="Password" name="password" type="password" />
+              <TextField label="Email" name="email" type="email" />
+              <TextField label="Password" name="password" type="password" />
+              <h5 className={classes.note}>Forgot your password ?</h5>
               <div className={classes.submit}>
-                <Button color="#4DAAAA" content="Sign in " type="submit" />
+                <Button color="#4DAAAA" content="Submit" type="submit" />
                 <SocialMediaBox />
-                <h5 className={classes.note}>Forgot your password ?</h5>
               </div>
             </Form>
           </div>
         </div>
-        
       )}
     </Formik>
-   
   );
 };
