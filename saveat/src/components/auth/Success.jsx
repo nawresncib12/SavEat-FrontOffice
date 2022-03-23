@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Succes = () => {
+export const Success = () => {
   return (
     <div>
                         <h2>Success</h2>

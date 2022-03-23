@@ -4,6 +4,7 @@ import { Button } from "../../UI/Button";
 import classes from "./StepOne.module.css";
 import next from "../../assets/next.png";
 export const StepOne = (props) => {
+
   return (
     <div className={classes.stepOne}>
       <div>
@@ -20,6 +21,7 @@ export const StepOne = (props) => {
               <img src={next} className={classes.nextImg} alt="" />
             </button>
           </div>
+
         </div>
       </div>
     </div>
