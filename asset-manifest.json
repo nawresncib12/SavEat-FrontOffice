@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/SavEat-FrontOffice/static/css/main.e7d8b627.css",
-    "main.js": "/SavEat-FrontOffice/static/js/main.d92e2b92.js",
+    "main.css": "/SavEat-FrontOffice/static/css/main.406aa42c.css",
+    "main.js": "/SavEat-FrontOffice/static/js/main.18c1c474.js",
     "static/media/cool-background.png": "/SavEat-FrontOffice/static/media/cool-background.4d199fdb289d80b48779.png",
     "static/media/welcomePic.png": "/SavEat-FrontOffice/static/media/welcomePic.087f825996bd33f62346.png",
-    "static/media/waves.png": "/SavEat-FrontOffice/static/media/waves.282db0abd7246ccf1edf.png",
+    "static/media/wavesss.png": "/SavEat-FrontOffice/static/media/wavesss.ce71afaa7527bf006444.png",
     "static/media/next.png": "/SavEat-FrontOffice/static/media/next.627b70c6d1723298d65c.png",
     "index.html": "/SavEat-FrontOffice/index.html",
-    "main.e7d8b627.css.map": "/SavEat-FrontOffice/static/css/main.e7d8b627.css.map",
-    "main.d92e2b92.js.map": "/SavEat-FrontOffice/static/js/main.d92e2b92.js.map"
+    "main.406aa42c.css.map": "/SavEat-FrontOffice/static/css/main.406aa42c.css.map",
+    "main.18c1c474.js.map": "/SavEat-FrontOffice/static/js/main.18c1c474.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7d8b627.css",
-    "static/js/main.d92e2b92.js"
+    "static/css/main.406aa42c.css",
+    "static/js/main.18c1c474.js"
   ]
 }
