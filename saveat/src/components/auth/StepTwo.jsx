@@ -12,7 +12,7 @@ export const StepTwo = (props) => {
                         <h5 className={classes.note} style={{display:"flex",marginTop:"0"}}>Code expires in <Timer expiryTimestamp={props.time} /> </h5>
                         <h5 style={{marginTop:"-10px"}} className={classes.note}>Resend Code ?</h5>
                         <div className={classes.submit}>
-                          <Button color="#4DAAAA" content="Sign Up " type="submit"/>
+                          <Button color="#4DAAAA" content="Sign Up " type="button" onClick={props.nextHandler}/>
                         </div>
                     </div>
   )

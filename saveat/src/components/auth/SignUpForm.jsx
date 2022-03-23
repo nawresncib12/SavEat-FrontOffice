@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { Timer } from '../../UI/Timer';
 import { StepOne } from './StepOne';
 import { StepTwo } from './StepTwo';
-import Succes from './Succes';
+import { Success } from './Success';
 export const SignUpForm = () => {
 
     const validate = Yup.object({
@@ -30,7 +30,8 @@ export const SignUpForm = () => {
       })
       const [next,setNext] = useState(1);
       const [time,setTime] = useState(new Date());
-      const nextHandler = () => {
+      const nextHandler = (e) => {
+          e.preventDefault()
           if(next === 1) {
               setNext(2);
               setTime(new Date());
@@ -40,6 +41,9 @@ export const SignUpForm = () => {
           }
 
       }
+      const handleSubmit = (e) => {
+          e.preventDefault()
+      }
   return (
       
     <Formik
@@ -48,9 +52,8 @@ export const SignUpForm = () => {
             password: ''
         }}
         validationSchema={validate}
-        onSubmit={values => {
-            console.log(values)
-        }}
+        
+        
     >
         {formik => (
         <div className={classes.signUpForm}>
@@ -69,10 +72,10 @@ export const SignUpForm = () => {
                 
             </div>
             <div className={classes.form}>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     {next===1 && <StepOne nextHandler={nextHandler} /> }
-                    {next===2 && <StepTwo time={time} /> }
-                 
+                    {next===2 && <StepTwo time={time} nextHandler={nextHandler} /> }
+                    {next ===3 && <Success />}
                    
                     
                  
