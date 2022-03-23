@@ -1,7 +1,7 @@
 .authBackground {
     height: 100vh;
     width: 100vw;
-    background: url(../../assets/cool-background.png) no-repeat;
+    background: url(../../../assets/cool-background.png) no-repeat;
     background-size: cover;
     box-sizing: border-box;
     overflow: hidden;
@@ -9,10 +9,10 @@
 
 .authHead {
     height: 50px;
-    margin: 30px 50px;
-    padding: 30px;
+    padding: 15px;
     position: absolute;
     top: 0;
+    left: 0;
 }
 
 .authHead img {

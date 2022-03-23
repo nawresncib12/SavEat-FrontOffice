@@ -55,16 +55,13 @@ export const SignUpForm = () => {
         {formik => (
         <div className={classes.signUpForm}>
             <div className={classes.header}>
-                <div className={classes.headerIcon}>
-                    <Icon icon="teenyicons:signin-outline" />
-                </div>
-                <h2 className={classes.title}>Sign Up</h2>    
+                <h2 className={classes.title}>Sign up</h2>    
             </div>
             <div className={classes.stepContainer}>
                 <StepCircle number="1" color={next>=1 ? "#4DAAAA" : "#E5E5E5"} />
-                <div className={classes.line} style={next>=2 ? {borderColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
+                <div className={classes.line} style={next>=2 ? {borderColor:"#4DAAAA",backgroundColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
                 <StepCircle number="2" color={next>=2 ? "#4DAAAA" : "#E5E5E5"}  />
-                <div className={classes.line} style={next===3 ? {borderColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
+                <div className={classes.line} style={next===3 ? {borderColor:"#4DAAAA",backgroundColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
                 <StepCircle number="3" color={next>=3 ? "#4DAAAA" : "#E5E5E5"}  />
                 
             </div>
@@ -72,10 +69,6 @@ export const SignUpForm = () => {
                 <Form>
                     {next===1 && <StepOne nextHandler={nextHandler} /> }
                     {next===2 && <StepTwo time={time} /> }
-                 
-                   
-                    
-                 
                    
                 </Form> 
             </div>

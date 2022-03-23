@@ -5,8 +5,6 @@
     margin: -1px auto 0 auto;
     display: grid;
     align-items: center;
-    
-    
 }
 
 .waves {
@@ -30,8 +28,9 @@
     position: absolute;
     bottom: -15px;
     right: 0;
-  
 }
+
+
 /*
 
 .smallWave {
@@ -139,4 +138,3 @@
         display: none;
     }
 }*/
-
