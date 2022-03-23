@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
+import { SocialMediaBox } from './SocialMediaBox';
 import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
 
@@ -48,6 +49,7 @@ export const SignInForm = (props) => {
               <TextField  label="Password" name="password" type="password" />
               <div className={classes.submit}>
                 <Button color="#4DAAAA" content="Sign in " type="submit" />
+                <SocialMediaBox />
                 <h5 className={classes.note}>Forgot your password ?</h5>
               </div>
             </Form>
