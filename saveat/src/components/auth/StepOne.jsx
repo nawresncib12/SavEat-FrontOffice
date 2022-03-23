@@ -16,7 +16,7 @@ export const StepOne = (props) => {
         />
         <div className={classes.submit}>
           <div className={classes.nextBtn}>
-            <button type="submit" onClick={props.nextHandler}>
+            <button type="submit" >
               <img src={next} className={classes.nextImg} alt="" />
             </button>
           </div>
