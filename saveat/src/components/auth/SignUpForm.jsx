@@ -19,7 +19,12 @@ export const SignUpForm = () => {
       .required("Email is required !"),
     password: Yup.string()
       .required("Password is required !")
-      .min(8, "Password must be at least 8 charaters !"),
+      .min(8, "Password must be at least 8 charaters !")
+      .matches(/^(?=.*[A-Z])/,
+      "Must Contain 8 Characters & One Uppercase"
+    )
+      ,
+      
     confirmpassword: Yup.string().when("password", {
         is: val => (val && val.length > 0 ? true : false),
         then: Yup.string().oneOf(

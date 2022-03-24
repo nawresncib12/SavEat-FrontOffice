@@ -10,6 +10,8 @@ export const StepOne = (props) => {
       <div>
         <TextField label="Email" name="email" type="email" />
         <TextField label="Password" name="password" type="password" />
+        <p className={classes.noteP1}>Must be longer than 8 characters and contain </p>
+        <p className={classes.noteP2}>one capital letter.</p>
         <TextField
           label="Confirm Password"
           name="confirmpassword"

@@ -46,3 +46,4 @@ export const ToggleBox = ({ note, isClicked, handleClick }) => {
     </div>
   );
 };
+

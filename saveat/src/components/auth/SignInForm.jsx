@@ -41,7 +41,8 @@ export const SignInForm = (props) => {
               <h5 className={classes.note}>Forgot your password ?</h5>
               <div className={classes.submit}>
                 <Button color="#4DAAAA" content="Submit" type="submit" />
-                <SocialMediaBox />
+                <div className={classes.social}><SocialMediaBox /></div>
+                
               </div>
             </Form>
           </div>

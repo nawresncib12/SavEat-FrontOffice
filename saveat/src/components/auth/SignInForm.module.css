@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    
+    
 }
 
 .signInForm .header {
@@ -34,8 +38,12 @@
     cursor: pointer;
     padding: 0;
     margin-top: 2px;
+    text-align: center;
 }
 
 .signInForm .note:hover {
     color: #4DAAAA;
+}
+.social {
+    margin-top: 25px;
 }

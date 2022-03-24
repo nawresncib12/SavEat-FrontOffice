@@ -43,7 +43,6 @@ export const SocialMediaBox = () => {
         <g></g>
         <g></g>
       </svg>
-
       <p>Sign in with Facebook</p>
     </button>
   );

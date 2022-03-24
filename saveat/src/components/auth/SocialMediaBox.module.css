@@ -7,15 +7,17 @@
     border-radius: 5px;
     color: #A5A5A5;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     height: 40px;
     cursor: pointer;
 }
 
 .socialBox:hover {
-    border: #4DAAAA solid 0.5px;
+    border: #4DAAAA solid 1px;
     color: #4DAAAA;
+    font-weight: 500;
 }
+
 
 .socialBox svg {
     margin-right: 10px;
@@ -23,6 +25,3 @@
     fill: #4267B2;
 }
 
-.socialBox:hover svg {
-    fill: #4DAAAA;
-}
