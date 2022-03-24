@@ -3,7 +3,7 @@ import classes from './ToggleBox.module.css';
 import { Icon } from '@iconify/react';
 import { Circle } from './Circle';
 import { motion } from 'framer-motion';
-
+import signup from '../../assets/sign-up.png'
 
 const CircleVariants = {
     initial: {
@@ -27,7 +27,7 @@ const IconVariants = {
     },
     animateIcon: {
         opacity: 1,
-        x:"-270%"
+        x:"-210%"
 
     },
     exitIcon: {
@@ -72,7 +72,7 @@ export const ToggleBox = ({note,isClicked,handleClick}) => {
                 exit="exitIcon"
                 transition={spring}
                 className={classes.icon}>
-                <Icon color='#ffff' icon="teenyicons:signin-outline" />
+                <img src={signup} style={{width:"20px",height:"20px"}} alt="" />
             </motion.div> : <motion.div 
                
                 className={classes.icon}>

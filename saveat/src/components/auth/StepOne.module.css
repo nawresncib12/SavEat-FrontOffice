@@ -25,13 +25,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .nextBtn button {
     border: none;
     text-align: center;
-    cursor: pointer;
-    width: 35px;
+    width: 45px;
     margin: auto;
     background-color: transparent;
 }
@@ -60,5 +60,6 @@
 }
 
 .nextBtn .nextImg {
-    width: 30px;
+    width: 40px;
+    cursor: pointer;
 }
