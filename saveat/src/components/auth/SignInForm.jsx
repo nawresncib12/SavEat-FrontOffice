@@ -36,6 +36,7 @@ export const SignInForm = (props) => {
           </div>
           <div className={classes.form}>
             <SocialMediaBox type="Sign in" />
+            
             <Form>
               <TextField label="Email" name="email" type="email" form="signin"/>
               <TextField label="Password" name="password" type="password"  form="signin" />
