@@ -72,7 +72,7 @@ export const ToggleBox = ({note,isClicked,handleClick}) => {
                 exit="exitIcon"
                 transition={spring}
                 className={classes.icon}>
-                <img src={signup} style={{width:"20px",height:"20px"}} alt="" />
+                <Icon  icon="ant-design:plus-circle-outlined" color="white" width="25px" height="25px" />
             </motion.div> : <motion.div 
                
                 className={classes.icon}>
