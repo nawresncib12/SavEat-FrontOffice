@@ -65,8 +65,8 @@ export const SignUpForm = () => {
       {(formik) => (
         <div className={classes.signUpForm}>
           <div className={classes.header}>
-            <SocialMediaBox />
-            <h2 className={classes.note}>Or</h2>
+            <h2 className={classes.title}>Sign up</h2>
+            <SocialMediaBox type="Sign up"/>
           </div>
           <div className={classes.stepContainer}>
             <StepCircle number="1" color={next >= 1 ? "#4DAAAA" : "#E5E5E5"} />

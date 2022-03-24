@@ -9,15 +9,16 @@
     margin: auto;
     margin-top: 10px;
     height: 40px;
+    width: 100%;
     cursor: pointer;
+    margin: 20px 0px;
 }
 
 .socialBox:hover {
-    border: #4DAAAA solid 1px;
-    color: #4DAAAA;
+    border: #4267B2 solid 1px;
+    color: #4267B2;
     font-weight: 500;
 }
-
 
 .socialBox svg {
     margin-right: 10px;
@@ -25,3 +26,19 @@
     fill: #4267B2;
 }
 
+.socials .note {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 8px;
+    color: #A5A5A5;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 2px;
+    text-align: center;
+    padding: 5px;
+}
+
+.socials {
+    margin-bottom: 15px;
+}

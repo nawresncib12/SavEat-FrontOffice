@@ -1,7 +1,6 @@
 .inputBox {
     display: flex;
     flex-direction: column;
-    
     margin-top: -5px;
 }
 
@@ -80,5 +79,4 @@ input.formControl:focus {
     margin: 12px 0 6px 0;
     display: block;
     height: 18px;
-    
 }
