@@ -55,7 +55,7 @@
 
 .formWhite.animate {
     transform: translateX(-80vw);
-    transition: transform 1s ease-in;
+    transition: transform 1s ease-out;
 }
 
 .formWhite.exit {
@@ -90,5 +90,9 @@
     .authBody {
         display: grid;
         grid-template-columns: 100vw 80vw;
+    }
+    .authHead {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
     }
 }

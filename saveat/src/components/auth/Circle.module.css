@@ -9,6 +9,7 @@
     align-items: center;
     cursor: pointer;
 }
+
 .innerCircle {
     position: absolute;
     width: 16px;
