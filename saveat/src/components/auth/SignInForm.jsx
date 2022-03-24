@@ -32,7 +32,7 @@ export const SignInForm = (props) => {
       {(formik) => (
         <div className={classes.signInForm}>
           <div className={classes.header}>
-            <h2 className={classes.title}>Sign in</h2>
+            <h3 className={classes.title}>Sign in</h3>
           </div>
           <div className={classes.form}>
             <SocialMediaBox type="Sign in" />

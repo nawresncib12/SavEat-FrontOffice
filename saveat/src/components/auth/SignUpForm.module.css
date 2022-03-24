@@ -13,6 +13,11 @@
     text-align: center;
 }
 
+.signUpForm h3 {
+    padding: 0;
+    margin: 0;
+}
+
 .signUpForm .header .note {
     text-align: center;
 }
@@ -59,5 +64,14 @@
     .signUpForm .header,
     .signUpForm .form {
         min-width: 400px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .signUpForm .header {
+        font-size: 20px;
+    }
+    .signUpForm .stepContainer {
+        margin-bottom: 2px;
     }
 }

@@ -1,6 +1,5 @@
 .stepOne .submit {
     margin-top: -8px;
-    
 }
 
 .stepOne .submit h5 {
@@ -28,6 +27,7 @@
     align-items: center;
     margin: 0;
 }
+
 .noteP1 {
     font-style: normal;
     font-weight: 400;
@@ -37,6 +37,7 @@
     padding: 0;
     margin-top: -8px;
 }
+
 .noteP2 {
     font-style: normal;
     font-weight: 400;
@@ -46,7 +47,6 @@
     padding: 0;
     margin-top: -15px;
 }
-
 
 .nextBtn button {
     border: none;
@@ -82,4 +82,15 @@
 .nextBtn .nextImg {
     width: 40px;
     cursor: pointer;
+}
+
+@media only screen and (max-height: 700px) {
+    .nextBtn .nextImg {
+        height: 20px;
+        width: 25px;
+    }
+    .nextBtn button {
+        height: 25px;
+        width: 35px;
+    }
 }

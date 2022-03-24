@@ -6,8 +6,6 @@
     border: #A5A5A5 solid 0.5px;
     border-radius: 5px;
     color: #A5A5A5;
-    margin: auto;
-    margin-top: 10px;
     height: 40px;
     width: 100%;
     cursor: pointer;
@@ -36,9 +34,16 @@
     padding: 0;
     margin-top: 2px;
     text-align: center;
-    padding: 5px;
+    padding: 0px;
 }
 
 .socials {
     margin-bottom: 15px;
+}
+
+@media only screen and (max-height: 700px) {
+    .socialBox {
+        height: 35px;
+        margin: 15px 0px;
+    }
 }

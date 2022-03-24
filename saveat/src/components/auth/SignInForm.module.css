@@ -52,3 +52,9 @@
         min-width: 400px;
     }
 }
+
+@media only screen and (max-height: 600px) {
+    .signInForm .header {
+        font-size: 20px;
+    }
+}
