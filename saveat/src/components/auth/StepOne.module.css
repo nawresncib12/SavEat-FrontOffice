@@ -25,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .nextBtn button {
@@ -60,4 +61,5 @@
 
 .nextBtn .nextImg {
     width: 40px;
+    cursor: pointer;
 }

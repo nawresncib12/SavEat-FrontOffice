@@ -11,6 +11,7 @@ const Background = () => {
     setshowForm(true);
   };
   const onSubmitForm = () => {
+   
     setSubmitted(true);
   };
   const handleResize = () => {

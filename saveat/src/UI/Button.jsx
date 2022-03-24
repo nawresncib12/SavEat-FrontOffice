@@ -9,6 +9,7 @@ export const Button = (props) => {
       className={classes.btn}
       style={{ backgroundColor: props.color }}
       onClick={props.onClick || nothing }
+
     >
       {props.content}
       {props.children}

@@ -3,8 +3,8 @@ import { TextField } from "./TextField";
 import { Button } from "../../UI/Button";
 import classes from "./StepOne.module.css";
 import next from "../../assets/next.png";
+import { SocialMediaBox } from "./SocialMediaBox";
 export const StepOne = (props) => {
-
   return (
     <div className={classes.stepOne}>
       <div>
@@ -12,16 +12,17 @@ export const StepOne = (props) => {
         <TextField label="Password" name="password" type="password" />
         <TextField
           label="Confirm Password"
-          name="confirmPassword"
+          name="confirmpassword"
           type="password"
         />
         <div className={classes.submit}>
           <div className={classes.nextBtn}>
-            <button type="submit" >
+            <button type="submit"  >
               <img src={next} className={classes.nextImg} alt="" />
+              
             </button>
           </div>
-
+          <SocialMediaBox />
         </div>
       </div>
     </div>

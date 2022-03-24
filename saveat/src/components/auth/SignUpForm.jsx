@@ -9,7 +9,9 @@ import * as Yup from "yup";
 import { Timer } from "../../UI/Timer";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
-import Succes from "./Succes";
+import { Success } from "./Success";
+
+
 export const SignUpForm = () => {
   const validate = Yup.object({
     email: Yup.string()
@@ -18,7 +20,20 @@ export const SignUpForm = () => {
     password: Yup.string()
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !"),
+    confirmpassword: Yup.string().when("password", {
+        is: val => (val && val.length > 0 ? true : false),
+        then: Yup.string().oneOf(
+          [Yup.ref("password")],
+          "Passwords Must Match !"
+        )
+      })
+     
+
   });
+  const validateCode = Yup.object({
+    verificationcode:Yup.string()
+.required("Please Enter The Code!")
+})
   const [next, setNext] = useState(1);
   const [time, setTime] = useState(new Date());
   const nextHandler = () => {
@@ -36,7 +51,7 @@ export const SignUpForm = () => {
         email: "",
         password: "",
       }}
-      validationSchema={validate}
+      validationSchema={next===1 ? validate : validateCode}
       onSubmit={(values) => {
         nextHandler();
         console.log(values);
@@ -69,10 +84,12 @@ export const SignUpForm = () => {
             <StepCircle number="3" color={next >= 3 ? "#4DAAAA" : "#E5E5E5"} />
           </div>
           <div className={classes.form}>
-            <Form>
-              {next === 1 && <StepOne nextHandler={nextHandler} />}
-              {next === 2 && <StepTwo time={time} />}
-            </Form>
+            
+              {next === 1 && <Form><StepOne /></Form>}
+              {next === 2 && <Form><StepTwo time={time} /></Form>}
+              {next ===3 && <Success />}
+              
+            
           </div>
         </div>
       )}
