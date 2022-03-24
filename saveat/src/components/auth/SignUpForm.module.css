@@ -2,32 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
 }
 
-.header {
+.signUpForm .header {
     font-size: 30px;
     font-weight: 600;
     color: #4DAAAA;
     display: flex;
     align-items: center;
- 
 }
 
-
-.headerIcon {
+.signUpForm .headerIcon {
     margin-right: 25px;
     margin-top: 8px;
 }
-.submit {
+
+.signUpForm .submit {
     margin-top: 0px;
 }
-.submit h5 {
+
+.signUpForm .submit h5 {
     text-align: center;
 }
 
-.note {
+.signUpForm .note {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -35,15 +33,18 @@
     color: #A5A5A5;
     cursor: pointer;
 }
-.stepContainer {
+
+.signUpForm .stepContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 12px;
 }
-.stepContainer .line {
+
+.signUpForm .stepContainer .line {
     width: 80px;
     height: 0px;
     border: 1px solid #E5E5E5;
+    background-color: #E5E5E5;
     margin-bottom: 8px;
 }

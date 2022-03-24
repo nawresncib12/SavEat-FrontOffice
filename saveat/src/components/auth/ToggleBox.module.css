@@ -9,13 +9,14 @@
     align-items: center;
     padding: 5px 15px;
 }
+
 .toggleSection {
     display: flex;
     align-items: center;
     float: right;
     margin: 20px 50px 20px;
-    
 }
+
 .toggleSection h5 {
     font-style: normal;
     font-weight: 400;

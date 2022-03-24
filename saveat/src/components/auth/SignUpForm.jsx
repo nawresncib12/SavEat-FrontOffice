@@ -10,7 +10,7 @@ import { Timer } from '../../UI/Timer';
 import { StepOne } from './StepOne';
 import { StepTwo } from './StepTwo';
 import { Success } from './Success';
-export const SignUpForm = () => {
+export const SignUpForm = (props) => {
 
     const validate = Yup.object({
         email: Yup.string()
@@ -18,12 +18,7 @@ export const SignUpForm = () => {
           .required('Email is required !'),
         password: Yup.string()
         .required('Password is required !')
-          .min(8, 'Password must be at least 8 charaters !'),
-        confirmPassword: Yup.string()
-        .required("Password's Confirmation is required !")
-          .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-        verificationCode: Yup.string()
-        .required("Please Enter The Code")
+          .min(8, 'Password must be at least 8 charaters !')
         
           
           
@@ -31,7 +26,7 @@ export const SignUpForm = () => {
       const [next,setNext] = useState(1);
       const [time,setTime] = useState(new Date());
       const nextHandler = (e) => {
-          e.preventDefault()
+       
           if(next === 1) {
               setNext(2);
               setTime(new Date());
@@ -41,45 +36,40 @@ export const SignUpForm = () => {
           }
 
       }
-      const handleSubmit = (e) => {
-          e.preventDefault()
-      }
+      
+      
   return (
       
     <Formik
         initialValues={{
             email: '',
-            password: ''
+            password: '',
+            confirmPassword:''
         }}
         validationSchema={validate}
-        
-        
+        onSubmit={(values) => {
+            props.onSubmitForm();
+            nextHandler();
+            console.log(values);
+          }}
     >
         {formik => (
         <div className={classes.signUpForm}>
             <div className={classes.header}>
-                <div className={classes.headerIcon}>
-                    <Icon icon="teenyicons:signin-outline" />
-                </div>
-                <h2 className={classes.title}>Sign Up</h2>    
+                <h2 className={classes.title}>Sign up</h2>    
             </div>
             <div className={classes.stepContainer}>
                 <StepCircle number="1" color={next>=1 ? "#4DAAAA" : "#E5E5E5"} />
-                <div className={classes.line} style={next>=2 ? {borderColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
+                <div className={classes.line} style={next>=2 ? {borderColor:"#4DAAAA",backgroundColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
                 <StepCircle number="2" color={next>=2 ? "#4DAAAA" : "#E5E5E5"}  />
-                <div className={classes.line} style={next===3 ? {borderColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
+                <div className={classes.line} style={next===3 ? {borderColor:"#4DAAAA",backgroundColor:"#4DAAAA"} : {borderColor:"#E5E5E5"}}></div>
                 <StepCircle number="3" color={next>=3 ? "#4DAAAA" : "#E5E5E5"}  />
                 
             </div>
             <div className={classes.form}>
-                <Form onSubmit={handleSubmit}>
-                    {next===1 && <StepOne nextHandler={nextHandler} /> }
-                    {next===2 && <StepTwo time={time} nextHandler={nextHandler} /> }
-                    {next ===3 && <Success />}
-                   
-                    
-                 
-                   
+                <Form>
+                    {next===1 && <StepOne /> }
+                    {next===2 && <StepTwo time={time} /> }
                 </Form> 
             </div>
         </div>

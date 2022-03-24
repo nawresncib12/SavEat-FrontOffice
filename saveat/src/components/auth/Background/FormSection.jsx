@@ -1,10 +1,10 @@
 import classes from "./FormSection.module.css";
-import { SignInForm } from "./SignInForm";
-import { ToggleBox } from "./ToggleBox";
+import { SignInForm } from "../SignInForm";
+import { ToggleBox } from "../ToggleBox";
 import { useState } from "react";
-import {SignUpForm} from './SignUpForm';
+import {SignUpForm} from '../SignUpForm';
 import { AnimatePresence, motion } from "framer-motion";
-import waves from "../../assets/waves.png"
+import waves from "../../../assets/wavesss.png"
 const formVariants = {
   initial:{
     opacity:0,

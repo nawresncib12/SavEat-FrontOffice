@@ -1,11 +1,8 @@
-
 .inputBox {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: -5px;
-    
-   
 }
 
 .input {
@@ -19,26 +16,26 @@
     outline: 0;
     background: #F0F0FF;
     border: 2px solid #A5A5A5;
-   
 }
+
 .errorIcon {
     font-size: 20px;
     color: red;
     margin-right: 10px;
     display: none;
-  
 }
+
 .passIcon {
     font-size: 20px;
     color: #A5A5A5;
     margin-right: 10px;
     cursor: pointer;
-
-
 }
+
 .passIcon:hover {
-  color: #4DAAAA;
+    color: #4DAAAA;
 }
+
 .input input {
     width: 100%;
     height: 32px;
@@ -48,25 +45,21 @@
     border-top-left-radius: 5px;
     border: none;
     outline: none;
-    
-    
- 
-    
 }
+
 label {
     color: #A5A5A5;
     font-weight: 500;
     margin-bottom: 13px;
     font-size: 18px;
-  }
+}
 
-  input.formControl, input.formControl:focus {
+input.formControl,
+input.formControl:focus {
     background: #F0F0FF;
-    border-top: 1.5px solid #A5A5A5;
-    border-bottom: 1.5px solid #A5A5A5;
-  }
-  
-  .inputformControlisInvalid{
+}
+
+.inputformControlisInvalid {
     display: flex;
     align-items: center;
     width: 100%;
@@ -76,11 +69,9 @@ label {
     border-radius: 5px;
     outline: 0;
     background: #F0F0FF;
-    
-      
-  }
-  
-  .error {
+}
+
+.error {
     color: red;
     font-style: normal;
     font-weight: 500;
@@ -89,4 +80,4 @@ label {
     margin: 12px 0 6px 0;
     display: block;
     height: 18px;
-  }
+}

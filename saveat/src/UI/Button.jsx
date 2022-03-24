@@ -7,9 +7,10 @@ export const Button = (props) => {
       type={props.type}
       className={classes.btn}
       style={{ backgroundColor: props.color }}
-      onClick={props.onClick || ""}
+     
     >
       {props.content}
+      {props.children}
     </button>
   );
 };
