@@ -35,14 +35,14 @@ export const SignInForm = (props) => {
             <h2 className={classes.title}>Sign in</h2>
           </div>
           <div className={classes.form}>
+            <SocialMediaBox type="Sign in" />
+            
             <Form>
-              <TextField label="Email" name="email" type="email" />
-              <TextField label="Password" name="password" type="password" />
-              <h5 className={classes.note}>Forgot your password ?</h5>
+              <TextField label="Email" name="email" type="email" form="signin"/>
+              <TextField label="Password" name="password" type="password"  form="signin" />
+              <h5 className={classes.note} style={{textAlign:"right"}}>Forgot your password ?</h5>
               <div className={classes.submit}>
                 <Button color="#4DAAAA" content="Submit" type="submit" />
-                <div className={classes.social}><SocialMediaBox /></div>
-                
               </div>
             </Form>
           </div>

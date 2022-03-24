@@ -3,9 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    
-    
 }
 
 .signInForm .header {
@@ -13,6 +10,7 @@
     font-weight: 600;
     color: #4DAAAA;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -44,6 +42,13 @@
 .signInForm .note:hover {
     color: #4DAAAA;
 }
+
 .social {
     margin-top: 25px;
+}
+
+@media only screen and (min-width: 500px) {
+    .signInForm .form {
+        min-width: 400px;
+    }
 }
