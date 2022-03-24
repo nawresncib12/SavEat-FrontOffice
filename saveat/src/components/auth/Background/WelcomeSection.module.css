@@ -114,3 +114,12 @@
         text-align: center;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .welcomeSection .content h1 {
+        font-size: 25px;
+    }
+    .welcomeSection .content p {
+        font-size: 20px;
+    }
+}
