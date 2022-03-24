@@ -65,7 +65,7 @@ export const SignUpForm = () => {
       {(formik) => (
         <div className={classes.signUpForm}>
           <div className={classes.header}>
-            <h2 className={classes.title}>Sign up</h2>
+            <h3 className={classes.title}>Sign up</h3>
             <SocialMediaBox type="Sign up"/>
           </div>
           <div className={classes.stepContainer}>
