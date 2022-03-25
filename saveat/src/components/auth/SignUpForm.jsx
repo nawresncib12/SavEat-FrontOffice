@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { Timer } from "../../UI/Timer";
+import { SocialMediaBox } from "./SocialMediaBox";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { Success } from "./Success";
@@ -65,7 +65,8 @@ export const SignUpForm = () => {
       {(formik) => (
         <div className={classes.signUpForm}>
           <div className={classes.header}>
-            <h2 className={classes.title}>Sign up</h2>
+            <SocialMediaBox />
+            <h2 className={classes.note}>Or</h2>
           </div>
           <div className={classes.stepContainer}>
             <StepCircle number="1" color={next >= 1 ? "#4DAAAA" : "#E5E5E5"} />

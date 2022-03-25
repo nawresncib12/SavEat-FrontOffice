@@ -24,7 +24,7 @@ export const StepOne = (props) => {
               
             </button>
           </div>
-          <SocialMediaBox />
+         
         </div>
       </div>
     </div>
