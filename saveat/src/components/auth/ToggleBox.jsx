@@ -27,7 +27,7 @@ const IconVariants = {
     },
     animateIcon: {
         opacity: 1,
-        x:"-210%"
+        x:"-150%"
 
     },
     exitIcon: {
@@ -71,7 +71,10 @@ export const ToggleBox = ({note,isClicked,handleClick}) => {
                 animate="animateIcon"
                 exit="exitIcon"
                 transition={spring}
-                className={classes.icon}>
+                className={classes.icon}
+                style={{marginTop:"5px"}}
+                >
+                    
                 <Icon  icon="ant-design:plus-circle-outlined" color="white" width="25px" height="25px" />
             </motion.div> : <motion.div 
                
