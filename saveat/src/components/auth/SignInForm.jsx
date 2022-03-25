@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
 import { SocialMediaBox } from "./SocialMediaBox";
-import { Icon } from "@iconify/react";
 import { TextField } from "./TextField";
-
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { login } from "../../api/api.user";
+
 export const SignInForm = (props) => {
   const validate = Yup.object({
     email: Yup.string()
@@ -16,6 +16,16 @@ export const SignInForm = (props) => {
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !"),
   });
+  const [failed, setFailed] = useState("");
+  const submitForm = async (values) => {
+    let data = { email: values.email, password: values.password };
+    const res = await login(data);
+    if (!res) {
+      setFailed("These credentials don't match any account");
+    }else{
+      props.onSubmitForm();
+    }
+  };
 
   return (
     <Formik
@@ -25,8 +35,7 @@ export const SignInForm = (props) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        props.onSubmitForm();
-        console.log(values);
+        submitForm(values);
       }}
     >
       {(formik) => (
@@ -36,11 +45,25 @@ export const SignInForm = (props) => {
           </div>
           <div className={classes.form}>
             <SocialMediaBox type="Sign in" />
-            
+
             <Form>
-              <TextField label="Email" name="email" type="email" form="signin"/>
-              <TextField label="Password" name="password" type="password"  form="signin" />
-              <h5 className={classes.note} style={{textAlign:"right"}}>Forgot your password ?</h5>
+              <TextField
+                label="Email"
+                name="email"
+                type="email"
+                form="signin"
+                
+              />
+              <TextField
+                label="Password"
+                name="password"
+                type="password"
+                form="signin"
+                failed={failed}
+              />
+              <h5 className={classes.note} style={{ textAlign: "right", marginTop:"10px" }}>
+                Forgot your password ?
+              </h5>
               <div className={classes.submit}>
                 <Button color="#4DAAAA" content="Submit" type="submit" />
               </div>

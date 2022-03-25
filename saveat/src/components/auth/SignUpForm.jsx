@@ -11,6 +11,7 @@ import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { Success } from "./Success";
 
+import { signUp } from "../../api/api.user";
 
 export const SignUpForm = () => {
   const validate = Yup.object({
@@ -20,25 +21,11 @@ export const SignUpForm = () => {
     password: Yup.string()
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !")
-      .matches(/^(?=.*[A-Z])/,
-      "Must Contain 8 Characters & One Uppercase"
-    )
-      ,
-      
-    confirmpassword: Yup.string().when("password", {
-        is: val => (val && val.length > 0 ? true : false),
-        then: Yup.string().oneOf(
-          [Yup.ref("password")],
-          "Passwords Must Match !"
-        )
-      })
-     
-
+      .matches(/^(?=.*[A-Z])/, "Must Contain 8 Characters & One Uppercase"),
   });
   const validateCode = Yup.object({
-    verificationcode:Yup.string()
-.required("Please Enter The Code!")
-})
+    verificationcode: Yup.string().required("Please Enter The Code!"),
+  });
   const [next, setNext] = useState(1);
   const [time, setTime] = useState(new Date());
   const nextHandler = () => {
@@ -50,23 +37,33 @@ export const SignUpForm = () => {
       setNext(3);
     }
   };
+
+  const [failed, setFailed] = useState("");
+  const submitSignup = async (values) => {
+    let data = { email: values.email, password: values.password };
+    const res = await signUp(data);
+    if (res === "true") {
+      nextHandler();
+    } else {
+      setFailed(res);
+    }
+  };
   return (
     <Formik
       initialValues={{
         email: "",
         password: "",
       }}
-      validationSchema={next===1 ? validate : validateCode}
+      validationSchema={next === 1 ? validate : validateCode}
       onSubmit={(values) => {
-        nextHandler();
-        console.log(values);
+        submitSignup(values);
       }}
     >
       {(formik) => (
         <div className={classes.signUpForm}>
           <div className={classes.header}>
             <h3 className={classes.title}>Sign up</h3>
-            <SocialMediaBox type="Sign up"/>
+            <SocialMediaBox type="Sign up" />
           </div>
           <div className={classes.stepContainer}>
             <StepCircle number="1" color={next >= 1 ? "#4DAAAA" : "#E5E5E5"} />
@@ -90,12 +87,17 @@ export const SignUpForm = () => {
             <StepCircle number="3" color={next >= 3 ? "#4DAAAA" : "#E5E5E5"} />
           </div>
           <div className={classes.form}>
-            
-              {next === 1 && <Form><StepOne /></Form>}
-              {next === 2 && <Form><StepTwo time={time} /></Form>}
-              {next ===3 && <Success />}
-              
-            
+            {next === 1 && (
+              <Form>
+                <StepOne failed={failed} />
+              </Form>
+            )}
+            {next === 2 && (
+              <Form>
+                <StepTwo time={time} />
+              </Form>
+            )}
+            {next === 3 && <Success />}
           </div>
         </div>
       )}

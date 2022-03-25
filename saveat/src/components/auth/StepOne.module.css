@@ -54,6 +54,7 @@
     width: 45px;
     margin: auto;
     background-color: transparent;
+    margin-top: 10px;
 }
 
 .nextBtn:hover {
