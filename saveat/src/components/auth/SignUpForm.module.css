@@ -2,21 +2,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .signUpForm .header {
-   
+    font-size: 30px;
+    font-weight: 600;
+    color: #4DAAAA;
     display: flex;
-    align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
     width: 100%;
     
 }
+
+.signUpForm h3 {
+    padding: 0;
+    margin: 0;
+}
+
 .signUpForm .header .note {
     text-align: center;
-    
 }
 
 .signUpForm .headerIcon {
@@ -55,4 +60,20 @@
     border: 1px solid #E5E5E5;
     background-color: #E5E5E5;
     margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 500px) {
+    .signUpForm .header,
+    .signUpForm .form {
+        min-width: 400px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .signUpForm .header {
+        font-size: 20px;
+    }
+    .signUpForm .stepContainer {
+        margin-bottom: 2px;
+    }
 }

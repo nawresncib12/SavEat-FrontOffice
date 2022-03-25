@@ -1,7 +1,6 @@
 .inputBox {
     display: flex;
     flex-direction: column;
-    
     margin-top: -5px;
 }
 
@@ -77,8 +76,13 @@ input.formControl:focus {
     font-weight: 500;
     font-size: 13px;
     line-height: 12px;
-    margin: 12px 0 6px 0;
+    margin: 1px 0 6px 0;
     display: block;
     height: 18px;
-    
+}
+
+@media only screen and (max-height: 700px) {
+    .error {
+        margin: 1px 0 6px 0;
+    }
 }

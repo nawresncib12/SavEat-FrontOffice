@@ -9,3 +9,9 @@
     width: 100%;
     cursor: pointer;
 }
+
+@media only screen and (max-height: 700px) {
+    .btn {
+        height: 35px;
+    }
+}

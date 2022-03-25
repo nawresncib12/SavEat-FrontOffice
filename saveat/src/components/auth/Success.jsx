@@ -7,7 +7,7 @@ export const Success = () => {
   return (
                   <div className={classes.successContainer}>
                         
-                        <p>You've successfully created your account at SaveEat</p>
+                        <p>Your account at SaveEat is being created</p>
                         <p>You'll be redirected shortly to our home page</p>
         
                         <div className={classes.loader}><Loader /></div>
