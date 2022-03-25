@@ -10,7 +10,9 @@
     color: #4DAAAA;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    
 }
 
 .signUpForm h3 {
