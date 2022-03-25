@@ -17,12 +17,12 @@ export const StepOne = (props) => {
           name="confirmpassword"
           type="password"
           form="signup"
+          failed={props.failed}
         />
         <div className={classes.submit}>
           <div className={classes.nextBtn}>
             <button type="submit"  >
               <img src={next} className={classes.nextImg} alt="" />
-              
             </button>
           </div>
          

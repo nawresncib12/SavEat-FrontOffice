@@ -37,7 +37,7 @@ export const TextField = ({ label, ...props }) => {
       style = { border: borderDiv };
     }
   };
-
+  let failed = props.failed || "";
   return (
     <div className={classes.inputBox}>
       <label htmlFor={field.name} style={{ color: labelColor }}>
@@ -75,9 +75,10 @@ export const TextField = ({ label, ...props }) => {
           </span>
         )}
       </div>
-        <div className={classes.error}>
-          <ErrorMessage name={field.name} />
-        </div>
+      <div className={classes.error}>
+        {failed !== "" && <p>{failed}</p>}
+        <ErrorMessage name={field.name} />
+      </div>
     </div>
   );
 };
