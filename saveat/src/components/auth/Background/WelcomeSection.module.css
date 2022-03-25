@@ -71,7 +71,7 @@
 .welcomeSection .content img.animate2 {
     animation-name: jump;
     animation-duration: 1s;
-    animation-delay: 2s;
+    animation-delay: 1.3s;
 }
 
 @keyframes jump {
