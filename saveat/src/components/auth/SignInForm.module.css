@@ -49,12 +49,12 @@
 
 @media only screen and (min-width: 500px) {
     .signInForm .form {
-        min-width: 400px;
+        min-width: 350px;
     }
 }
 
 @media only screen and (max-height: 600px) {
     .signInForm .header {
-        font-size: 20px;
+        font-size: 27px;
     }
 }
