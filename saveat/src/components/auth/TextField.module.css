@@ -90,3 +90,60 @@ input.formControl:focus {
         margin: 1px 0 6px 0;
     }
 }
+
+@media only screen and (min-width: 1500px) {
+    .inputBox{
+        zoom: 111.8%;
+        
+    }
+
+}
+@media only screen and (min-width: 1600px) {
+    .inputBox{
+        zoom: 130%;
+        
+    }
+ 
+   
+
+}
+@media only screen and (min-width: 1700px) {
+    .inputBox{
+        zoom: 132%;
+        
+    }
+  
+   
+
+}
+@media only screen and (min-width: 1900px) {
+    .inputBox{
+        zoom: 155%;
+        
+    }
+  
+
+}
+@media only screen and (min-width: 2500px) {
+   
+   
+
+    .inputBox {
+        zoom: 200%;
+    }
+}
+
+@media only screen and (min-width: 3200px) {
+    .inputBox {
+        zoom: 300%;
+    }
+   
+
+}
+@media only screen and (min-width: 5000px) {
+    .inputBox {
+        zoom: 400%;
+    }
+   
+
+}

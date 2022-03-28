@@ -1,8 +1,9 @@
 .signUpForm {
     display: flex;
     flex-direction: column;
+ justify-content: center;
     align-items: center;
-    justify-content: center;
+    
 }
 
 .signUpForm .header {
@@ -24,10 +25,12 @@
 .signUpForm h3 {
     padding: 0;
     margin: 0;
+    margin-bottom: 10px;
 }
 
 .signUpForm .header .note {
     text-align: center;
+
 }
 
 .signUpForm .headerIcon {
@@ -83,3 +86,87 @@
         margin-bottom: 2px;
     }
 }
+
+@media only screen and (min-width: 1500px) {
+    .signUpForm .header , .signUpForm .note {
+        zoom: 111%;
+        
+    }
+    .stepContainer {
+        zoom: 111%;
+    }
+
+}
+@media only screen and (min-width: 1600px) {
+    .signUpForm .header  .title {
+        zoom: 119%;
+        
+        
+    }
+  
+
+}
+
+@media only screen and (min-width: 1700px) {
+    .signUpForm .header .title  {
+        zoom: 128%;
+        margin-bottom: 10px;
+        margin-top: -15px;
+        
+        
+    }
+  
+
+}
+@media only screen and (min-width: 1950px) {
+    .stepContainer {
+        zoom: 135%;
+    }
+ 
+
+}
+
+@media only screen and (min-width: 2500px) {
+   
+    .stepContainer {
+        zoom: 185%;
+    }
+    .signUpForm .header .title  {
+        zoom: 188%;
+        margin-bottom: 10px;
+        margin-top: -15px;
+        
+        
+    }
+
+}
+
+@media only screen and (min-width: 3200px) {
+   
+    .stepContainer {
+        zoom: 285%;
+    }
+    .signUpForm .header .title  {
+        zoom: 270%;
+        margin-bottom: 10px;
+        margin-top: -15px;
+        
+        
+    }
+
+}
+@media only screen and (min-width: 5000px) {
+   
+    .stepContainer {
+        zoom: 385%;
+    }
+    .signUpForm .header .title  {
+        zoom: 340%;
+        margin-bottom: 10px;
+        margin-top: -15px;
+        
+        
+    }
+
+}
+

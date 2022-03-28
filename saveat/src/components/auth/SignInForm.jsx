@@ -42,6 +42,7 @@ export const SignInForm = (props) => {
         <div className={classes.signInForm}>
           <div className={classes.header}>
             <h3 className={classes.title}>Sign in</h3>
+            
           </div>
           <div className={classes.form}>
             <SocialMediaBox type="Sign in" />
