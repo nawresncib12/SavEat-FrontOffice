@@ -132,3 +132,71 @@
     }
 
 }
+@media only screen and (min-width: 1500px) {
+    .welcomeSection{
+        zoom: 104.5%;
+        
+    }
+   
+
+}
+@media only screen and (min-width: 1800px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 110%;
+    }
+    .welcomeSection .content img {
+        zoom: 102%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 2000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 130%;
+    }
+    .welcomeSection .content img {
+        zoom: 102%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 2700px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 180%;
+    }
+    .welcomeSection .content img {
+        zoom: 105%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 4000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 220%;
+    }
+    .welcomeSection .content img {
+        zoom: 110%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 5000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 280%;
+    }
+    .welcomeSection .content img {
+        zoom: 120%;
+    }
+   
+   
+
+}

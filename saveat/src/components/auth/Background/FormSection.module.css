@@ -5,6 +5,7 @@
     margin: -1px auto 0 auto;
     display: grid;
     align-items: center;
+    
 }
 
 .waves {
@@ -22,6 +23,7 @@
 .formContainer {
     z-index: 5;
     margin-top: -30px;
+  
 }
 
 .toggleSection {
@@ -52,3 +54,4 @@
         z-index: -99;
     }
 }
+
