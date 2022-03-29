@@ -36,6 +36,25 @@ export const signUp = (data) => {
 
 export const verifySignup = (data) => {
     //check accesToken in local storage and send it in header
+
     //post with code
     //if invalid send error else save auth token in local storage and remove access
+    const accessToken = localStorage.getItem('accessToken');
+    return axios.post(`${api}/users/verifyAccount`, data, {
+            headers: {
+                access: 'Bearer ' + accessToken
+            }
+        })
+        .then(res => {
+            if (res.data.status === 'success') {
+                localStorage.setItem('authToken', res.data.token);
+                return "true";
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            return false;
+        });
 }

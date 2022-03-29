@@ -8,7 +8,7 @@ export const StepTwo = (props) => {
     <div className={classes.stepTwo}>
                         <h5 className={classes.note}>We sent a verification code to *******@***.***</h5>
                         <h5 className={classes.note} style={{marginTop:"-10px"}}>Please enter your code </h5>
-                        <TextField label="Verification Code" name="verificationcode" type="text" />
+                        <TextField label="Verification Code" name="verificationcode" type="text" failed={props.failed}/>
                         <h5 className={classes.note} style={{display:"flex",marginTop:"0"}}>Code expires in <Timer expiryTimestamp={props.time} /> </h5>
                         <h5 style={{marginTop:"-10px"}} className={classes.note+" "+ classes.resend}>Resend Code ?</h5>
                         <div className={classes.submit}>
