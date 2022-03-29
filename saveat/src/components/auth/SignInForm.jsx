@@ -6,8 +6,10 @@ import { TextField } from "./TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { login } from "../../api/api.user";
-
+import { useNavigate } from "react-router-dom";
 export const SignInForm = (props) => {
+  
+  const navigate = useNavigate();
   const validate = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
@@ -24,6 +26,9 @@ export const SignInForm = (props) => {
       setFailed("These credentials don't match any account");
     }else{
       props.onSubmitForm();
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
     }
   };
 

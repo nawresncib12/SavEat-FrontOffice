@@ -12,7 +12,6 @@ export const login = (data) => {
             }
         })
         .catch(err => {
-            console.log(err);
             return false;
         });
 }
@@ -28,7 +27,6 @@ export const signUp = (data) => {
             }
         })
         .catch(err => {
-            console.log(err);
 
             return false;
         });
@@ -54,7 +52,6 @@ export const verifySignup = (data) => {
             }
         })
         .catch(err => {
-            console.log(err);
             return false;
         });
 }
