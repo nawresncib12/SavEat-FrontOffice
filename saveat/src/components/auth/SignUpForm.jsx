@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import classes from "./SignUpForm.module.css";
-import { Button } from "../../UI/Button";
 import { StepCircle } from "../../UI/StepCircle";
-import { Icon } from "@iconify/react";
-import { TextField } from "./TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { SocialMediaBox } from "./SocialMediaBox";
@@ -11,7 +8,7 @@ import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { Success } from "./Success";
 
-import { signUp } from "../../api/api.user";
+import { signUp, verifySignup } from "../../api/api.user";
 
 export const SignUpForm = () => {
   const validate = Yup.object({
@@ -39,6 +36,7 @@ export const SignUpForm = () => {
   };
 
   const [failed, setFailed] = useState("");
+  const [failedVerify, setFailedVerify] = useState("");
   const submitSignup = async (values) => {
     let data = { email: values.email, password: values.password };
     const res = await signUp(data);
@@ -46,6 +44,15 @@ export const SignUpForm = () => {
       nextHandler();
     } else {
       setFailed(res);
+    }
+  };
+  const verifyAccount = async (values) => {
+    let verifyData = { code: values.verificationcode };
+    const res = await verifySignup(verifyData);
+    if (res === "true") {
+      nextHandler();
+    } else {
+      setFailedVerify(res);
     }
   };
   return (
@@ -56,7 +63,9 @@ export const SignUpForm = () => {
       }}
       validationSchema={next === 1 ? validate : validateCode}
       onSubmit={(values) => {
-        submitSignup(values);
+        {
+          next === 1 ? submitSignup(values) : verifyAccount(values);
+        }
       }}
     >
       {(formik) => (
@@ -94,7 +103,7 @@ export const SignUpForm = () => {
             )}
             {next === 2 && (
               <Form>
-                <StepTwo time={time} />
+                <StepTwo time={time} failed={failedVerify}/>
               </Form>
             )}
             {next === 3 && <Success />}
