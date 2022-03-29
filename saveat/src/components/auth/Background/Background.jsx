@@ -3,7 +3,7 @@ import classes from "./Background.module.css";
 import FormSection from "./FormSection";
 import WelcomeSection from "./WelcomeSection";
 import logo from '../../../assets/logo.png'
-const Background = () => {
+const Background = (props) => {
 
   const [showForm, setshowForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -11,7 +11,6 @@ const Background = () => {
     setshowForm(true);
   };
   const onSubmitForm = () => {
-   
     setSubmitted(true);
   };
   const handleResize = () => {
@@ -63,6 +62,7 @@ const Background = () => {
           <FormSection
             onSubmitForm={onSubmitForm}
             submitted={submitted}
+            auth={props.auth}
           ></FormSection>
         </div>
       </div>

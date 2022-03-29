@@ -7,10 +7,10 @@ import { SocialMediaBox } from "./SocialMediaBox";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { Success } from "./Success";
-
 import { signUp, verifySignup } from "../../api/api.user";
-
+import { useNavigate } from "react-router-dom";
 export const SignUpForm = () => {
+  const navigate = useNavigate();
   const validate = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
@@ -24,12 +24,9 @@ export const SignUpForm = () => {
     verificationcode: Yup.string().required("Please Enter The Code!"),
   });
   const [next, setNext] = useState(1);
-  const [time, setTime] = useState(new Date());
   const nextHandler = () => {
     if (next === 1) {
       setNext(2);
-      setTime(new Date());
-      time.setSeconds(time.getSeconds() + 600);
     } else if (next === 2) {
       setNext(3);
     }
@@ -51,6 +48,9 @@ export const SignUpForm = () => {
     const res = await verifySignup(verifyData);
     if (res === "true") {
       nextHandler();
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
     } else {
       setFailedVerify(res);
     }
@@ -63,9 +63,7 @@ export const SignUpForm = () => {
       }}
       validationSchema={next === 1 ? validate : validateCode}
       onSubmit={(values) => {
-        {
-          next === 1 ? submitSignup(values) : verifyAccount(values);
-        }
+        next === 1 ? submitSignup(values) : verifyAccount(values);
       }}
     >
       {(formik) => (
@@ -103,7 +101,7 @@ export const SignUpForm = () => {
             )}
             {next === 2 && (
               <Form>
-                <StepTwo time={time} failed={failedVerify}/>
+                <StepTwo failed={failedVerify} />
               </Form>
             )}
             {next === 3 && <Success />}

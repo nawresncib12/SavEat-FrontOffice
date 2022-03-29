@@ -9,8 +9,7 @@ export const StepTwo = (props) => {
                         <h5 className={classes.note}>We sent a verification code to *******@***.***</h5>
                         <h5 className={classes.note} style={{marginTop:"-10px"}}>Please enter your code </h5>
                         <TextField label="Verification Code" name="verificationcode" type="text" failed={props.failed}/>
-                        <h5 className={classes.note} style={{display:"flex",marginTop:"0"}}>Code expires in <Timer expiryTimestamp={props.time} /> </h5>
-                        <h5 style={{marginTop:"-10px"}} className={classes.note+" "+ classes.resend}>Resend Code ?</h5>
+                        <h5 className={classes.note} style={{display:"flex",marginTop:"0"}}>Code expires in <Timer /> </h5>
                         <div className={classes.submit}>
                           <Button color="#4DAAAA" content="Sign Up " type="submit" />
                         </div>

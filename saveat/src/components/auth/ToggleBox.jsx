@@ -2,14 +2,7 @@ import React from "react";
 import classes from "./ToggleBox.module.css";
 import { Icon } from "@iconify/react";
 import { Circle } from "./Circle";
-import { motion } from "framer-motion";
-import signup from "../../assets/sign-up.png";
 
-const spring = {
-  type: "spring",
-  stiffness: 500,
-  damping: 30,
-};
 
 export const ToggleBox = ({ note, isClicked, handleClick }) => {
   return (

@@ -1,9 +1,7 @@
 import React from "react";
 import { TextField } from "./TextField";
-import { Button } from "../../UI/Button";
 import classes from "./StepOne.module.css";
 import next from "../../assets/next.png";
-import { SocialMediaBox } from "./SocialMediaBox";
 export const StepOne = (props) => {
   return (
     <div className={classes.stepOne}>
