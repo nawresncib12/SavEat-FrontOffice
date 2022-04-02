@@ -23,7 +23,7 @@ const MyTimer = ({ expiryTimestamp }) => {
 }
 export const Timer = () => {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
+  time.setSeconds(time.getSeconds() + 300); // 10 minutes timer
   return (
     <div>
       <MyTimer expiryTimestamp={time} />

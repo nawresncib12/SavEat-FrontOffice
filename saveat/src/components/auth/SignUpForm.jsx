@@ -7,6 +7,7 @@ import { SocialMediaBox } from "./SocialMediaBox";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { Success } from "./Success";
+import { Timer } from "../../UI/Timer";
 
 import { signUp, verifySignup } from "../../api/api.user";
 
@@ -99,6 +100,7 @@ export const SignUpForm = () => {
             {next === 1 && (
               <Form>
                 <StepOne failed={failed} />
+                <Timer />
               </Form>
             )}
             {next === 2 && (
