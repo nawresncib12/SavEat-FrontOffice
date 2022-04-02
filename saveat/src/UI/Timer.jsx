@@ -5,14 +5,7 @@ import classes from './Timer.module.css';
 const MyTimer = ({ expiryTimestamp }) => {
     const {
         seconds,
-        minutes,
-        hours,
-        days,
-        isRunning,
-        start,
-        pause,
-        resume,
-        restart,
+        minutes
       } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
   
     return (
@@ -23,7 +16,7 @@ const MyTimer = ({ expiryTimestamp }) => {
 }
 export const Timer = () => {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 300); // 10 minutes timer
+  time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
   return (
     <div>
       <MyTimer expiryTimestamp={time} />

@@ -11,6 +11,8 @@ export const TextField = ({ label, ...props }) => {
   const [labelColor, setLabelColor] = useState("#A5A5A5");
   const [border, setBorder] = useState("1.5px solid #A5A5A5");
   const [borderDiv, setBorderDiv] = useState("2px solid #A5A5A5");
+
+  let failed = props.failed || "";
   const [isFocus, setIsFocus] = useState(false);
   const changeColor = () => {
     setIsFocus(true);
@@ -37,7 +39,6 @@ export const TextField = ({ label, ...props }) => {
       style = { border: borderDiv };
     }
   };
-  let failed = props.failed || "";
   return (
     <div className={classes.inputBox}>
       <label htmlFor={field.name} style={{ color: labelColor }}>
@@ -77,7 +78,7 @@ export const TextField = ({ label, ...props }) => {
       </div>
       <div className={classes.error}>
         {failed !== "" && <p>{failed}</p>}
-        <ErrorMessage name={field.name} />
+        {failed === "" && <ErrorMessage name={field.name} />}
       </div>
     </div>
   );
