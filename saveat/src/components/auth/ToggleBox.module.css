@@ -60,3 +60,48 @@
     transform: translateX(0%);
     transition: transform 0.2s ease-in;
 }
+@media only screen and (min-width: 1500px) {
+    .toggleSection{
+        zoom: 111%;
+        
+    }
+
+}
+@media only screen and (min-width: 1600px) {
+    .toggleSection{
+        zoom: 123%;
+        
+    }
+
+}
+@media only screen and (min-width: 1900px) {
+    .toggleSection{
+        zoom: 140%;
+        
+    }
+   
+
+}
+@media only screen and (min-width: 2500px) {
+    .toggleSection {
+       zoom: 183%;
+    }
+   
+
+}
+@media only screen and (min-width: 3200px) {
+    .toggleSection {
+        zoom: 280%;
+    }
+   
+   
+
+}
+
+@media only screen and (min-width: 5000px) {
+    .toggleSection{
+       zoom: 395%;
+    }
+   
+
+}

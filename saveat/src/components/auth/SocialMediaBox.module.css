@@ -9,7 +9,7 @@
     height: 40px;
     width: 100%;
     cursor: pointer;
-    margin: 20px 0px;
+    
 }
 
 .socialBox:hover {
@@ -46,4 +46,60 @@
         height: 35px;
         margin: 15px 0px;
     }
+}
+@media only screen and (min-width: 1500px) {
+   .socialBox {
+       height: 38px;
+   }
+
+}
+
+@media only screen and (min-width: 1600px) {
+    .socials .note {
+        margin-top: 15px;
+    }
+    .socialBox {
+        zoom: 111%;
+        
+    }
+
+}
+@media only screen and (min-width: 1700px) {
+    .socials .note {
+        margin-top: 15px;
+    }
+    .socialBox {
+        zoom: 119%;
+        
+    }
+
+}
+@media only screen and (min-width: 1900px) {
+    .socialBox {
+        zoom: 138%;
+    }
+  
+
+}
+@media only screen and (min-width: 2500px) {
+    .socials {
+        zoom: 158%;
+    }
+  
+
+}
+@media only screen and (min-width: 3200px) {
+    .socials {
+        zoom: 250%;
+    }
+  
+
+}
+
+@media only screen and (min-width: 5000px) {
+    .socials {
+        zoom: 320%;
+    }
+  
+
 }

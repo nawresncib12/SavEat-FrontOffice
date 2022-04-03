@@ -69,6 +69,7 @@ export const SignInForm = (props) => {
         <div className={classes.signInForm}>
           <div className={classes.header}>
             <h3 className={classes.title}>{forgotPass ?"Resetting password":"Sign in"}</h3>
+
           </div>
           {!forgotPass && (
             <div className={classes.form}>
