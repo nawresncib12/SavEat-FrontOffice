@@ -19,6 +19,10 @@ export const SignUpForm = () => {
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !")
       .matches(/^(?=.*[A-Z])/, "Must Contain 8 Characters & One Uppercase"),
+    confirmpassword: Yup.string().when("password", {
+      is: (val) => (val && val.length > 0 ? true : false),
+      then: Yup.string().oneOf([Yup.ref("password")], "Passwords Must Match !"),
+    }),
   });
   const validateCode = Yup.object({
     verificationcode: Yup.string().required("Please Enter The Code!"),
@@ -62,8 +66,10 @@ export const SignUpForm = () => {
         password: "",
       }}
       validationSchema={next === 1 ? validate : validateCode}
-      onSubmit={(values) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        setSubmitting(true);
         next === 1 ? submitSignup(values) : verifyAccount(values);
+        setSubmitting(false);
       }}
     >
       {(formik) => (

@@ -58,9 +58,9 @@ export const TextField = ({ label, ...props }) => {
               ? { borderTop: border, borderBottom: border }
               : styleErrorInput
           }
-          type={passVisible && props.type === "password" ? "text" : props.type}
+          type={passVisible && props.type !== "email" ? "password" : "text"}
         />
-        {props.type === "password" && (
+        {(props.type === "password" || props.type === "confirmPassword") && (
           <span onClick={passwordVisible} className={classes.passIcon}>
             {!passVisible ? (
               <Icon icon="bi:eye-slash" />
@@ -76,8 +76,12 @@ export const TextField = ({ label, ...props }) => {
           </span>
         )}
       </div>
-      <div className={classes.error}>
-        {failed !== "" && <p>{failed}</p>}
+      <div className={classes.error} style={props.type === "email" ? { marginBottom: "20px"} : {}}>
+        {failed !== "" && (
+          <p style={props.type === "email" ? { color: "#4DAAAA"} : {}}>
+            {failed}
+          </p>
+        )}
         {failed === "" && <ErrorMessage name={field.name} />}
       </div>
     </div>

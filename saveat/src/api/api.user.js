@@ -69,6 +69,20 @@ export const logout = () => {
             return false;
         });
 }
+export const forgotPassword = (data) => {
+    return axios.post(`${api}/users/forgotPassword`, data)
+        .then(res => {
+            if (res.data.status === 'success') {
+                return true
+
+            } else {
+                return false
+            }
+        })
+        .catch(err => {
+            return false;
+        });
+}
 export const loggedIn = () => {
     const authToken = localStorage.getItem('authToken');
     if (authToken && authToken !== undefined) {
