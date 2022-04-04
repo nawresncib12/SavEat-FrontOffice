@@ -2,7 +2,7 @@ import classes from "./FormSection.module.css";
 import { SignInForm } from "../SignInForm";
 import { ToggleBox } from "../ToggleBox";
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SignUpForm } from "../SignUpForm";
 import { AnimatePresence, motion } from "framer-motion";
 import waves from "../../../assets/wavesss.png";
@@ -27,14 +27,14 @@ const FormSection = (props) => {
   const text = ["Are You New Here ? Join Us", "Already A Member ? Sign In !"];
   const [isClicked, setIsClicked] = useState(props.auth);
   const [note, setNote] = useState(text[0]);
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
   const handleClick = () => {
     setIsClicked(!isClicked);
     note === text[0] ? setNote(text[1]) : setNote(text[0]);
     if (isClicked) {
-      navigate("/login");
+      navigate("/login", { state: { toggle: true } });
     } else {
-      navigate("/signup");
+      navigate("/signup", { state: { toggle: true } });
     }
   };
 

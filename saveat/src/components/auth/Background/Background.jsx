@@ -5,7 +5,7 @@ import WelcomeSection from "./WelcomeSection";
 import logo from '../../../assets/logo.png'
 const Background = (props) => {
 
-  const [showForm, setshowForm] = useState(false);
+  const [showForm, setshowForm] = useState( props.toggle && (window.innerWidth < 1000));
   const [submitted, setSubmitted] = useState(false);
   const onShow = () => {
     setshowForm(true);
