@@ -91,3 +91,35 @@ export const loggedIn = () => {
         return false
     }
 }
+
+
+// export const resetPassword = (email) => {
+//     return axios.post(`${api}/users/forgotPassword`, {email:email})
+//         .then(res => {
+//             if (res.status === 'success') {
+//                 return "true";
+//             } else if (res.status === 'error') {
+//                 return res.error;
+//             }
+//         })
+//         .catch(err => {
+//             return false;
+//         });
+// }
+
+export const resetPassword = (password,params) => {
+    console.log(password)
+    return axios.patch(`${api}/users/resetPassword/${params.token}`,password)
+        .then(res => {
+            if (res.data.status === 'success') {
+                return true
+                //changed
+            } else {
+                return false
+                //invalid token or has expired
+            }
+        })
+        .catch(err => {
+            return false;
+        });
+}
