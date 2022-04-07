@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { api } from "./config"
-export const login = (data) => {
-    return axios.post(`${api}/users/login`, data)
+export const login = async(data) => {
+    return await axios.post(`${api}/users/login`, data)
         .then(res => {
             if (res.data.status === 'success') {
                 localStorage.setItem('authToken', res.data.token);
@@ -16,8 +16,8 @@ export const login = (data) => {
         });
 }
 
-export const signUp = (data) => {
-    return axios.post(`${api}/users/signup`, data)
+export const signUp = async(data) => {
+    return await axios.post(`${api}/users/signup`, data)
         .then(res => {
             if (res.data.status === 'success') {
                 localStorage.setItem('accessToken', res.data.accessToken);
@@ -32,9 +32,9 @@ export const signUp = (data) => {
         });
 }
 
-export const verifySignup = (data) => {
+export const verifySignup = async(data) => {
     const accessToken = localStorage.getItem('accessToken');
-    return axios.post(`${api}/users/verifyAccount`, data, {
+    return await axios.post(`${api}/users/verifyAccount`, data, {
             headers: {
                 access: 'Bearer ' + accessToken
             }
@@ -52,9 +52,9 @@ export const verifySignup = (data) => {
         });
 }
 
-export const logout = () => {
+export const logout = async() => {
     const authToken = localStorage.getItem('authToken');
-    return axios.post(`${api}/users/logout`, {}, {
+    return await axios.post(`${api}/users/logout`, {}, {
             headers: {
                 authorization: 'Bearer ' + authToken
             }
@@ -69,7 +69,7 @@ export const logout = () => {
             return false;
         });
 }
-export const forgotPassword = (data) => {
+export const forgotPassword = async(data) => {
     return axios.post(`${api}/users/forgotPassword`, data)
         .then(res => {
             if (res.data.status === 'success') {
@@ -83,11 +83,36 @@ export const forgotPassword = (data) => {
             return false;
         });
 }
-export const loggedIn = () => {
+
+export const loggedIn = async() => {
+
     const authToken = localStorage.getItem('authToken');
     if (authToken && authToken !== undefined) {
-        return true;
+        console.log("presque")
+        return await axios.get(`${api}/users/test`, {
+                headers: {
+                    authorization: 'Bearer ' + authToken
+                }
+            })
+            .then(res => {
+                if (res.data.status === 'success') {
+
+                    console.log("yey")
+                    return true
+
+                } else {
+
+                    console.log("noo")
+                    return false
+                }
+            })
+            .catch(err => {
+
+                console.log("oops")
+                return false;
+            });
     } else {
+        console.log("oops")
         return false
     }
 }
