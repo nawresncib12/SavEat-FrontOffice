@@ -4,8 +4,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect , useState} from "react";
 
 import { LoaderPage } from "./loader";
-const Login = () => {
-  const [loading, setLoading] = useState(true);
+const Login = () => {const { state } = useLocation();
+
+let toggle;
+if (state) {
+  toggle = state.toggle;
+} else {
+  toggle = false;
+}
+  const [loading, setLoading] = useState(!toggle);
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
@@ -18,14 +25,7 @@ const Login = () => {
     }
     log();
   }, [navigate]);
-  const { state } = useLocation();
-
-  let toggle;
-  if (state) {
-    toggle = state.toggle;
-  } else {
-    toggle = false;
-  }
+  
   return (
     <>
       {loading ? (
