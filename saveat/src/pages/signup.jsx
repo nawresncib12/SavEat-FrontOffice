@@ -26,13 +26,12 @@ const SignUp = () => {
   } else {
     toggle = false;
   }
-  console.log(toggle);
   return (
     <>
       {loading ? (
         <LoaderPage />
       ) : (
-        <Background toggle={toggle} auth={true}></Background>
+        <Background resetPass={false} toggle={toggle} auth={true}></Background>
       )}
     </>
   );

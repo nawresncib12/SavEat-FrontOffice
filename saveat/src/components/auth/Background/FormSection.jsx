@@ -59,7 +59,8 @@ const FormSection = (props) => {
               animate="animate"
               initial="intitial"
             >
-              <SignInForm onSubmitForm={props.onSubmitForm} />
+              <SignInForm 
+            resetPass={props.resetPass} token={props.token} onSubmitForm={props.onSubmitForm} />
             </motion.div>
           ) : (
             <SignUpForm
