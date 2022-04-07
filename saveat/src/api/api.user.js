@@ -88,7 +88,6 @@ export const loggedIn = async() => {
 
     const authToken = localStorage.getItem('authToken');
     if (authToken && authToken !== undefined) {
-        console.log("presque")
         return await axios.get(`${api}/users/test`, {
                 headers: {
                     authorization: 'Bearer ' + authToken
@@ -97,22 +96,18 @@ export const loggedIn = async() => {
             .then(res => {
                 if (res.data.status === 'success') {
 
-                    console.log("yey")
                     return true
 
                 } else {
 
-                    console.log("noo")
                     return false
                 }
             })
             .catch(err => {
 
-                console.log("oops")
                 return false;
             });
     } else {
-        console.log("oops")
         return false
     }
 }
@@ -132,16 +127,16 @@ export const loggedIn = async() => {
 //         });
 // }
 
-export const resetPassword = (password,params) => {
+export const resetPassword = async(password, params) => {
     console.log(password)
-    return axios.patch(`${api}/users/resetPassword/${params.token}`,password)
+    return await axios.patch(`${api}/users/resetPassword/${params.token}`, password)
         .then(res => {
             if (res.data.status === 'success') {
                 return true
-                //changed
+                    //changed
             } else {
                 return false
-                //invalid token or has expired
+                    //invalid token or has expired
             }
         })
         .catch(err => {

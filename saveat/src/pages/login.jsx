@@ -8,7 +8,6 @@ const Login = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/login");
     async function log() {
       if (await loggedIn()) {
         setLoading(false);
@@ -32,7 +31,7 @@ const Login = () => {
       {loading ? (
         <LoaderPage />
       ) : (
-        <Background toggle={toggle} auth={false}></Background>
+        <Background resetPass={false} toggle={toggle} auth={false}></Background>
       )}
     </>
   );

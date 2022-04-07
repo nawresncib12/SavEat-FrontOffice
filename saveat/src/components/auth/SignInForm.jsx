@@ -5,10 +5,12 @@ import { SocialMediaBox } from "./SocialMediaBox";
 import { TextField } from "./TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { login,forgotPassword } from "../../api/api.user";
+import { login, forgotPassword, resetPassword } from "../../api/api.user";
 import { useNavigate } from "react-router-dom";
 import Fpassword from "./Fpassword";
 export const SignInForm = (props) => {
+  const resetPass = props.resetPass;
+  const token = props.token || "";
   const navigate = useNavigate();
   const validate = Yup.object({
     email: Yup.string()
@@ -18,13 +20,24 @@ export const SignInForm = (props) => {
       .required("Password is required !")
       .min(8, "Password must be at least 8 charaters !"),
   });
+  const validateResetPass = Yup.object({
+    password: Yup.string()
+      .required("Password is required !")
+      .min(8, "Password must be at least 8 charaters !"),
+  });
   const validateForgotPass = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
       .required("Email is required !"),
   });
+  const [newPassword, setNewPassword] = useState("");
+  const getpassword = (e) => {
+    setNewPassword(e.target.value);
+  };
   const [failed, setFailed] = useState("");
   const [failedForgot, setFailedForgot] = useState("");
+  const [failedReset, setFailedReset] = useState("");
+  const [loadingReset, setLoadingReset] = useState(false);
   const submitForm = async (values) => {
     let data = { email: values.email, password: values.password };
     const res = await login(data);
@@ -38,11 +51,14 @@ export const SignInForm = (props) => {
     }
   };
   const submitFpass = async (values) => {
+    setLoadingReset(true);
     let data = { email: values.email };
     const res = await forgotPassword(data);
     if (!res) {
+      setLoadingReset(false);
       setFailedForgot("There is no account with this email address!");
     } else {
+      setLoadingReset(false);
       setFailedForgot("Please check your email to continue");
     }
   };
@@ -54,24 +70,43 @@ export const SignInForm = (props) => {
   const hideFpass = () => {
     setForgotPass(false);
   };
+  const submitResetpass = async (values) => {
+    const res = await resetPassword({ password: newPassword }, token);
+    if (!res) {
+      setFailedReset("Problem Resetting Password");
+    } else {
+      navigate("/login", { state: { toggle: true } });
+    }
+  };
+  const validatePass = forgotPass ? validateForgotPass : validateResetPass;
+  const submitPass = (values) => {
+    if (forgotPass) {
+      submitFpass(values);
+    } else {
+      submitResetpass(values);
+    }
+  };
   return (
     <Formik
       initialValues={{
         email: "",
         password: "",
       }}
-      validationSchema={forgotPass ? validateForgotPass : validate}
+      validationSchema={!forgotPass && !resetPass ? validate : validatePass}
       onSubmit={(values) => {
-        forgotPass ? submitFpass(values) : submitForm(values);
+        !forgotPass && !resetPass ? submitForm(values) : submitPass(values);
       }}
     >
       {(formik) => (
         <div className={classes.signInForm}>
           <div className={classes.header}>
-            <h3 className={classes.title}>{forgotPass ?"Resetting password":"Sign in"}</h3>
-
+            <h3 className={classes.title}>
+              {forgotPass ? "Resetting password" : ""}
+              {resetPass ? "Resetting password" : ""}
+              {!forgotPass && !resetPass ? "Sign in" : ""}
+            </h3>
           </div>
-          {!forgotPass && (
+          {!forgotPass && !resetPass && (
             <div className={classes.form}>
               <SocialMediaBox type="Sign in" />
 
@@ -105,10 +140,27 @@ export const SignInForm = (props) => {
 
           {forgotPass && (
             <Form>
-              <Fpassword hideFpass={hideFpass}
-              
-              failed={failedForgot}
+              <Fpassword
+                hideFpass={hideFpass}
+                loadingReset={loadingReset}
+                failed={failedForgot}
               ></Fpassword>
+            </Form>
+          )}
+          {resetPass && (
+            <Form>
+              <div onChange={getpassword}>
+                <TextField
+                  label="New Password"
+                  name="password"
+                  type="password"
+                  failed={failedReset}
+                />
+                <br />
+                <div className={classes.submit}>
+                  <Button color="#4DAAAA" content="Submit" type="submit" />
+                </div>
+              </div>
             </Form>
           )}
         </div>

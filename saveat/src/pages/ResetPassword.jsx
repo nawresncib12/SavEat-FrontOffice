@@ -1,24 +1,17 @@
-import React,{useState} from 'react'
-import { resetPassword } from "../api/api.user";
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { useParams } from "react-router-dom";
+import Background from "../components/auth/Background/Background";
 const ResetPassword = () => {
+  const token = useParams();
 
-const token= useParams();
-const [newPassword, setNewPassword] = useState("")
-const getpassword = (e)=>{
-    setNewPassword(e.target.value)
-}
   return (
-      <div  onChange={getpassword}  >
-          <input type="text" placeholder=' new password'/>
-          <button type='submit' onClick={()=>{   resetPassword({password:newPassword},token)
-      // loader 
-    // redirection && notification success or fail
-      
-      }}>submit</button>
-      </div>
+    <Background
+      resetPass={true}
+      token={token}
+      toggle={true}
+      auth={false}
+    ></Background>
   );
-    
-}
+};
 
-export default ResetPassword
+export default ResetPassword;
