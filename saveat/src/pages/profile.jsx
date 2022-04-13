@@ -1,11 +1,14 @@
 import React from 'react'
-import SideBar from '../components/SideBar'
-import ProfileCard from '../components/ProfileCard'
+import SideBar from '../components/profile/SideBar'
+import ProfileCard from '../components/profile/ProfileCard'
 import { loggedIn } from "../api/api.user";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { logout } from "../api/api.user";
-import EditProfile from '../components/EditProfile';
+import EditProfile from '../components/profile/EditProfile';
+import EditSettings from '../components/profile/EditSettings';
+import Pereferences from '../components/profile/Pereferences';
+import Cart from '../components/profile/Cart';
 
 const Profile = () => {
   const [loading, setLoading] = useState(true);
@@ -37,9 +40,9 @@ const Profile = () => {
     <div style={{display:"flex",height:"100%"}}>
         <SideBar fn = {f}/>
         {(active==0)&&<EditProfile/>}
-        {(active==1)&&<div style={{width : "100%",display:"flex",alignItems:"center",justifyContent:"center"}}> change password</div>}
-        {(active==2)&&<div style={{width : "100%",display:"flex",alignItems:"center",justifyContent:"center"}}> preference</div>}
-        {(active==3)&&<div style={{width : "100%",display:"flex",alignItems:"center",justifyContent:"center"}}>cart</div>}
+        {(active==1)&&<EditSettings/>}
+        {(active==2)&&<Pereferences/>}
+        {(active==3)&&<Cart/>}
         {(active==4)&&<div style={{width : "100%",display:"flex",alignItems:"center",justifyContent:"center"}}>deals</div>}
         {(active==5)&&<div style={{width : "100%",display:"flex",alignItems:"center",justifyContent:"center"}}>others</div>}
         <ProfileCard/>
