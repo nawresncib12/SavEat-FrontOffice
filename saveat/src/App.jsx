@@ -12,11 +12,8 @@ function App() {
         <Route exact path="/login" element={<Login></Login>} />
         <Route exact path="/signup" element={<SignUp></SignUp>} />
         <Route exact path="/home" element={<Home></Home>} /> 
-        <Route exact path="/updateProfile" element={<Profile></Profile>} /> 
+        <Route exact path="/updateProfile" element={<Profile/>} /> 
         <Route exact path="/resetPassword/:token" element={<ResetPassword></ResetPassword>} />
-        
-        {/* <Route exact path="/resetPassword/:token" element={<ResetPassword></ResetPassword>} /> */}
-
       </Routes>
     </Router>
   );

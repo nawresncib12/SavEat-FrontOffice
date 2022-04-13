@@ -13,7 +13,14 @@ const ProfileCard = () => {
     const [phone, setPhone] = useState("-")
     const [progressMessage, setProgressMessage] = useState("You are halfway through !")
     const [percent, setPercent] = useState(50)
+    const [deal, setDeal] = useState(true)
+    const [meal, setMeal] = useState(false)
+    const [foodBox, setFoodBox] = useState(true)
+
     const ref=useRef();
+    setTimeout(() => {
+        setPercent(20);
+    }, 2000);
 useEffect(()=> {
 ref.current.style.setProperty("--width",percent+"%");
 },[percent])
@@ -47,6 +54,20 @@ ref.current.style.setProperty("--width",percent+"%");
                     </div>
                 </div>
             </div>
+           {deal && <div className={style.proposition}>
+                <div className={style.txt}>You haven’t made any deal yet</div>
+            <div className={style.btn}> Start now</div>
+            </div>}
+
+            {meal && <div className={style.proposition}>
+                <div className={style.txt}>You haven’t saved any meal yet</div>
+            <div className={style.btn}> Start now</div>
+            </div>}
+
+            {foodBox &&<div className={style.proposition}>
+                <div className={style.txt}>You haven’t saved any food box yet</div>
+            <div className={style.btn}> Start now</div>
+            </div>}
 
             <div className={style.progressBarCont}>
                 <h3>Profile Progress</h3>
