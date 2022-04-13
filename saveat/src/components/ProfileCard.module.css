@@ -1,7 +1,7 @@
 .container{
     display: flex;
     align-items: center;
-    height: 100%;
+    height:980px;
     width: 830px;
     justify-content: space-evenly;
     flex-direction: column;
@@ -100,6 +100,7 @@ font-size: 18px;
     margin: auto;
     border-radius: 10px;
     background: #4DAAAA     ;
+    transition: .7s ease-in-out;
  }
 .percent{
     position: absolute;
@@ -111,4 +112,29 @@ font-size: 18px;
     justify-content: center;
     display: flex;
     font-size: 22px;
+}
+.btn{
+    background-color: #FFFFFF;
+    height: 35px;
+    width: 190px;
+    color: #4DAAAA;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.proposition{
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;
+}
+.txt{
+    margin-bottom: 3px;
+    font-size: 20px;
 }
