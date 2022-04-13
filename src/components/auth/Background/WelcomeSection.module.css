@@ -1,0 +1,202 @@
+.welcomeSection {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.welcomeSection .hidden {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+
+.welcomeSection .shown {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+}
+
+.welcomeSection .content {
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.content .line {
+    width: 50px;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.welcomeSection .content img {
+    height: 50vh;
+    min-height: 300px;
+}
+
+.welcomeSection .content button {
+    display: none;
+    background-color: #4DAAAA;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 230px;
+    height: 40px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.welcomeSection .content p {
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+}
+
+.welcomeSection .content img.hide {
+    transform: translateY(0px);
+    transition: transform 1s ease-out 1s;
+}
+
+.welcomeSection .content img.animate1 {
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+.welcomeSection .content img.animate2 {
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-delay: 1.3s;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(-10px);
+    }
+    12.5% {
+        transform: translateY(10px);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    37.5% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    62.5% {
+        transform: translateY(10px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    87.5% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .welcomeSection .content button {
+        display: block;
+    }
+    .welcomeSection .content p {
+        font-size: 25px;
+        width: 60%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .welcomeSection .content h1 {
+        font-size: 25px;
+    }
+    .welcomeSection .content p {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-height: 500px) {
+    .welcomeSection {
+        z-index: 5;
+        margin-top: -30px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+}
+@media only screen and (min-width: 1500px) {
+    .welcomeSection{
+        zoom: 104.5%;
+        
+    }
+   
+
+}
+@media only screen and (min-width: 1800px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 110%;
+    }
+    .welcomeSection .content img {
+        zoom: 102%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 2000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 130%;
+    }
+    .welcomeSection .content img {
+        zoom: 102%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 2700px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 180%;
+    }
+    .welcomeSection .content img {
+        zoom: 105%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 4000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 220%;
+    }
+    .welcomeSection .content img {
+        zoom: 110%;
+    }
+   
+   
+
+}
+@media only screen and (min-width: 5000px) {
+   
+    .welcomeSection .content .line, .welcomeSection .content h1, .welcomeSection .content p,.welcomeSection .content button {
+        zoom: 280%;
+    }
+    .welcomeSection .content img {
+        zoom: 120%;
+    }
+   
+   
+
+}

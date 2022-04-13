@@ -1,0 +1,107 @@
+.toggleBox {
+    width: 60px;
+    height: 30px;
+    background: #4DAAAA;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.toggleSection {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin: 20px 50px 20px;
+}
+
+.toggleSection h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    color: #A5A5A5;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.toggleSection .icon {
+    line-height: 30px;
+    height: 24px;
+    width: 24px;
+}
+
+.toggleBox .circle {
+    transform: translateX(50%);
+    transition: transform 1s ease-in;
+}
+
+.toggleBox .circle.animate {
+    transform: translateX(150%);
+    opacity: 1;
+    transition: transform 0.2s ease-in;
+}
+
+.toggleBox .circle.exit {
+    transform: translateX(0%);
+    transition: transform 0.2s ease-in;
+}
+
+.toggleBox .icon {}
+
+.toggleBox .icon.animate {
+    transform: translateX(-150%);
+    transition: transform 0.2s ease-in;
+}
+
+.toggleBox .icon.exit {
+    transform: translateX(0%);
+    transition: transform 0.2s ease-in;
+}
+@media only screen and (min-width: 1500px) {
+    .toggleSection{
+        zoom: 111%;
+        
+    }
+
+}
+@media only screen and (min-width: 1600px) {
+    .toggleSection{
+        zoom: 123%;
+        
+    }
+
+}
+@media only screen and (min-width: 1900px) {
+    .toggleSection{
+        zoom: 140%;
+        
+    }
+   
+
+}
+@media only screen and (min-width: 2500px) {
+    .toggleSection {
+       zoom: 183%;
+    }
+   
+
+}
+@media only screen and (min-width: 3200px) {
+    .toggleSection {
+        zoom: 280%;
+    }
+   
+   
+
+}
+
+@media only screen and (min-width: 5000px) {
+    .toggleSection{
+       zoom: 395%;
+    }
+   
+
+}

@@ -1,0 +1,148 @@
+.stepOne .submit {
+    margin-top: -8px;
+}
+
+.stepOne .submit h5 {
+    text-align: center;
+}
+
+.stepOne .note {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 8px;
+    color: #A5A5A5;
+    cursor: pointer;
+}
+
+.stepOne .nextSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.noteP1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #A5A5A5;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -8px;
+}
+
+.noteP2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #A5A5A5;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -15px;
+}
+
+.nextBtn button {
+    border: none;
+    text-align: center;
+    width: 45px;
+    margin: auto;
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+.nextBtn:hover {
+    animation-name: vibrate;
+    animation-duration: 1s;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(-10px);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.nextBtn .nextImg {
+    width: 40px;
+    cursor: pointer;
+}
+
+@media only screen and (max-height: 700px) {
+    .nextBtn .nextImg {
+        height: 20px;
+        width: 25px;
+    }
+    .nextBtn button {
+        height: 25px;
+        width: 35px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .noteP1,
+    .noteP2 {
+        zoom: 111%;
+    }
+    .nextBtn .nextImg {
+        zoom: 80%;
+        margin-top: -10px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .noteP1,
+    .noteP2 {
+        zoom: 150%;
+    }
+}
+
+@media only screen and (min-width: 2500px) {
+    .noteP1,
+    .noteP2 {
+        zoom: 200%;
+    }
+    .nextBtn .nextImg {
+        zoom: 120%;
+        margin-top: -10px;
+    }
+}
+
+@media only screen and (min-width: 3200px) {
+    .noteP1,
+    .noteP2 {
+        zoom: 280%;
+    }
+    .nextBtn .nextImg {
+        zoom: 160%;
+        margin-top: -10px;
+    }
+}
+
+@media only screen and (min-width: 5000px) {
+    .noteP1,
+    .noteP2 {
+        zoom: 395%;
+    }
+    .nextBtn .nextImg {
+        zoom: 180%;
+        margin-top: -10px;
+    }
+}

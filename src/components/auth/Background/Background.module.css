@@ -1,0 +1,133 @@
+.authBackground {
+    height: 100vh;
+    width: 100vw;
+    background: url(../../../assets/cool-background.png) no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.authHead {
+    height: 50px;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.authHead img {
+    width: 100px;
+}
+
+.authBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.authBody.hidden {
+    transform: translateX(0vw);
+    transition: transform 1s ease-out;
+    transform-origin: 25vw 25vh;
+}
+
+.authBody.animate {
+    transform: translateX(25vw);
+    transform-origin: 25vw 25vh;
+    transition: transform 1s ease-in;
+}
+
+.authBackground .submitted {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+/*  transition: <property> <duration> <timing-function> <delay>;*/
+
+.formWhite {
+    height: 100vh;
+}
+
+.formWhite.hidden {
+    transform: translateX(0vw);
+    transition: transform 1s ease-out;
+}
+
+.formWhite.animate {
+    transform: translateX(-80vw);
+    transition: transform 1s ease-out;
+}
+
+.formWhite.exit {
+    transform: translateX(80vw);
+    transition: transform 1s ease-out;
+}
+
+
+/*originY: "50vh",
+      originX: "25vw",
+      scale: 1.3,
+      transition: {
+        delay: 1,
+        type: "tween",
+        duration: 1,
+        when: "beforeChildren",
+        staggerChildren: 2,*/
+
+.welcomeDiv.hidden {
+    transform: scale(1);
+    transition: transform 1s ease-out 1s;
+    transform-origin: 25vw 50vh;
+}
+
+.welcomeDiv.animate {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in 1s;
+    transform-origin: 25vw 50vh;
+}
+
+@media only screen and (max-width: 1000px) {
+    .authBody {
+        display: grid;
+        grid-template-columns: 100vw 80vw;
+    }
+    .authHead {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    .authHead {
+        zoom: 130%;
+    }
+
+
+}
+@media only screen and (min-width: 2000px) {
+    .authHead {
+        zoom: 150%;
+    }
+
+
+}
+@media only screen and (min-width: 2700px) {
+    .authHead {
+        zoom: 200%;
+    }
+
+
+}
+@media only screen and (min-width: 4000px) {
+    .authHead {
+        zoom: 320%;
+    }
+
+
+}
+@media only screen and (min-width: 5000px) {
+    .authHead {
+        zoom: 340%;
+    }
+
+
+}

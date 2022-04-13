@@ -1,0 +1,60 @@
+.btn {
+    height: 40px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media only screen and (max-height: 700px) {
+    .btn {
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .btn{
+        zoom: 120%;
+        
+    }
+
+}
+@media only screen and (min-width: 1600px) {
+    .btn{
+        zoom: 128%;
+        
+    }
+
+}
+@media only screen and (min-width: 1700px) {
+    .btn{
+        zoom: 136%;
+        
+    }
+
+}
+@media only screen and (min-width: 2200px) {
+    .btn{
+        zoom: 186%;
+        
+    }
+
+}
+@media only screen and (min-width: 3200px) {
+    .btn{
+        zoom: 280%;
+        
+    }
+
+}
+@media only screen and (min-width: 5000px) {
+    .btn{
+        zoom: 350%;
+        
+    }
+
+}
