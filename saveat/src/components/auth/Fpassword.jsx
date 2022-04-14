@@ -12,7 +12,8 @@ const Fpassword = (props) => {
             label="Email"
             name="email"
             type="email"
-            form="signup"
+            form="signin"
+            success={props.success}
             failed={props.failed}
           />
           <p className={classes.note}>

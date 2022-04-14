@@ -1,16 +1,15 @@
 .stepCircle {
-   
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -10px;
 }
+
 .stepCircle p {
     color: #fff;
     font-weight: 600;
     font-size: 16px;
-
 }
