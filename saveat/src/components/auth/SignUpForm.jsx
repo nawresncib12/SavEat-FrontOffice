@@ -37,14 +37,18 @@ export const SignUpForm = () => {
   };
 
   const [failed, setFailed] = useState("");
+  const [loading, setLoading] = useState(false);
   const [failedVerify, setFailedVerify] = useState("");
   const submitSignup = async (values) => {
+    setLoading(true);
     let data = { email: values.email, password: values.password };
     const res = await signUp(data);
     if (res === "true") {
       nextHandler();
+      setLoading(false);
     } else {
       setFailed(res);
+      setLoading(false);
     }
   };
   const verifyAccount = async (values) => {
@@ -102,7 +106,7 @@ export const SignUpForm = () => {
           <div className={classes.form}>
             {next === 1 && (
               <Form>
-                <StepOne failed={failed} />
+                <StepOne failed={failed} loading={loading} />
               </Form>
             )}
             {next === 2 && (

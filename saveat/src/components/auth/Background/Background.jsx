@@ -63,6 +63,7 @@ const Background = (props) => {
             onSubmitForm={onSubmitForm}
             submitted={submitted}
             auth={props.auth}
+            resetPass={props.resetPass} token={props.token}
           ></FormSection>
         </div>
       </div>

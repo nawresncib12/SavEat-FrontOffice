@@ -1,7 +1,9 @@
 import classes from "./Fpassword.module.css";
 import { TextField } from "./TextField";
 import { Button } from "../../UI/Button";
+import ButtonLoader from "../../UI/ButtonLoader";
 const Fpassword = (props) => {
+  const loading = props.loadingReset;
   return (
     <div>
       <div className={classes.Fpassword}>
@@ -18,7 +20,11 @@ const Fpassword = (props) => {
           </p>
 
           <div className={classes.submit}>
-            <Button color="#4DAAAA" content="Submit" type="submit" />
+            {loading ? (
+              <ButtonLoader />
+            ) : (
+              <Button color="#4DAAAA" content="Submit" type="submit" />
+            )}
           </div>
           <p className={classes.noteBack} onClick={props.hideFpass}>
             Go back to log in
