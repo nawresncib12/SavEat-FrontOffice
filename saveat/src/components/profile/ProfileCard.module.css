@@ -137,9 +137,17 @@ font-size: 18px;
     flex-direction: column;
 }
 .txt{
-    margin-bottom: 3px;
+    margin-bottom: 1vh;
     font-size: 17px;
 }
 .details p {
     margin : 5px;
+}@media only screen and (max-width: 950px) {
+  
+    .container, .wrap{
+width: 100vw;
+height: 100vh;
+margin-bottom: unset;
+    }
+
 }

@@ -3,8 +3,8 @@ import style from './Orders.module.css'
 const Orders = () => {
   return (
     <div className={style.container}>
-        <div className={style.title}><h1>Orders</h1> </div>
-        <div className={style.content}>
+        <div className={style.title}><h1>ORDERS</h1> </div>
+        <div className={style.meriem}>
         </div>
     </div>
   )
