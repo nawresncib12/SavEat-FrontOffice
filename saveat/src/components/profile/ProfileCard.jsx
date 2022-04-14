@@ -18,9 +18,7 @@ const ProfileCard = () => {
     const [foodBox, setFoodBox] = useState(true)
 
     const ref=useRef();
-    setTimeout(() => {
-        setPercent(20);
-    }, 2000);
+
 useEffect(()=> {
 ref.current.style.setProperty("--width",percent+"%");
 },[percent])

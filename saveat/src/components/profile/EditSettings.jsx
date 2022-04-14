@@ -1,10 +1,10 @@
 import React from 'react'
-import style from './EditProfile.module.css'
+import style from './EditSettings.module.css'
 const EditSettings = () => {
   return (
     <div className={style.container}>
-        <div className={style.title}><h1>Edit My Account</h1> </div>
-        <div className={style.content}>
+        <div className={style.title}><h1>ACCOUNT SETTINGS</h1> </div>
+        <div className={style.meriem}>
         </div>
     </div>
   )

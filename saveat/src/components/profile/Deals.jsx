@@ -1,13 +1,13 @@
 import React from 'react'
-import style from './Cart.module.css'
-const Cart = () => {
+import style from './Deals.module.css'
+const Deals = () => {
   return (
     <div className={style.container}>
-        <div className={style.title}><h1>PROFILE</h1> </div>
-        <div className={style.content}>
+        <div className={style.title}><h1>DEALS</h1> </div>
+        <div className={style.meriem}>
         </div>
     </div>
   )
 }
 
-export default Cart
+export default Deals
