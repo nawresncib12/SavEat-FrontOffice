@@ -5,7 +5,6 @@
     margin: -1px auto 0 auto;
     display: grid;
     align-items: center;
-    
 }
 
 .waves {
@@ -22,8 +21,7 @@
 
 .formContainer {
     z-index: 5;
-    margin-top: -30px;
-  
+    margin-top: 30px;
 }
 
 .toggleSection {
@@ -31,6 +29,24 @@
     right: 0;
     bottom: 0;
     z-index: -99;
+}
+
+.formContainer .close {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .formContainer .close {
+        display: block;
+        cursor: pointer;
+        padding-right: 20px;
+        color: #4Daaaa;
+        font-size: 15px;
+        text-align: right;
+    }
+    .formContainer .close:hover {
+        color: #317b7b;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -42,7 +58,7 @@
     }
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 625px) {
     .formContainer {
         z-index: 5;
         margin-top: -10px;
@@ -54,4 +70,3 @@
         z-index: -99;
     }
 }
-

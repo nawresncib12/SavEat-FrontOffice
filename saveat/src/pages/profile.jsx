@@ -1,10 +1,8 @@
 import React from 'react'
 import SideBar from '../components/profile/SideBar'
 import ProfileCard from '../components/profile/ProfileCard'
-import { loggedIn } from "../api/api.user";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { logout } from "../api/api.user";
+import {  useState } from "react";
 import EditProfile from '../components/profile/EditProfile';
 import EditSettings from '../components/profile/EditSettings';
 import Pereferences from '../components/profile/Pereferences';
@@ -49,12 +47,12 @@ const Profile = () => {
     <div style={{display:"flex",height:"100%"}}>
       <ToggleButton fn = {f}/>
         <SideBar fn = {f}/>
-        {(active==0)&&<EditProfile/>}
-        {(active==1)&&<EditSettings/>}
-        {(active==2)&&<Pereferences/>}
-        {(active==3)&&<Cart/>}
-        {(active==4)&&<Deals/>}
-        {(active==5)&&<Orders/>}
+        {(active===0)&&<EditProfile/>}
+        {(active===1)&&<EditSettings/>}
+        {(active===2)&&<Pereferences/>}
+        {(active===3)&&<Cart/>}
+        {(active===4)&&<Deals/>}
+        {(active===5)&&<Orders/>}
         {!phoneNav&&<ProfileCard/>}
     </div>
   )

@@ -35,7 +35,7 @@
     color: #A5A5A5;
     cursor: pointer;
     padding: 0;
-    margin-top: -8px;
+    margin-top: -10px;
 }
 
 .noteP2 {
@@ -54,10 +54,10 @@
     width: 45px;
     margin: auto;
     background-color: transparent;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-.nextBtn:hover {
+.nextBtn .nextImg:hover {
     animation-name: vibrate;
     animation-duration: 1s;
 }

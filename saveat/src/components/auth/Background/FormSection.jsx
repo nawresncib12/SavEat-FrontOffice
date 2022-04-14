@@ -51,16 +51,17 @@ const FormSection = (props) => {
       </div>
 
       <div className={classes.formContainer}>
+        <div className={classes.close} onClick={props.onHide}>
+          x
+        </div>
         <AnimatePresence>
           {isClicked === false ? (
-            <motion.div
-              variants={formVariants}
-              exit="exit"
-              animate="animate"
-              initial="intitial"
-            >
-              <SignInForm 
-            resetPass={props.resetPass} token={props.token} onSubmitForm={props.onSubmitForm} />
+            <motion.div variants={formVariants} exit="exit" initial="intitial">
+              <SignInForm
+                resetPass={props.resetPass}
+                token={props.token}
+                onSubmitForm={props.onSubmitForm}
+              />
             </motion.div>
           ) : (
             <SignUpForm

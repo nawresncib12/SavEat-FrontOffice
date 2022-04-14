@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./SignInForm.module.css";
 import { Button } from "../../UI/Button";
 import { SocialMediaBox } from "./SocialMediaBox";
@@ -8,6 +8,8 @@ import * as Yup from "yup";
 import { login, forgotPassword, resetPassword } from "../../api/api.user";
 import { useNavigate } from "react-router-dom";
 import Fpassword from "./Fpassword";
+import SuccessMessageModal from "../../UI/SuccessMessageModel";
+import ErrorMessageModal from "../../UI/ErrorMessageModel";
 export const SignInForm = (props) => {
   const resetPass = props.resetPass;
   const token = props.token || "";
@@ -36,8 +38,10 @@ export const SignInForm = (props) => {
   };
   const [failed, setFailed] = useState("");
   const [failedForgot, setFailedForgot] = useState("");
-  const [failedReset, setFailedReset] = useState("");
+  const [successForgot, setSuccessForgot] = useState("");
   const [loadingReset, setLoadingReset] = useState(false);
+  const [successReset, setSuccessReset] = useState(false);
+  const [failedResetMesg, setFailedResetMesg] = useState(false);
   const submitForm = async (values) => {
     let data = { email: values.email, password: values.password };
     const res = await login(data);
@@ -57,9 +61,11 @@ export const SignInForm = (props) => {
     if (!res) {
       setLoadingReset(false);
       setFailedForgot("There is no account with this email address!");
+      setSuccessForgot("");
     } else {
       setLoadingReset(false);
-      setFailedForgot("Please check your email to continue");
+      setSuccessForgot("Please check your email to continue");
+      setFailedForgot("");
     }
   };
   const [forgotPass, setForgotPass] = useState(false);
@@ -73,11 +79,22 @@ export const SignInForm = (props) => {
   const submitResetpass = async (values) => {
     const res = await resetPassword({ password: newPassword }, token);
     if (!res) {
-      setFailedReset("Problem Resetting Password");
+      setFailedResetMesg(true);
     } else {
-      navigate("/login", { state: { toggle: true } });
+      setSuccessReset(true);
     }
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (successReset) {
+        navigate("/login", { state: { toggle: true } });
+      }
+      if (failedResetMesg) {
+        navigate("/login", { state: { toggle: true } });
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [successReset, failedResetMesg,navigate]);
   const validatePass = forgotPass ? validateForgotPass : validateResetPass;
   const submitPass = (values) => {
     if (forgotPass) {
@@ -87,84 +104,88 @@ export const SignInForm = (props) => {
     }
   };
   return (
-    <Formik
-      initialValues={{
-        email: "",
-        password: "",
-      }}
-      validationSchema={!forgotPass && !resetPass ? validate : validatePass}
-      onSubmit={(values) => {
-        !forgotPass && !resetPass ? submitForm(values) : submitPass(values);
-      }}
-    >
-      {(formik) => (
-        <div className={classes.signInForm}>
-          <div className={classes.header}>
-            <h3 className={classes.title}>
-              {forgotPass ? "Resetting password" : ""}
-              {resetPass ? "Resetting password" : ""}
-              {!forgotPass && !resetPass ? "Sign in" : ""}
-            </h3>
-          </div>
-          {!forgotPass && !resetPass && (
-            <div className={classes.form}>
-              <SocialMediaBox type="Sign in" />
+    <>
+      {successReset && <SuccessMessageModal></SuccessMessageModal>}
+      {failedResetMesg && <ErrorMessageModal></ErrorMessageModal>}
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+        }}
+        validationSchema={!forgotPass && !resetPass ? validate : validatePass}
+        onSubmit={(values) => {
+          !forgotPass && !resetPass ? submitForm(values) : submitPass(values);
+        }}
+      >
+        {(formik) => (
+          <div className={classes.signInForm}>
+            <div className={classes.header}>
+              <h3 className={classes.title}>
+                {forgotPass ? "Resetting password" : ""}
+                {resetPass ? "Resetting password" : ""}
+                {!forgotPass && !resetPass ? "Sign in" : ""}
+              </h3>
+            </div>
+            {!forgotPass && !resetPass && (
+              <div className={classes.form}>
+                <SocialMediaBox type="Sign in" />
 
+                <Form>
+                  <TextField
+                    label="Email"
+                    name="email"
+                    type="email"
+                    form="signin"
+                  />
+                  <TextField
+                    label="Password"
+                    name="password"
+                    type="password"
+                    form="signin"
+                    failed={failed}
+                  />
+                  <h5
+                    className={classes.note}
+                    style={{ textAlign: "right", marginTop: "10px" }}
+                    onClick={forgotPassHandler}
+                  >
+                    Forgot your password ?
+                  </h5>
+                  <div className={classes.submit}>
+                    <Button color="#4DAAAA" content="Submit" type="submit" />
+                  </div>
+                </Form>
+              </div>
+            )}
+
+            {forgotPass && (
               <Form>
-                <TextField
-                  label="Email"
-                  name="email"
-                  type="email"
-                  form="signin"
-                />
-                <TextField
-                  label="Password"
-                  name="password"
-                  type="password"
-                  form="signin"
-                  failed={failed}
-                />
-                <h5
-                  className={classes.note}
-                  style={{ textAlign: "right", marginTop: "10px" }}
-                  onClick={forgotPassHandler}
-                >
-                  Forgot your password ?
-                </h5>
-                <div className={classes.submit}>
-                  <Button color="#4DAAAA" content="Submit" type="submit" />
+                <Fpassword
+                  hideFpass={hideFpass}
+                  loadingReset={loadingReset}
+                  failed={failedForgot}
+                  success={successForgot}
+                ></Fpassword>
+              </Form>
+            )}
+            {resetPass && (
+              <Form>
+                <div onChange={getpassword}>
+                  <TextField
+                    label="New Password"
+                    name="password"
+                    type="password"
+                  />
+                  <br />
+                  <div className={classes.submit}>
+                    <Button color="#4DAAAA" content="Submit" type="submit" />
+                  </div>
                 </div>
               </Form>
-            </div>
-          )}
-
-          {forgotPass && (
-            <Form>
-              <Fpassword
-                hideFpass={hideFpass}
-                loadingReset={loadingReset}
-                failed={failedForgot}
-              ></Fpassword>
-            </Form>
-          )}
-          {resetPass && (
-            <Form>
-              <div onChange={getpassword}>
-                <TextField
-                  label="New Password"
-                  name="password"
-                  type="password"
-                  failed={failedReset}
-                />
-                <br />
-                <div className={classes.submit}>
-                  <Button color="#4DAAAA" content="Submit" type="submit" />
-                </div>
-              </div>
-            </Form>
-          )}
-        </div>
-      )}
-    </Formik>
+            )}
+          </div>
+        )}
+      </Formik>
+    </>
   );
 };

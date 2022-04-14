@@ -1,18 +1,20 @@
 import Background from "../components/auth/Background/Background";
 import { loggedIn } from "../api/api.user";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect , useState} from "react";
-
+import { useEffect, useState } from "react";
 import { LoaderPage } from "./loader";
-const Login = () => {const { state } = useLocation();
+const Login = () => {
+  const { state } = useLocation();
 
-let toggle;
-if (state) {
-  toggle = state.toggle;
-} else {
-  toggle = false;
-}
+  let toggle;
+  if (state) {
+    toggle = state.toggle;
+  } else {
+    toggle = false;
+  }
+
   const [loading, setLoading] = useState(!toggle);
+
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
@@ -25,7 +27,7 @@ if (state) {
     }
     log();
   }, [navigate]);
-  
+
   return (
     <>
       {loading ? (
@@ -33,6 +35,7 @@ if (state) {
       ) : (
         <Background resetPass={false} toggle={toggle} auth={false}></Background>
       )}
+     
     </>
   );
 };

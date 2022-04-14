@@ -2,13 +2,21 @@ import { useState } from "react";
 import classes from "./Background.module.css";
 import FormSection from "./FormSection";
 import WelcomeSection from "./WelcomeSection";
-import logo from '../../../assets/logo.png'
+import logo from "../../../assets/logo.png";
 const Background = (props) => {
-
-  const [showForm, setshowForm] = useState( props.toggle && (window.innerWidth < 1000));
+  const [showForm, setshowForm] = useState(
+    props.toggle && window.innerWidth < 1000
+  );
   const [submitted, setSubmitted] = useState(false);
   const onShow = () => {
+    console.log(showForm)
     setshowForm(true);
+    console.log(showForm)
+  };
+  const onHide = () => {
+    console.log(showForm)
+    setshowForm(false);
+    console.log(showForm)
   };
   const onSubmitForm = () => {
     setSubmitted(true);
@@ -60,10 +68,12 @@ const Background = (props) => {
           className={`${formWhiteClass[0]} ${formWhiteClass[1]} ${classes.formWhite} `}
         >
           <FormSection
+            onHide={onHide}
             onSubmitForm={onSubmitForm}
             submitted={submitted}
             auth={props.auth}
-            resetPass={props.resetPass} token={props.token}
+            resetPass={props.resetPass}
+            token={props.token}
           ></FormSection>
         </div>
       </div>
