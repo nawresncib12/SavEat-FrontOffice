@@ -6,10 +6,9 @@
     border: #A5A5A5 solid 0.5px;
     border-radius: 5px;
     color: #A5A5A5;
-    height: 40px;
+    height: 30px;
     width: 100%;
     cursor: pointer;
-    
 }
 
 .socialBox:hover {
@@ -32,7 +31,7 @@
     color: #A5A5A5;
     cursor: pointer;
     padding: 0;
-    margin-top: 2px;
+    margin-top: 5px;
     text-align: center;
     padding: 0px;
 }
@@ -43,15 +42,15 @@
 
 @media only screen and (max-height: 700px) {
     .socialBox {
-        height: 35px;
+        height: 32px;
         margin: 15px 0px;
     }
 }
-@media only screen and (min-width: 1500px) {
-   .socialBox {
-       height: 38px;
-   }
 
+@media only screen and (min-width: 1500px) {
+    .socialBox {
+        height: 30px;
+    }
 }
 
 @media only screen and (min-width: 1600px) {
@@ -60,46 +59,38 @@
     }
     .socialBox {
         zoom: 111%;
-        
     }
-
 }
+
 @media only screen and (min-width: 1700px) {
     .socials .note {
         margin-top: 15px;
     }
     .socialBox {
         zoom: 119%;
-        
     }
-
 }
+
 @media only screen and (min-width: 1900px) {
     .socialBox {
         zoom: 138%;
     }
-  
-
 }
+
 @media only screen and (min-width: 2500px) {
     .socials {
         zoom: 158%;
     }
-  
-
 }
+
 @media only screen and (min-width: 3200px) {
     .socials {
         zoom: 250%;
     }
-  
-
 }
 
 @media only screen and (min-width: 5000px) {
     .socials {
         zoom: 320%;
     }
-  
-
 }

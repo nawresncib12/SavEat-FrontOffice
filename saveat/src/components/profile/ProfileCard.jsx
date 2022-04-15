@@ -1,10 +1,10 @@
 import React,{useState,useRef,useEffect} from 'react'
 import style from './ProfileCard.module.css'
-import avatar from '../assets/avatar1.svg'
-import logout from '../assets/logout.svg'
-import phoneImg from "../assets/phone.svg"
-import addressImg from "../assets/address.svg"
-import birthdayImg from "../assets/birthday.svg"
+import avatar from '../../assets/avatar1.svg'
+import logout from '../../assets/logout.svg'
+import phoneImg from "../../assets/phone.svg"
+import addressImg from "../../assets/address.svg"
+import birthdayImg from "../../assets/birthday.svg"
 const ProfileCard = () => {
     const [name, setName] = useState("stranger")
     const [email, setEmail] = useState("ncubnawres04@gmail.com")
@@ -18,15 +18,12 @@ const ProfileCard = () => {
     const [foodBox, setFoodBox] = useState(true)
 
     const ref=useRef();
-    setTimeout(() => {
-        setPercent(20);
-    }, 2000);
+
 useEffect(()=> {
 ref.current.style.setProperty("--width",percent+"%");
 },[percent])
   return (
     <div className={style.container}>
-        <div className={style.profile}>Profile</div>
         <div className={style.wrap}>
             <img src={logout} alt="logout" className={style.logout} />
             <div className={style.avatar}>

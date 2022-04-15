@@ -1,39 +1,43 @@
 .container{
     display: flex;
     align-items: center;
-    height:980px;
-    width: 830px;
-    justify-content: space-evenly;
+    height: 100vh;
+    width: 735px;
+    justify-content: flex-end;
     flex-direction: column;
+    /* margin-top: -20px;*/
 }
 .wrap{
     background-color: #4DAAAA;
-    height: 86%;
+    height: 88%;
     width: 90%;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
     min-width: 90%;
+    margin-bottom: 24px;
 }
 .profile {
     margin-top: 10px;
 }
 .avatar{
-width: 150px;
-height: 150px;
-background: #FFFFFF;
-border-radius: 25px;
-transform: rotate(-45deg);
-display: flex;
-justify-content: center;
-align-items: center;
+    width: 130px;
+    height: 130px;
+    background: #FFFFFF;
+    border-radius: 25px;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
 }
 
 .img{
     transform: rotate(45deg);
+    width: 73%;     
 }
 .logout{
     position: absolute;
@@ -50,8 +54,6 @@ align-items: center;
 
 }
 .title{
-
-    margin-top: 20px;
     color: #FFFFFF;
 }
 .contact{
@@ -64,7 +66,7 @@ align-items: center;
     margin-right: 15px;
 }
 .details{
-    margin-top: -20pxs;
+    margin-top: -20px;
 }
 .progressBarCont{
     width: 88%;
@@ -115,12 +117,12 @@ font-size: 18px;
 }
 .btn{
     background-color: #FFFFFF;
-    height: 35px;
-    width: 190px;
+    height: 23px;
+    width: 165px;
     color: #4DAAAA;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 19px;
+    font-size: 17px;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -128,13 +130,24 @@ font-size: 18px;
 .proposition{
     color: #FFFFFF;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: center;    
     flex-direction: column;
 }
 .txt{
-    margin-bottom: 3px;
-    font-size: 20px;
+    margin-bottom: 1vh;
+    font-size: 17px;
+}
+.details p {
+    margin : 5px;
+}@media only screen and (max-width: 950px) {
+  
+    .container, .wrap{
+width: 100vw;
+height: 100vh;
+margin-bottom: unset;
+    }
+
 }

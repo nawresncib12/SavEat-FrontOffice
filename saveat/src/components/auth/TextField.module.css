@@ -53,8 +53,8 @@
 label {
     color: #A5A5A5;
     font-weight: 500;
-    margin-bottom: 13px;
-    font-size: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
 }
 
 input.formControl,
@@ -80,7 +80,7 @@ input.formControl:focus {
     font-weight: 500;
     font-size: 13px;
     line-height: 12px;
-    margin: 1px 0 6px 0;
+    margin: 5px 0 6px 0;
     display: block;
     height: 18px;
 }
@@ -92,42 +92,30 @@ input.formControl:focus {
 }
 
 @media only screen and (min-width: 1500px) {
-    .inputBox{
+    .inputBox {
         zoom: 111.8%;
-        
     }
-
 }
+
 @media only screen and (min-width: 1600px) {
-    .inputBox{
+    .inputBox {
         zoom: 130%;
-        
     }
- 
-   
-
 }
+
 @media only screen and (min-width: 1700px) {
-    .inputBox{
+    .inputBox {
         zoom: 132%;
-        
     }
-  
-   
-
 }
+
 @media only screen and (min-width: 1900px) {
-    .inputBox{
+    .inputBox {
         zoom: 155%;
-        
     }
-  
-
 }
-@media only screen and (min-width: 2500px) {
-   
-   
 
+@media only screen and (min-width: 2500px) {
     .inputBox {
         zoom: 200%;
     }
@@ -137,13 +125,10 @@ input.formControl:focus {
     .inputBox {
         zoom: 300%;
     }
-   
-
 }
+
 @media only screen and (min-width: 5000px) {
     .inputBox {
         zoom: 400%;
     }
-   
-
 }

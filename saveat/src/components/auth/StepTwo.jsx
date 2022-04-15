@@ -4,6 +4,7 @@ import { TextField } from './TextField';
 import { Timer } from '../../UI/Timer';
 import { Button } from '../../UI/Button';
 export const StepTwo = (props) => {
+ 
   return (
     <div className={classes.stepTwo}>
                         <h5 className={classes.note}>We sent a verification code to *******@***.***</h5>

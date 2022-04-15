@@ -33,14 +33,14 @@ const SideBar = ({fn}) => {
                         <div className={(active==1)? style.active :style.pair }> 
  
             <svg width="27" height="32" viewBox="0 0 27 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path stroke={(active==1)? white : green } stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.8214 1V5.28571L9.03571 6.35714L6.35714 3.14286L2.78571 7.42857L5.46429 10.6429L4.57143 12.7857H1V19.2143H4.57143L5.46429 21.3571L2.78571 24.5714L6.35714 28.8571L9.03571 25.6429L10.8214 26.7143V31H16.1786V26.7143L17.9643 25.6429L20.6429 28.8571L24.2143 24.5714L21.5357 21.3571L22.4286 19.2143H26V12.7857H22.4286L21.5357 10.6429L24.2143 7.42857L20.6429 3.14286L17.9643 6.35714L16.1786 5.28571V1H10.8214Z" />
-            <path stroke={(active==1)? white : green }  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.5001 20.2857C15.4726 20.2857 17.0716 18.3669 17.0716 16C17.0716 13.6331 15.4726 11.7143 13.5001 11.7143C11.5277 11.7143 9.92871 13.6331 9.92871 16C9.92871 18.3669 11.5277 20.2857 13.5001 20.2857Z"/>
+            <path stroke={(active===1)? white : green } stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.8214 1V5.28571L9.03571 6.35714L6.35714 3.14286L2.78571 7.42857L5.46429 10.6429L4.57143 12.7857H1V19.2143H4.57143L5.46429 21.3571L2.78571 24.5714L6.35714 28.8571L9.03571 25.6429L10.8214 26.7143V31H16.1786V26.7143L17.9643 25.6429L20.6429 28.8571L24.2143 24.5714L21.5357 21.3571L22.4286 19.2143H26V12.7857H22.4286L21.5357 10.6429L24.2143 7.42857L20.6429 3.14286L17.9643 6.35714L16.1786 5.28571V1H10.8214Z" />
+            <path stroke={(active===1)? white : green }  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.5001 20.2857C15.4726 20.2857 17.0716 18.3669 17.0716 16C17.0716 13.6331 15.4726 11.7143 13.5001 11.7143C11.5277 11.7143 9.92871 13.6331 9.92871 16C9.92871 18.3669 11.5277 20.2857 13.5001 20.2857Z"/>
             </svg>
               <div className={style.choice}>
               Edit My Account 
               </div>
             </div>
-            <div className={(active==1)? style.index : style.hidden}></div>
+            <div className={(active===1)? style.index : style.hidden}></div>
           </div>
 
 

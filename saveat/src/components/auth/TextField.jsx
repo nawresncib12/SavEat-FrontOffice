@@ -7,12 +7,12 @@ export const TextField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   let styleError;
   let styleErrorInput;
-  const [passVisible, setPassVisible] = useState(false);
+
   const [labelColor, setLabelColor] = useState("#A5A5A5");
-  const [border, setBorder] = useState("1.5px solid #A5A5A5");
-  const [borderDiv, setBorderDiv] = useState("2px solid #A5A5A5");
 
   let failed = props.failed || "";
+  let success = props.success || "";
+  const [passVisible, setPassVisible] = useState(0);
   const [isFocus, setIsFocus] = useState(false);
   const changeColor = () => {
     setIsFocus(true);
@@ -28,15 +28,17 @@ export const TextField = ({ label, ...props }) => {
     };
   }
   const passwordVisible = () => {
-    setPassVisible(!passVisible);
+    if (passVisible === 0) {
+      setPassVisible(1);
+    } else {
+      setPassVisible(0);
+    }
   };
 
   let style;
   const getStyle = () => {
     if (meta.touched && meta.error) {
       style = styleError;
-    } else if (isFocus) {
-      style = { border: borderDiv };
     }
   };
   return (
@@ -53,12 +55,8 @@ export const TextField = ({ label, ...props }) => {
           {...field}
           {...props}
           autoComplete="off"
-          style={
-            isFocus && !meta.touched && !meta.error
-              ? { borderTop: border, borderBottom: border }
-              : styleErrorInput
-          }
-          type={passVisible && props.type !== "email" ? "password" : "text"}
+          style={isFocus && !meta.touched && !meta.error ? {} : styleErrorInput}
+          type={passVisible || props.type === "email" ? "text" : "password"}
         />
         {(props.type === "password" || props.type === "confirmPassword") && (
           <span onClick={passwordVisible} className={classes.passIcon}>
@@ -76,12 +74,12 @@ export const TextField = ({ label, ...props }) => {
           </span>
         )}
       </div>
-      <div className={classes.error} style={props.type === "email" ? { marginBottom: "20px"} : {}}>
-        {failed !== "" && (
-          <p style={props.type === "email" ? { color: "#4DAAAA"} : {}}>
-            {failed}
-          </p>
-        )}
+      <div
+        className={classes.error}
+        style={props.type === "email"  && props.form==="signin" ? { marginBottom: "20px" } : {}}
+      >
+        {failed !== "" && <p>{failed}</p>}
+        {success !== "" && props.form==="signin" && <p style={{ color: "#4DAAAA" }}>{success}</p>}
         {failed === "" && <ErrorMessage name={field.name} />}
       </div>
     </div>
