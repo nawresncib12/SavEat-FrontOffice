@@ -1,30 +1,31 @@
 .saveat{
 color: #4DAAAA;
-font-size: 36px;
+font-size: 2.34vw;
 font-weight: 700;
-line-height: 44px;
+line-height: 0.167578vw;
 letter-spacing: 0em;
 cursor: pointer;
 }
 .logo{
     width: min-content;
     position: absolute;
-    top: 25px;
-    left: 40px;
+    top: 1.74vw;
+    left: 3vw;
 }
+
 .wrap{
 
     width: 100%;
-    border-right:solid 2px #95959542;
+    border-right:solid 0.117187vw #95959542;
     height: 77vh;
-    margin-top: 40px;
+    margin-top: 2.62vw;
 
 }
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 350px;
+    min-width: 22vw;
     height: 100vh;
     justify-content: center;
 }
@@ -49,8 +50,8 @@ cursor: pointer;
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 20px;
-    margin: auto 32px;
+    font-size: 1.3vw;
+    margin: auto 2.08vw;
 }
 .pair{
     display: flex;
@@ -59,7 +60,7 @@ cursor: pointer;
     /* justify-content: space-between; */
     cursor: pointer;
     height: 70%;
-    padding-left: 13px;
+    padding-left: 0.761717vw;
     color: #BCC5C5;
 
 }
@@ -69,30 +70,30 @@ cursor: pointer;
     width: fit-content;
     cursor: pointer;
     height: 70%;
-    padding-left: 13px;
-    border-radius: 20px;
+    padding-left: .76vw;
+    border-radius: 1.17187vw;
     background: #4DAAAA;
     color: white;
 
 }
 .index{
-    width: 11px;
-    height: 82px;
+    width: .65vw;
+    height: 4.8vw;
     background: #4DAAAA;
-    margin-right: -7px;
-    border-radius: 3px;
-
+    margin-right: -.4vw;
+    border-radius: 0.175781vw;
 }
+
 .hidden{
     display: none;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 800px) {
     .choice{
     display: none;        
     }
     .container{
-        min-width: 65px;
+        min-width: 50px;
     }
     .logo{
         left: 20px;
@@ -104,18 +105,17 @@ cursor: pointer;
 
         cursor: pointer;
         height: 70%;
-        /* padding-left: 13px; */
-        border-radius: 20px;
+        border-radius: 1.17187vw;
         background: #4DAAAA;
         color: white;
     
     }
    .block svg{
-        margin-left: -3px;
+        margin-left: 7px;
     }
 
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 650px) {
   
     .container{
        display: none;
