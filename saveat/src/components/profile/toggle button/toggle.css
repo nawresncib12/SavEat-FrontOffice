@@ -38,19 +38,39 @@
   }
   /* ANIMATION */
   .menu-btn.open .middle-menu-btn {
-    transform: translateX(-50px);
+    transform: translateX(50px);
     background: transparent;
     box-shadow: none;
   }
   .menu-btn.open .middle-menu-btn::before {
-    transform: rotate(45deg) translate(35px, -35px);
+    transform: rotate(-45deg) translate(-35px, -35px);
     background-color: #4DAAAA;
 
   }
   .menu-btn.open .middle-menu-btn::after {
     background-color: #4DAAAA;
 
-    transform: rotate(-45deg) translate(35px, 35px);
+    transform: rotate(45deg) translate(-35px, 35px);
+  }
+
+  
+  .green{
+    background-color: #4DAAAA;
+  }
+  .white{
+    background-color: #FFFFFF;
+  }
+  .green::before{
+    background-color: #4DAAAA;
+  }
+  .white::after{
+    background-color: #FFFFFF;
+  }
+  .green::after{
+    background-color: #4DAAAA;
+  }
+  .white::before{
+    background-color: #FFFFFF;
   }
 
   .X{

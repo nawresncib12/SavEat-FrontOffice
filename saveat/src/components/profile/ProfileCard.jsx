@@ -31,22 +31,22 @@ ref.current.style.setProperty("--width",percent+"%");
             </div>
             <div className={style.info}>
                 <div className={style.title}>
-                    <h2> Hi, {name}</h2>
+                    <h2 > Hi, {name}</h2>
                 </div>
                 <div className={style.details}>
-                    <p>{email}</p>
+                    <div className={style.email}>{email}</div>
                     <div className={style.contact}>
                         <div style={{display:"flex"}}>
                             <img src={phoneImg}  alt="phone" />
-                            <p>phone : {phone}</p>
+                            <div>phone : {phone}</div>
                         </div>
                         <div style={{display:"flex"}}>
                             <img src={addressImg}  alt="adress" />
-                            <p>Address : {adress}</p>
+                            <div>Address : {adress}</div>
                         </div>
                         <div style={{display:"flex"}}>
                             <img src={birthdayImg}  alt="birthday" />
-                            <p>Birthday: {birthday}</p>
+                            <div>Birthday: {birthday}</div>
                         </div>
                     </div>
                 </div>
@@ -67,8 +67,8 @@ ref.current.style.setProperty("--width",percent+"%");
             </div>}
 
             <div className={style.progressBarCont}>
-                <h3>Profile Progress</h3>
-                <p> {progressMessage}</p>
+                <div className={style.div}>Profile Progress</div>
+                <div className={style.msg}> {progressMessage}</div>
                 <div className={style.bar} ref={ref}>
                     <div className={style.percent} >{`${percent}%`}</div>
                 </div>
