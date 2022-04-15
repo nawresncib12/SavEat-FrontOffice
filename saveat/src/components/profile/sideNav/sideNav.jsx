@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './sideNav.css'
 import {Link} from 'react-router-dom'
 
-export const SideNav = ({open,fn}) => {
+export const SideNav = ({open,fn,setToggleColor}) => {
     const [active, setActive] = useState(1)  
     const green = "#6CD6D6"
     const white = "#FFFFFF"
@@ -11,7 +11,7 @@ export const SideNav = ({open,fn}) => {
                >
             <div className="menuItem">
 
-            <div className={"block"}onClick={()=>{setActive(0);fn(-1)}} >
+            <div className={"block"}onClick={()=>{setActive(0);setToggleColor("green");fn(-1)}} >
               <div className={(active==0)? "pair" :"pair" }> 
               <svg width="27" height="32" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill={(active==0)? green:green } d="M1.83333 27C1.83333 27 0 27 0 24.75C0 22.5 1.83333 15.75 11 15.75C20.1667 15.75 22 22.5 22 24.75C22 27 20.1667 27 20.1667 27H1.83333ZM11 13.5C12.4587 13.5 13.8576 12.7888 14.8891 11.523C15.9205 10.2571 16.5 8.54021 16.5 6.75C16.5 4.95979 15.9205 3.2429 14.8891 1.97703C13.8576 0.711159 12.4587 0 11 0C9.54131 0 8.14236 0.711159 7.11091 1.97703C6.07946 3.2429 5.5 4.95979 5.5 6.75C5.5 8.54021 6.07946 10.2571 7.11091 11.523C8.14236 12.7888 9.54131 13.5 11 13.5Z" />
@@ -23,7 +23,7 @@ export const SideNav = ({open,fn}) => {
             </div>
             
           </div>
-          <div className={"block"}onClick={()=>{setActive(1);fn(-1-1)}}>
+          <div className={"block"}onClick={()=>{setActive(1);setToggleColor("green");fn(-1-1)}}>
                         <div className={(active==1)? "pair" :"pair" }> 
  
             <svg width="27" height="32" viewBox="0 0 27 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ export const SideNav = ({open,fn}) => {
           </div>
 
 
-          <div className={"block"}onClick={()=>{setActive(2);fn(-2-1)}}>
+          <div className={"block"}onClick={()=>{setActive(2);setToggleColor("green");fn(-2-1)}}>
                         <div className={(active==2)? "pair" :"pair" }> 
  
             <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ export const SideNav = ({open,fn}) => {
             
           </div>
 
-          <div className={"block"}onClick={()=>{setActive(3);fn(-3-1)}}>
+          <div className={"block"}onClick={()=>{setActive(3);setToggleColor("green");fn(-3-1)}}>
                         <div className={(active==3)? "pair" :"pair" }> 
  
             <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@ export const SideNav = ({open,fn}) => {
             
           </div>
 
-          <div className={"block"}onClick={()=>{setActive(4);fn(-4-1)}}>
+          <div className={"block"}onClick={()=>{setActive(4);setToggleColor("green");fn(-4-1)}}>
                         <div className={(active==4)? "pair" :"pair" }> 
  
             <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ export const SideNav = ({open,fn}) => {
             
           </div>
 
-          <div className={"block"}onClick={()=>{setActive(5);fn(-5-1)}}>
+          <div className={"block"}onClick={()=>{setActive(5);setToggleColor("green");fn(-5-1)}}>
                         <div className={(active==5)? "pair" :"pair" }> 
  
             <svg width="30" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,15 +105,15 @@ export const SideNav = ({open,fn}) => {
 
                 {/* <div className="options"> 
                 <div className="option side"><Link to="/EliteJasmin" className={ (active==1) ? "pair" :"option"  } 
-        onClick={()=>{setActive(1);fn(-1-1)}}>ACCEUIL</Link></div>
+        onClick={()=>{setActive(1);setToggleColor("green");fn(-1-1)}}>ACCEUIL</Link></div>
                 <div className="option side"><Link to="/EliteJasmin" className={ (active==2) ? "pair" :"option"  } 
-        onClick={()=>{setActive(2);fn(-2-1)}}>A propos de nous</Link></div>
+        onClick={()=>{setActive(2);setToggleColor("green");fn(-2-1)}}>A propos de nous</Link></div>
                 <div className="option side"><Link to="/EliteJasmin/login" className={ (active==3) ? "pair" :"option"  } 
-        onClick={()=>{setActive(3);fn(-3-1)}}>espace parent</Link></div>
+        onClick={()=>{setActive(3);setToggleColor("green");fn(-3-1)}}>espace parent</Link></div>
                 <div className="option side"><Link to="/EliteJasmin" className={ (active==4) ? "pair" :"option"  } 
-        onClick={()=>{setActive(4);fn(-4-1)}}>poles d'activites</Link></div>
+        onClick={()=>{setActive(4);setToggleColor("green");fn(-4-1)}}>poles d'activites</Link></div>
                 <div className="option side"><Link to="/EliteJasmin" className={ (active==5) ? "pair" :"option"  } 
-        onClick={()=>{setActive(5);fn(-5-1)}}>contact</Link></div>
+        onClick={()=>{setActive(5);setToggleColor("green");fn(-5-1)}}>contact</Link></div>
             </div> */}
             </div>
         </div>
