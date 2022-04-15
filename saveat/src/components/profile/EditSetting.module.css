@@ -1,12 +1,51 @@
 .title{
     color: #4DAAAA;
     position: absolute;
+    top: 4.54vw;
+    left: 2.34vw;
+}
+.title h1{
+    font-weight: 350;
+    font-size: 1.8vw;
+
+}
+
+.container{
+    width: 54vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.content{
+    width: 97%;
+    height: 80%;
+    background-color: beige;
+
+}
+@media only screen and (max-width: 800px) {
+  
+    .container{
+        width: 66vw;
+    }
+}
+@media only screen and (max-width: 650px) {
+  
+    .container{
+        width: 66vw;
+    }
+
+
+.title{
+    color: #4DAAAA;
+    position: absolute;
     top: 73px;
     left: 40px;
 }
 .title h1{
     font-weight: 350;
-
+    font-size: 2em;
 }
 
 .container{
@@ -22,4 +61,4 @@
     height: 830px;
     background-color: beige;
 
-}
+}}
