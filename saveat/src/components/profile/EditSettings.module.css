@@ -21,8 +21,13 @@
 .meriem{
     width: 97%;
     height: 80%;
-    background-color: beige;
+    
 
+}
+.switcherContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media only screen and (max-width: 800px) {
   
