@@ -36,6 +36,7 @@ cursor: pointer;
     height: 100%;
     justify-content: space-around;
     margin-left: 12%;
+    z-index: 99;
 }
 .block{
     display: flex;

@@ -17,7 +17,16 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    animation: 0.5s roadRunnerOut;
 }
+@keyframes roadRunnerOut {
+    100% {
+      transform: translateX(0);
+    }
+    0% {
+      transform: translateX(-100vw) ;
+    }
+  }
 .meriem{
     width: 97%;
     height: 80%;
