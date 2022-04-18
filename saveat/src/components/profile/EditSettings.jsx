@@ -47,7 +47,8 @@ const EditSettings = () => {
             <div className={style.formContainer}>
               {
                 isClicked === "password" ? 
-                <div className={style.passContainer}>
+                <Form>
+                  <div className={style.passContainer}>
                     <TextField
                       label="Old Password"
                       name="oldpassword"
@@ -64,25 +65,30 @@ const EditSettings = () => {
                       type="password"
                     />
                     <Button content="Save" color="#6CD6D6" />
-                </div>
+                  </div>
+                </Form>
+                
                  :
 
 
 
-                 <div className={style.passContainer}>
-                 <TextField
-                   label="Password"
-                   name="password"
-                   type="password"
-                 />
-                 <TextField
-                   label="New Email"
-                   name="newemail"
-                   type="email"
-                 />
+                 <Form>
+                    <div className={style.passContainer}>
+                      <TextField
+                        label="Password"
+                        name="password"
+                        type="password"
+                      />
+                      <TextField
+                        label="New Email"
+                        name="newemail"
+                        type="email"
+                      />
+                      
+                      <Button content="Save" color="#6CD6D6" type="submit" />
+                    </div>
+                 </Form>
                 
-                 <Button content="Save" color="#6CD6D6" />
-             </div>
               }
             </div>
             
