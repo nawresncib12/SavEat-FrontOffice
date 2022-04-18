@@ -54,7 +54,7 @@
 @media only screen and (max-width: 650px) {
   
     .container{
-        width: 66vw;
+        width: 90vw;
     }
 
 
@@ -62,7 +62,7 @@
     color: #4DAAAA;
     position: absolute;
     top: 73px;
-    left: 40px;
+    left: 13px;
 }
 .title h1{
     font-weight: 350;

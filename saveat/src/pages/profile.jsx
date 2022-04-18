@@ -50,7 +50,7 @@ const Profile = () => {
   }
 
   return (
-    <div style={{display:"flex",height:"100%"}}>
+    <div style={{display:"flex",height:"100%",justifyContent:"center"}}>
       <ToggleButton fn = {f}/>
         <SideBar fn = {f}/>
         {(active===0)&&<EditProfile/>}

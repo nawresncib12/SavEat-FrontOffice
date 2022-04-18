@@ -41,14 +41,14 @@ const EditSettings = () => {
   {(formik) => (
     <div className={style.container}>
         <div className={style.title}><h1>ACCOUNT SETTINGS</h1> </div>
+        <div className={style.cont}>
             <div className={style.switcherContainer}>
               <EmailPassSwitcher switchMode={switchMode} isClicked={isClicked} />
             </div>
             <div className={style.formContainer}>
               {
                 isClicked === "password" ? 
-                <Form>
-                  <div className={style.passContainer}>
+                <div className={style.passContainer}>
                     <TextField
                       label="Old Password"
                       name="oldpassword"
@@ -65,34 +65,30 @@ const EditSettings = () => {
                       type="password"
                     />
                     <Button content="Save" color="#6CD6D6" />
-                  </div>
-                </Form>
-                
+                </div>
                  :
 
 
 
-                 <Form>
-                    <div className={style.passContainer}>
-                      <TextField
-                        label="Password"
-                        name="password"
-                        type="password"
-                      />
-                      <TextField
-                        label="New Email"
-                        name="newemail"
-                        type="email"
-                      />
-                      
-                      <Button content="Save" color="#6CD6D6" type="submit" />
-                    </div>
-                 </Form>
+                 <div className={style.passContainer}>
+                 <TextField
+                   label="Password"
+                   name="password"
+                   type="password"
+                 />
+                 <TextField
+                   label="New Email"
+                   name="newemail"
+                   type="email"
+                 />
                 
+                 <Button content="Save" color="#6CD6D6" />
+             </div>
               }
             </div>
             
         </div>
+    </div>
     )}
     </Formik>
   )
