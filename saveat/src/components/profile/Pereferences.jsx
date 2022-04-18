@@ -51,7 +51,7 @@ const handleInputChange1 = (event) => {
   return (
     <div className={style.container}>
         <div className={style.title}><h1>MY PREFERENCES</h1> </div>
-        <div className={style.meriem}>
+        <div className={style.cont}>
           <p className={style.intro}>
           Are you allergic to some food elements 
           ? Or do you have  some special preferences
