@@ -41,7 +41,6 @@ const EditSettings = () => {
   {(formik) => (
     <div className={style.container}>
         <div className={style.title}><h1>ACCOUNT SETTINGS</h1> </div>
-        <div className={style.meriem}>
             <div className={style.switcherContainer}>
               <EmailPassSwitcher switchMode={switchMode} isClicked={isClicked} />
             </div>
@@ -88,7 +87,6 @@ const EditSettings = () => {
             </div>
             
         </div>
-    </div>
     )}
     </Formik>
   )

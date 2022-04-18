@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SideBar from '../components/profile/SideBar'
 import ProfileCard from '../components/profile/ProfileCard'
 import { useNavigate } from "react-router-dom";
@@ -30,8 +30,14 @@ const Profile = () => {
   //     navigate("/login");
   //   }
   // };
+  useEffect(() => {
+      if(window.screen.width<650)setActive(-1);
+      else setActive(0)
+  
+  }, [(window.screen.width)])
+  
 
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState((window.screen.width>650)?0:-1)
   const [phoneNav, setphoneNav] = useState(false)
 
   const f = (x)=>{
