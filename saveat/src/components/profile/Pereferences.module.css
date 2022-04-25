@@ -18,37 +18,28 @@
     align-items: flex-end;
     justify-content: flex-end;
     overflow-y: hidden;
-    animation: 0.5s roadRunnerOut;
 }
-@keyframes roadRunnerOut {
-    100% {
-      transform: translateX(0);
-    }
-    0% {
-      transform: translateX(-100vw) ;
-    }
-  }
-.meriem{
+.cont{
     width: 97%;
     height: 80%;
-    margin-left: 4%;
-    margin-right: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
 
 }
-.meriem .intro {
+.cont .intro {
     color: #A5A5A5;
     font-style: normal;
 font-weight: 500;
-font-size: 1.1vw;
+font-size: max(1.1vw,14px);
 margin: 0;
 }
 
 .sectionHeader {
     font-style: normal;
     font-weight: 600;
-    font-size: 1.5vw;
+    font-size: max(17px,1.5vw);
     color: #FFBCBC;
-    margin: 1.2vw 0;
+    margin: max(1.2vw,16px) 0;
 }
 .foodItems {
     display: grid;
@@ -66,7 +57,7 @@ margin: 0;
     transition: 0.3s ease-in-out;
 }
 .fooditem p {
-    font-size: 1.3vw;
+    font-size: max(1.3vw,10px);
     font-weight: 550;
     transition: 0.3s ease-in-out;
 }
@@ -160,8 +151,18 @@ margin: 0;
     align-items: flex-end;
     justify-content: flex-end;
 }
-.meriem{
-    
-    
+.cont{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 4%;
+    width: 95%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.fooditem  {
+    margin-top: 15px;
+}
 
-}}
+}
