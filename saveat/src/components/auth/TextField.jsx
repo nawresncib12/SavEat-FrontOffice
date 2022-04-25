@@ -56,7 +56,8 @@ export const TextField = ({ label, ...props }) => {
           {...props}
           autoComplete="off"
           style={isFocus && !meta.touched && !meta.error ? {} : styleErrorInput}
-          type={passVisible || props.type === "email" ? "text" : "password"}
+          type={passVisible ? "text" : props.type}
+          maxLength={props.max}
         />
         {(props.type === "password" || props.type === "confirmPassword") && (
           <span onClick={passwordVisible} className={classes.passIcon}>

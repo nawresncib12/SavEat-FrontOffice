@@ -22,7 +22,7 @@ const EditSettings = () => {
         .matches(/^(?=.*[A-Z])/, "Must Contain 8 Characters & One Uppercase"),
       confirmpassword: Yup.string().when("newpassword", {
         is: (val) => (val && val.length > 0 ? true : false),
-        then: Yup.string().oneOf([Yup.ref("password")], "Passwords Must Match !"),
+        then: Yup.string().oneOf([Yup.ref("newpassword")], "Passwords Must Match !"),
       }),
     });
   return (
@@ -30,10 +30,13 @@ const EditSettings = () => {
     initialValues={{
     oldpassword:"",
     newpassword:"",
-    confirmpassword:""
+    confirmpassword:"",
+
+    oldemail:"",
+    newemail:""
+    }
   }
-  }
-  validationSchema={validate}
+  validationSchema={isClicked === "password" ? validate : null}
   onSubmit={(values) => {
     console.log(values);
   }}
@@ -48,7 +51,8 @@ const EditSettings = () => {
             <div className={style.formContainer}>
               {
                 isClicked === "password" ? 
-                <div className={style.passContainer}>
+                <Form>
+                   <div className={style.passContainer}>
                     <TextField
                       label="Old Password"
                       name="oldpassword"
@@ -64,26 +68,30 @@ const EditSettings = () => {
                       name="confirmpassword"
                       type="password"
                     />
-                    <Button content="Save" color="#6CD6D6" />
-                </div>
+                    <Button content="Save" color="#6CD6D6" type="submit" />
+                   </div>
+                </Form>
+               
                  :
 
 
 
-                 <div className={style.passContainer}>
-                 <TextField
-                   label="Password"
-                   name="password"
-                   type="password"
-                 />
-                 <TextField
-                   label="New Email"
-                   name="newemail"
-                   type="email"
-                 />
-                
-                 <Button content="Save" color="#6CD6D6" />
-             </div>
+                 <Form>
+                  <div className={style.passContainer}>
+                    <TextField
+                      label="Old Email"
+                      name="oldemail"
+                      type="email"
+                    />
+                    <TextField
+                      label="New Email"
+                      name="newemail"
+                      type="email"
+                    />
+                    
+                    <Button content="Save" color="#6CD6D6" type="submit" />
+                  </div>
+             </Form>
               }
             </div>
             
