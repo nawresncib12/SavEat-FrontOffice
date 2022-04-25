@@ -61,15 +61,15 @@ const handleInputChange1 = (event) => {
           <div className={style.foodsection}>
             <h4 className={style.sectionHeader}>Allergies You Might Suffer From ...</h4>
             <div className={style.foodItems}>
-              <div onClick={() => setGluten(!gluten)} className={style.fooditem} style={ gluten === true ? {background:"#FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
+              <div onClick={() => setGluten(!gluten)} className={style.fooditem} style={ gluten === true ? {background:"#FFBCBC",border:"2px solid #FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
                 <img src={glutenimg} alt="" />
                 <p style={gluten === true ? {color:"#fff"}: {color:"#A5A5A5"}}>Gluten</p>
               </div>
-              <div onClick={() => setlactose(!lactose)} className={style.fooditem} style={ lactose === true ? {background:"#FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
+              <div onClick={() => setlactose(!lactose)} className={style.fooditem} style={ lactose === true ? {background:"#FFBCBC",border:"2px solid #FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
                 <img src={lactoseimg} alt="" />
                 <p style={lactose === true ? {color:"#fff"}: {color:"#A5A5A5"}}>Lactose</p>
               </div>
-              <div onClick={() => setNuts(!nuts)} className={style.fooditem} style={ nuts === true ? {background:"#FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
+              <div onClick={() => setNuts(!nuts)} className={style.fooditem} style={ nuts === true ? {background:"#FFBCBC",border:"2px solid #FFBCBC"} : {background:"#fff",border:"2px solid #6CD6D6"}}>
                 <img src={nutsimg} alt="" />
                 <p style={nuts === true ? {color:"#fff"}: {color:"#A5A5A5"}}>Nuts</p>
               </div>

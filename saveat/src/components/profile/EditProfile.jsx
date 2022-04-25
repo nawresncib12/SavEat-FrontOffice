@@ -3,6 +3,7 @@ import style from './EditProfile.module.css'
 import { Form , Formik} from 'formik'
 import { TextField } from '../auth/TextField'
 import { Button } from '../../UI/Button'
+import { Phone } from './phone/Phone'
 const EditProfile = () => {
   return (
     <Formik
@@ -22,7 +23,7 @@ const EditProfile = () => {
     <div className={style.container}>
         <div className={style.title}><h1>PROFILE</h1> </div>
         <div className={style.formMiddle}>
-            <Form>
+            <Form autoComplete='false'>
                   <div className={style.inputGroup}>
                     <TextField
                       label="Firstname"
@@ -39,12 +40,13 @@ const EditProfile = () => {
                     />
                   </div>
                   <div className={style.inputGroup}>
-                    <TextField
+                    {/*<TextField
                       label="Phone Number"
                       name="phone"
                       type="text"
                     
-                    />
+    />*/}
+                    <Phone />
                     <TextField
                       label="Birthday"
                       name="birthday"
@@ -58,6 +60,7 @@ const EditProfile = () => {
                       label="Address"
                       name="address"
                       type="text"
+                      max="30"
                     
                     />
                   </div>
