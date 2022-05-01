@@ -6,6 +6,7 @@ export const EmailPassSwitcher = ({switchMode, isClicked}) => {
   
     
     return (
+   /* <div style={{height:"100%"}}>*/
     <div className={classes.switcher}>
         <div onClick={switchMode} className={classes.password} style={isClicked === "password" ? {background:"#4DAAAA"} : null}>
             <Icon width="25px" height="25px" icon="ant-design:lock-filled" color={isClicked === "password" ? "white" : "#4DAAAA"} />
@@ -15,5 +16,6 @@ export const EmailPassSwitcher = ({switchMode, isClicked}) => {
         </div>
 
     </div>
+    /*</div>*/
   )
 }

@@ -18,7 +18,8 @@ cursor: pointer;
     width: 100%;
     border-right:solid 0.117187vw #95959542;
     height: 77vh;
-    margin-top: 2.62vw;
+    margin-top: max(2.62vw,35px);    
+    min-height: 500px;
 
 }
 .container{
@@ -28,6 +29,7 @@ cursor: pointer;
     min-width: 22vw;
     height: 100vh;
     justify-content: center;
+    min-height: 700px;
 }
 .SideBar{
     display: flex;
