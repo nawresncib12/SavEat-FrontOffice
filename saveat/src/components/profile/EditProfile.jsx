@@ -1,22 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './EditProfile.module.css'
 import { Form , Formik} from 'formik'
 import { TextField } from '../auth/TextField'
 import { Button } from '../../UI/Button'
 import { Phone } from './phone/Phone'
+import { updateUser } from "../../api/api.user";
+import { loggedIn } from "../../api/api.user";
+import { useNavigate } from "react-router-dom";
+
+ 
 const EditProfile = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null)
+  const [percent, setPercent] = useState(0)
+useEffect(() => {
+  async function log() {
+    const usr =await loggedIn()
+    if (!usr) {
+      navigate("/login");
+    }else{
+      if(!user){setUser(usr);
+        let p = 0 ;
+      if(usr.firstName)p++
+      if(usr.lastName)p++
+      if(usr.phone)p++
+      if(usr.address)p++
+      if(usr.birthday)p++
+      setPercent(p)
+      }
+    }
+
+  }
+  log();
+
+}, [navigate,user])
+console.log(percent)
+if(!user) return  <>LOADER</> // put loader here
   return (
     <Formik
       initialValues={{
-      firstname:"",
-      lastname:"",
-      birthday:"",
-      phone:"",
-      address:""  
+      firstName: user.firstName,
+      lastName:user.lastName,
+      birthday:user.birthday,
+      phone:user.phone,
+      address:user.address
     }
     }
     onSubmit={(values) => {
-      console.log(values);
+      updateUser(values);
     }}
     >
     {(formik) => (
@@ -26,26 +57,20 @@ const EditProfile = () => {
             <Form autoComplete='false'>
                   <div className={style.inputGroup}>
                     <TextField
-                      label="Firstname"
-                      name="firstname"
+                      label="FirstName"
+                      name="firstName"
                       type="text"
-                    
                     />
                     <TextField
-                      label="Lastname"
-                      name="lastname"
+                      label="LastName"
+                      name="lastName"
                       type="text"
                       
                       
                     />
                   </div>
                   <div className={style.inputGroup}>
-                    {/*<TextField
-                      label="Phone Number"
-                      name="phone"
-                      type="text"
-                    
-    />*/}
+
                     <Phone />
                     <TextField
                       label="Birthday"

@@ -1,0 +1,117 @@
+.saveat{
+color: #4DAAAA;
+font-size: 36px;
+font-weight: 700;
+line-height: 44px;
+letter-spacing: 0em;
+cursor: pointer;
+}
+.logo{
+    width: min-content;
+    position: absolute;
+    top: 25px;
+    left: 40px;
+}
+.wrap{
+
+    width: 100%;
+    border-right:solid 2px #95959542;
+    height: 77vh;
+    margin-top: 40px;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+    height: 980px;
+    justify-content: center;
+}
+.SideBar{
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+    height: 100%;
+    justify-content: space-around;
+    margin-left: 12%;
+}
+.block{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.choice{
+    height: 100%;
+    /* width: 88%; */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    margin: auto 32px;
+}
+.pair{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    /* justify-content: space-between; */
+    cursor: pointer;
+    height: 70%;
+    padding-left: 13px;
+    color: #BCC5C5;
+
+}
+.active{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    height: 70%;
+    padding-left: 13px;
+    border-radius: 20px;
+    background: #4DAAAA;
+    color: white;
+
+}
+.index{
+    width: 11px;
+    height: 82px;
+    background: #4DAAAA;
+    margin-right: -7px;
+    border-radius: 3px;
+
+}
+.hidden{
+    display: none;
+}
+
+@media only screen and (max-width: 1400px) {
+    .choice{
+    display: none;        
+    }
+    .container{
+        min-width: 65px;
+    }
+    .logo{
+        left: 20px;
+    }
+    .active{
+        display: flex;
+        align-items: center;
+        width: 63%;
+
+        cursor: pointer;
+        height: 70%;
+        /* padding-left: 13px; */
+        border-radius: 20px;
+        background: #4DAAAA;
+        color: white;
+    
+    }
+   .block svg{
+        margin-left: -3px;
+    }
+
+}

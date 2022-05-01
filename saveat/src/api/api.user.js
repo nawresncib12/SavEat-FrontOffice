@@ -27,7 +27,25 @@ export const signUp = async(data) => {
             }
         })
         .catch(err => {
-
+            return false;
+        });
+}
+export const updateUser = async(data) => {
+    const accessToken = localStorage.getItem('authToken');
+    return await axios.patch(`${api}/users/updateMe`, data, { headers: {
+        authorization: 'Bearer ' + accessToken
+    }
+    })
+    .then(res => {
+            console.log(res)
+            if (res.data.status === 'success') {
+                console.log('updated')
+                return "true";
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {console.log(err)
             return false;
         });
 }
@@ -95,8 +113,8 @@ export const loggedIn = async() => {
             })
             .then(res => {
                 if (res.data.status === 'success') {
-
-                    return true
+                    
+                    return res.data.user
 
                 } else {
 

@@ -11,34 +11,27 @@ import Deals from '../components/profile/Deals';
 import Orders from '../components/profile/Orders';
 import ToggleButton from '../components/profile/toggle button/toggle'
 import useWindowSize from '../components/windowSize'
+import { loggedIn } from "../api/api.user";
+
 const Profile = () => {
   const [loading, setLoading] = useState(true);
   const size = useWindowSize();
 
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   async function log() {
-  //     if (!(await loggedIn())) {
-  //       setLoading(false)
-  //       navigate("/login");
-  //     }else{
-  //       setLoading(false)
-  //     }
-  //   }
-  //   log();
-  // }, [navigate]);
-  // const signout = async () => {
-  //   const res = await logout();
-  //   if (res) {
-  //     navigate("/login");
-  //   }
-  // };
-  console.log(size.width);
   useEffect(() => {
+    async function log() {
+      if (!(await loggedIn())) {
+        setLoading(false)
+        navigate("/login");
+      }else{
+        setLoading(false)
+      }
+    }
+    log();
       if(window.screen.width<650) setActive(-1);
       else {setActive(preactive);      setphoneNav(false)
       }
-  }, [window.screen.width])
+  }, [window.screen.width,navigate])
   
 
   const [active, setActive] = useState((window.screen.width>650)?0:-1)
