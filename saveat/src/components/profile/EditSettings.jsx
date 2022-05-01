@@ -8,12 +8,14 @@ import { Button } from '../../UI/Button';
 import { updatePassword,updateEmail,verifyEmail } from "../../api/api.user";
 import { Loader } from "../../UI/Loader";
 import ButtonLoader from "../../UI/ButtonLoader";
+import { connect } from 'react-redux';
+import { update_email } from '../redux/actions/actions'
 
-
-const EditSettings = () => {
+const EditSettings = ({update_email}) => {
   const [isClicked,setIsClicked] = useState('password');
   const [loading,setLoading] = useState(false);
   const [loading2,setLoading2] = useState(false);
+  const [loading3,setLoading3] = useState(false);
   const [err,setErr] = useState('');
   const [codeErr,setCodeErr] = useState('');
   const [emailSent,setEmailSent] = useState(false);
@@ -55,9 +57,10 @@ const EditSettings = () => {
   validationSchema={isClicked === "password" ? validate : null}
   onSubmit={async(values) => {
     if(isClicked=='password'){
-
-      if(!await updatePassword(values) )setErr("incorrect Password")
+      setLoading3(true)
+      if(!await updatePassword(values) ){setErr("incorrect Password");setLoading3(false)}
       else{
+        setLoading3(false)
         setPasswordUpdated(true)
         setErr("")
         
@@ -67,13 +70,14 @@ const EditSettings = () => {
 
       if(values.code){
         setLoading2(true)
-      console.log(values)
-      if(!await verifyEmail(values) ){
+      const usr= await verifyEmail(values) 
+      if(!usr){
         setLoading2(false)
         console.log("code wrong")
         setCodeErr("wrong code")
       }
       else{
+        update_email(usr.email)
         setLoading2(false)
         setEmailUpdated(true)
         setCodeErr("")
@@ -121,7 +125,8 @@ const EditSettings = () => {
                       label="Confirm New Password"
                       name="confirmpassword"
                       type="password"
-                    />
+                    />                    
+                    {loading3 && <div style={{height:"10px" ,display:"flex",alignItems:"center",marginBottom:"40px",justifyContent:"center",width:'100%'}}><ButtonLoader/></div> }
                     <Button content="Save" color="#6CD6D6" type="submit" />
                    </div>
                 </Form>
@@ -133,7 +138,7 @@ const EditSettings = () => {
                  <Form>
                   <div className={style.passContainer}>
                     <TextField
-                      label="password"
+                      label="Password"
                       name="password"
                       type="password"
                       failed={err}
@@ -177,4 +182,9 @@ const EditSettings = () => {
   )
 }
 
-export default EditSettings
+const mapDispatchToProps = (dispatch)=>{
+  return{
+    update_email : (email)=>{ dispatch (update_email(email)) }
+  }
+}
+export default connect(null,mapDispatchToProps)(EditSettings)

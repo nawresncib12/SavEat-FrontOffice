@@ -8,12 +8,15 @@ import { updateUser } from "../../api/api.user";
 import { loggedIn } from "../../api/api.user";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "../../UI/Loader";
-
- 
-const EditProfile = () => {
+import ButtonLoader from "../../UI/ButtonLoader";
+import { connect } from 'react-redux';
+import { update_Profile_Card } from '../redux/actions/actions'
+const EditProfile = ({update_Profile_Card}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null)
-  const [percent, setPercent] = useState(0)
+  const [loading,setLoading] = useState(false);
+  const [updatedUser,setUpdatedUser] = useState(false);
+
 useEffect(() => {
   async function log() {
     const usr =await loggedIn()
@@ -21,13 +24,7 @@ useEffect(() => {
       navigate("/login");
     }else{
       if(!user){setUser(usr);
-        let p = 0 ;
-      if(usr.firstName)p++
-      if(usr.lastName)p++
-      if(usr.phone)p++
-      if(usr.address)p++
-      if(usr.birthday)p++
-      setPercent(p)
+        update_Profile_Card(usr)
       }
     }
 
@@ -35,7 +32,6 @@ useEffect(() => {
   log();
 
 }, [navigate,user])
-console.log(percent)
 if(!user) return ( <div className={style.container} style={{animation:"none"}}><Loader/></div>)
   return (
     <Formik
@@ -47,8 +43,10 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
       address:user.address
     }
     }
-    onSubmit={(values) => {
-      updateUser(values);
+    onSubmit={async(values) => {
+      setLoading(true) ;setUpdatedUser(false  );        
+      const usr = await updateUser(values)
+      if (usr) {setLoading(false); setUpdatedUser(true);console.log(usr);update_Profile_Card(usr)}
     }}
     >
     {(formik) => (
@@ -90,6 +88,8 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
                     
                     />
                   </div>
+                  {loading && <div style={{height:"10px" ,display:"flex",alignItems:"center",marginBottom:"40px",justifyContent:"center",width:'100%'}}><ButtonLoader/></div> }
+
                   <div className={style.submit}>
                     <Button color="#6CD6D6" content="Save" type="submit" />
                   </div>
@@ -104,5 +104,9 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
      </Formik>
   )
 }
-
-export default EditProfile
+const mapDispatchToProps = (dispatch)=>{
+  return{
+    update_Profile_Card : (user)=>{ dispatch (update_Profile_Card(user)) }
+  }
+}
+export default connect(null,mapDispatchToProps)(EditProfile)

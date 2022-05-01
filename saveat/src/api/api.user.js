@@ -39,8 +39,7 @@ export const updateUser = async(data) => {
     .then(res => {
             console.log(res)
             if (res.data.status === 'success') {
-                console.log('updated')
-                return "true";
+                return res.data.data.updatedUser;
             } else if (res.data.status === 'error') {
                 return res.data.error;
             }
@@ -100,7 +99,7 @@ export const verifyEmail = async(data) => {
     console.log("data",res)
     if (res.data.status === 'success') {
         console.log('email updated',res)
-        return true;
+        return res.data.data.updatedUser;
     } else if (res.data.status === 'error') {
         return res.data.error;
     }
