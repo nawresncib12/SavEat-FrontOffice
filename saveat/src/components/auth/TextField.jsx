@@ -86,7 +86,11 @@ export const TextField = ({ label, ...props }) => {
         className={classes.error}
         style={props.type === "email"  && props.form==="signin" ? { marginBottom: "20px" } : {}}
       >
-        {failed !== "" && <p>{failed}</p>}
+        {props.laoding  && <p style={{fontSize:"14px" , marginTop:'-3px'}}>Loader</p>}
+        {failed === "incorrect Password" && <p style={{fontSize:"14px" , marginTop:'-3px'}}>{failed}</p>}
+        {failed === "wrong code" && <p style={{fontSize:"16px" , margin:'0px' }}>{failed}</p>}
+        {failed !== "" && failed !== "incorrect Password" && failed !== "wrong code"   &&<p >{failed}</p>}
+
         {success !== "" && props.form==="signin" && <p style={{ color: "#4DAAAA" }}>{success}</p>}
         {failed === "" && <ErrorMessage name={field.name} />}
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './EditProfile.module.css'
+
 const EditProfile = () => {
   return (
     <div className={style.container}>

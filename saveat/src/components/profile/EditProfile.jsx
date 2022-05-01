@@ -7,6 +7,7 @@ import { Phone } from './phone/Phone'
 import { updateUser } from "../../api/api.user";
 import { loggedIn } from "../../api/api.user";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../UI/Loader";
 
  
 const EditProfile = () => {
@@ -35,7 +36,7 @@ useEffect(() => {
 
 }, [navigate,user])
 console.log(percent)
-if(!user) return  <>LOADER</> // put loader here
+if(!user) return ( <div className={style.container} style={{animation:"none"}}><Loader/></div>)
   return (
     <Formik
       initialValues={{
