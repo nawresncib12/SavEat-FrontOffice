@@ -6,17 +6,14 @@ import phoneImg from "../../assets/phone.svg"
 import addressImg from "../../assets/address.svg"
 import birthdayImg from "../../assets/birthday.svg"
 import { connect } from 'react-redux';
-
+import edit from '../../assets/edit.png'
 const ProfileCard = ({info}) => {
-    const [name, setName] = useState("stranger")
-    const [email, setEmail] = useState("ncubnawres04@gmail.com")
-    const [adress, setAdress] = useState("-")
-    const [birthday, setBirthday] = useState("-")
-    const [phone, setPhone] = useState("-")
+
     const [progressMessage, setProgressMessage] = useState("You are halfway through !")
     const [percent, setPercent] = useState(0)
     const [deal, setDeal] = useState(true)
     const [meal, setMeal] = useState(false)
+    const [avatars, setAvatars] = useState(false)
     const [foodBox, setFoodBox] = useState(true)
 
     const ref=useRef();
@@ -37,8 +34,48 @@ if(p*20!=percent)setPercent(20*p)
     <div className={style.container}>
         <div className={style.wrap}>
             <img src={logout} alt="logout" className={style.logout} />
+            {avatars&&<div className={style.avatars} >
+                        <div className={style.row}>
+                            <div className={style.column} style={{borderRadius:"10px 0 0 0 " }} onClick={()=>{setAvatars(false)}}>
+                                <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column}onClick={()=>{setAvatars(false)}}>
+                                <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column}style={{borderRadius:" 0 10px 0 0 " }} onClick={()=>{setAvatars(false)}} >
+                             <img src={avatar} alt="avatar" />
+                            </div>
+                        </div>
+                        <div className={style.row}>
+                            <div className={style.column}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+
+                            </div>
+                        </div>
+                        <div className={style.row}>
+                            <div className={style.column} style={{borderRadius:"0 0 0 10px  " }}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+                            </div>
+                            <div className={style.column} style={{borderRadius:" 0 0  10px 0 " }}onClick={()=>{setAvatars(false)}}>
+                            <img src={avatar} alt="avatar" />
+                            </div>
+                        </div>
+                        
+                    </div>}
             <div className={style.avatar}>
                 <img  className={style.img} src={avatar} alt="avatar" />
+                <div className={style.edit} onClick={()=>{setAvatars(!avatars)}} >
+                <img src={edit} alt="edit"  />
+                </div>
             </div>
             <div className={style.info}>
                 <div className={style.title}>
