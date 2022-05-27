@@ -7,6 +7,50 @@
     flex-direction: column;
 
     min-height: 700px;}
+    .edit{
+        position: absolute;
+        background-color: white;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotateZ(45deg);
+        right: 45%;
+        bottom: 7%;
+        cursor: pointer;
+    }
+    .avatars{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 60%;z-index: 10;
+        margin: auto;
+        top:25%;
+        border-radius: 30px;
+        
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+    }
+    .column{
+        height: 100%;
+        /* border: solid 1px black; */
+        width: 100%;
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
 .wrap{
     background-color: #4DAAAA;
     height: 88%;
@@ -141,6 +185,10 @@ margin-bottom: 0.5vw;
     justify-content: center;    
     flex-direction: column;
 }
+.column img{
+    width: 70%;
+    cursor: pointer;
+}
 .txt{
     margin-bottom: .3vw;
     font-size: 0.996092vw;
@@ -148,6 +196,7 @@ margin-bottom: 0.5vw;
 .details div {
     margin : 0.292968vw;
     font-size: 1vw;
+    text-align: center;
 }
 .contact img{
     width: 1.3vw;
