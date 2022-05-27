@@ -27,8 +27,85 @@ export const signUp = async(data) => {
             }
         })
         .catch(err => {
-
             return false;
+        });
+}
+export const updateUser = async(data) => {
+    const accessToken = localStorage.getItem('authToken');
+    return await axios.patch(`${api}/users/updateMe`, data, { headers: {
+        authorization: 'Bearer ' + accessToken
+    }
+    })
+    .then(res => {
+            console.log(res)
+            if (res.data.status === 'success') {
+                return res.data.data.updatedUser;
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {console.log(err)
+            return false;
+        });
+}
+export const updatePassword = async(data) => {
+    const accessToken = localStorage.getItem('authToken');
+    return await axios.patch(`${api}/users/updatePassword`, data, { headers: {
+        authorization: 'Bearer ' + accessToken
+    }
+})
+.then(res => {
+    console.log("data",res)
+    localStorage.setItem('authToken', res.data.token);
+    if (res.data.status === 'success') {
+        console.log('password updated')
+        return true;
+    } else if (res.data.status === 'error') {
+        return res.data.error;
+    }
+})
+.catch(err => {console.log(err)
+    return false;
+        });
+}
+export const updateEmail = async(data) => {
+    console.log("email data",data)
+    const accessToken = localStorage.getItem('authToken');
+    return await axios.patch(`${api}/users/updateEmail`, data, { headers: {
+        authorization: 'Bearer ' + accessToken
+    }
+})
+.then(res => {
+    console.log("data",res)
+    if (res.data.status === 'success') {
+        console.log('email sent',res)
+        return true;
+    } else if (res.data.status === 'error') {
+        return res.data.error;
+    }
+})
+.catch(err => {console.log(err)
+    return false;
+        });
+}
+export const verifyEmail = async(data) => {
+    console.log("email verif",data)
+    const accessToken = localStorage.getItem('authToken');
+    return await axios.patch(`${api}/users/verifyEmail`, data, { headers: {
+        authorization: 'Bearer ' + accessToken
+    }
+})
+.then(res => {
+    console.log("data",res)
+    if (res.data.status === 'success') {
+        console.log('email updated',res)
+        return res.data.data.updatedUser;
+    } else if (res.data.status === 'error') {
+        return res.data.error;
+    }
+})
+.catch(err => {console.log(err)
+    return false;
         });
 }
 
@@ -95,8 +172,8 @@ export const loggedIn = async() => {
             })
             .then(res => {
                 if (res.data.status === 'success') {
-
-                    return true
+                    
+                    return res.data.user
 
                 } else {
 
@@ -113,19 +190,6 @@ export const loggedIn = async() => {
 }
 
 
-// export const resetPassword = (email) => {
-//     return axios.post(`${api}/users/forgotPassword`, {email:email})
-//         .then(res => {
-//             if (res.status === 'success') {
-//                 return "true";
-//             } else if (res.status === 'error') {
-//                 return res.error;
-//             }
-//         })
-//         .catch(err => {
-//             return false;
-//         });
-// }
 
 export const resetPassword = async(password, params) => {
     console.log(password)

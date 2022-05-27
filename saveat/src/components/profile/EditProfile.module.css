@@ -21,7 +21,20 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    min-height: 700px;
+    animation: roadRunnerOut 0.5s;
 }
+
+
+
+@keyframes roadRunnerOut {
+    100% {
+      transform: translateX(0);
+    }
+    0% {
+      transform: translateX(-100vw) ;
+    }
+  }
 .formMiddle{
     width: 97%;
     height: 73%;

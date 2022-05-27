@@ -2,16 +2,20 @@ import React, { useEffect } from "react";
 import SideBar from "../components/profile/SideBar";
 import ProfileCard from "../components/profile/ProfileCard";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import EditProfile from "../components/profile/EditProfile";
-import EditSettings from "../components/profile/EditSettings";
-import Pereferences from "../components/profile/Pereferences";
-import Cart from "../components/profile/Cart";
-import Deals from "../components/profile/Deals";
-import Orders from "../components/profile/Orders";
-import ToggleButton from "../components/profile/toggle button/toggle";
+import {  useState } from "react";
+import EditProfile from '../components/profile/EditProfile';
+import EditSettings from '../components/profile/EditSettings';
+import Pereferences from '../components/profile/Pereferences';
+import Cart from '../components/profile/Cart';
+import Deals from '../components/profile/Deals';
+import Orders from '../components/profile/Orders';
+import ToggleButton from '../components/profile/toggle button/toggle'
+import useWindowSize from '../components/windowSize'
 import { loggedIn } from "../api/api.user";
+
 const Profile = () => {
+  const size = useWindowSize();
+
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
@@ -20,21 +24,26 @@ const Profile = () => {
       }
     }
     log();
-  }, [navigate]);
+      if(window.screen.width<650) setActive(-1);
+      else {setActive(preactive);      setphoneNav(false)
+      }
+  }, [window.screen.width,navigate])
+  
 
-  useEffect(() => {
-    if (window.screen.width < 650) setActive(-1);
-    else setActive(0);
-  }, [window.screen.width]);
+  const [active, setActive] = useState((window.screen.width>650)?0:-1)
+  const [preactive, setPrective] = useState(active)
+  const [phoneNav, setphoneNav] = useState(false)
 
-  const [active, setActive] = useState(window.screen.width > 650 ? 0 : -1);
-  const [phoneNav, setphoneNav] = useState(false);
+  const f = (x)=>{
+    if(x>=0){
+      setActive(x)
+      setPrective(x)
+    }
+    else{
+      setActive(-1-x)
+      setPrective(-1-x)
 
-  const f = (x) => {
-    if (x >= 0) setActive(x);
-    else {
-      setActive(-1 - x);
-      setphoneNav(true);
+      setphoneNav(true)
     }
   };
 
