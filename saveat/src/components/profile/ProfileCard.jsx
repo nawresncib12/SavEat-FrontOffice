@@ -1,11 +1,14 @@
 import React,{useState,useRef,useEffect} from 'react'
 import style from './ProfileCard.module.css'
 import avatar from '../../assets/avatar1.svg'
-import logout from '../../assets/logout.svg'
+import logOut from '../../assets/logout.svg'
 import phoneImg from "../../assets/phone.svg"
 import addressImg from "../../assets/address.svg"
 import birthdayImg from "../../assets/birthday.svg"
+import { logout } from '../../api/api.user'
+import { useNavigate } from 'react-router-dom'
 const ProfileCard = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState("stranger")
     const [email, setEmail] = useState("ncubnawres04@gmail.com")
     const [adress, setAdress] = useState("-")
@@ -22,10 +25,16 @@ const ProfileCard = () => {
 useEffect(()=> {
 ref.current.style.setProperty("--width",percent+"%");
 },[percent])
+const signout = async () => {
+    const res = await logout();
+    if (res) {
+      navigate("/login");
+    }
+  };
   return (
     <div className={style.container}>
         <div className={style.wrap}>
-            <img src={logout} alt="logout" className={style.logout} />
+            <img onClick={signout} src={logOut} alt="logout" className={style.logout} />
             <div className={style.avatar}>
                 <img  className={style.img} src={avatar} alt="avatar" />
             </div>
