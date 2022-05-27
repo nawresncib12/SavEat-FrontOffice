@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import SideBar from '../components/profile/SideBar'
-import ProfileCard from '../components/profile/ProfileCard'
+import React, { useEffect } from "react";
+import SideBar from "../components/profile/SideBar";
+import ProfileCard from "../components/profile/ProfileCard";
 import { useNavigate } from "react-router-dom";
 import {  useState } from "react";
 import EditProfile from '../components/profile/EditProfile';
@@ -14,17 +14,13 @@ import useWindowSize from '../components/windowSize'
 import { loggedIn } from "../api/api.user";
 
 const Profile = () => {
-  const [loading, setLoading] = useState(true);
   const size = useWindowSize();
 
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
       if (!(await loggedIn())) {
-        setLoading(false)
         navigate("/login");
-      }else{
-        setLoading(false)
       }
     }
     log();
@@ -49,21 +45,21 @@ const Profile = () => {
 
       setphoneNav(true)
     }
-  }
+  };
 
   return (
-    <div style={{display:"flex",height:"100%",justifyContent:"center"}}>
-      <ToggleButton fn = {f}/>
-        <SideBar fn = {f}/>
-        {(active===0)&&<EditProfile/>}
-        {(active===1)&&<EditSettings/>}
-        {(active===2)&&<Pereferences/>}
-        {(active===3)&&<Cart/>}
-        {(active===4)&&<Deals/>}
-        {(active===5)&&<Orders/>}
-        {!phoneNav&&<ProfileCard/>}
+    <div style={{ display: "flex", height: "100%", justifyContent: "center" }}>
+      <ToggleButton fn={f} />
+      <SideBar fn={f} />
+      {active === 0 && <EditProfile />}
+      {active === 1 && <EditSettings />}
+      {active === 2 && <Pereferences />}
+      {active === 3 && <Cart />}
+      {active === 4 && <Deals />}
+      {active === 5 && <Orders />}
+      {!phoneNav && <ProfileCard />}
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
