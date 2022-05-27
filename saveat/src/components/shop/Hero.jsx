@@ -2,7 +2,7 @@ import classes from "./Hero.module.css";
 import Button from "../../UI/Button";
 const Hero = () => {
   return (
-    <div className={classes.catalogueHero}>
+    <div className={classes.shopHero}>
       <div className={classes.leftHero}>
         <h1></h1>
         <p></p>
