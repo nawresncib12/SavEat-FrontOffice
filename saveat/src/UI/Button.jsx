@@ -7,7 +7,7 @@ export const Button = (props) => {
     <button
       type={props.type}
       className={classes.btn}
-      style={{ backgroundColor: props.color }}
+      style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
       onClick={props.onClick || nothing}
     >
       {props.content}
