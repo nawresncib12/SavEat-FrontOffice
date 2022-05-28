@@ -6,6 +6,8 @@ import { BoxContainer } from "../components/shop/BoxContainer";
 import Features from "../components/shop/Features";
 import Hero from "../components/shop/Hero";
 const Shop = () => {
+  const [scroll,setScroll]=useState(false);
+  const [shop,setShop]=useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
@@ -27,9 +29,9 @@ const Shop = () => {
       ) : (
         <>
           <div>
-              <Hero></Hero>
-              <Features></Features>
-              <BoxContainer />
+              <Hero setShop={setShop} setScroll={setScroll}></Hero>
+              <Features scroll={scroll} setScroll={setScroll}></Features>
+              <BoxContainer  shop={shop} setShop={setShop}/>
           </div>
           
         </>
