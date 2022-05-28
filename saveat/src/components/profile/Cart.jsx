@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import style from "./Cart.module.css";
 import cart from "../../common/data/cart.json";
-import avatar from "../../assets/avatar1.svg";
+import CartLine from './CartLine';
 import Button from "../../UI/Button";
 import CartModal from "./CartModal";
+import { Icon } from '@iconify/react';
 const Cart = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -14,21 +15,17 @@ const Cart = () => {
       </div>
       <div className={style.meriem}>
         {cart.map((box, index) => {
+          console.log(index)
           return (
-            <div key={index} className={style.cartBox}>
-              <div className={style.side}>
-                <div className={style.pic}>
-                  <img src={avatar} alt="" />
-                  <h2>
-                    {box.box.category + " "}
-                    {box.box.subcategory}
-                  </h2>
-                </div>
-                <div className={style.boxContent}></div>
-              </div>
-
-              <hr style={{ color: "#4DAAAA" }} />
+            
+            <div>
+              <CartLine box={box} index={index} />
+              {
+                index !== cart.length-1 && <hr />
+              }
+              
             </div>
+            
           );
         })}
         <Button

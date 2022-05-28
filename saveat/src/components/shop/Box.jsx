@@ -6,19 +6,7 @@ import { useState } from 'react';
 const Box = ({category,subcategory,price,stock,items}) => {
   
   const [addedBox,setAddedBox] = useState(false);
-  const [amount,setAmount]=useState(1);
-  const handleClick= () => {
-    setAddedBox(true)
-    setAmount(1)
-  }
-  const handleplus = () => {
-      setAmount(amount+1);
-  }
-  const handleminus = () => {
-      if(amount >0)
-        setAmount(amount-1);
-  }
-    return (
+  return (
     <div className={classes.box}>
         <h2 className={classes.title}>
             {subcategory+" "+category+" goods"} 
@@ -36,15 +24,10 @@ const Box = ({category,subcategory,price,stock,items}) => {
         {
             stock === "true" ? 
             <div>
-               { !addedBox || amount===0 ?
-               <Button color="#4DAAAA" content={"Add To Cart" } onClick={handleClick}/> :
-               <div className={classes.amount}>
-                   
-                   <Button color="#4DAAAA" content={" - "} onClick={handleminus}/>
-                   <p>{amount}</p>
-                   <Button color="#4DAAAA" content={" + "} onClick={handleplus} />
-               </div>
-               }
+              
+               <Button color="#4DAAAA" content={"Add To Cart" } /> :
+               
+               
             </div> : 
             <h5 className={classes.error}>Out Of Stock !</h5>
         }
