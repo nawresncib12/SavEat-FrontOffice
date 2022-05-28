@@ -1,0 +1,36 @@
+.cartBox .side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartBox .side .pic {
+    display: flex;
+    align-items: center;
+}
+
+.cartBox .side .pic img {
+    width: 90px;
+    height: 90px;
+}
+.cartBox .side .pic h2 {
+    font-weight: 550;
+    
+    font-size: 20px;
+}
+.cartBox .boxContent {
+  
+   
+}
+.cartBox .boxContent .price {
+    
+    color: #4DAAAA;
+    font-size: 20px;
+}
+
+.status {
+    color: #FFBCBC;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    text-align: start;
+}

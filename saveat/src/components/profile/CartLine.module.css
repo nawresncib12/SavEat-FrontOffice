@@ -1,0 +1,39 @@
+.cartBox .side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartBox .side .pic {
+    display: flex;
+    align-items: center;
+}
+
+.cartBox .side .pic img {
+    width: 90px;
+    height: 90px;
+}
+.cartBox .side .pic h2 {
+    font-weight: 550;
+    
+    font-size: 20px;
+}
+.cartBox .boxContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartBox .boxContent .price {
+    margin-right: 40px;
+}
+.cartBox .boxContent .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartBox .boxContent .options span {
+    margin: 0 10px;
+    font-size: 20px;
+}
+.cartBox .boxContent .options .trash {
+    margin-left: 20px;
+}
