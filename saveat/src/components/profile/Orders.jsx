@@ -3,10 +3,12 @@ import style from './Orders.module.css'
 import order from '../../common/data/order.json';
 import OrderLine from './OrderLine'
 const Orders = () => {
+  
   return (
     <div className={style.container}>
         <div className={style.title}><h1>ORDERS</h1> </div>
         <div className={style.meriem}>
+      
         {order.map((orderItem, index) => {
     
           return (

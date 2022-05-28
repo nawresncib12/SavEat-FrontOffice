@@ -22,7 +22,7 @@ const Cart = ({box,index}) => {
              <div key={index} className={style.cartBox}>
               <div className={style.side}>
                 <div className={style.pic}>
-                  <img src={avatar} alt="" />
+                  
                   <h2>
                     {box.box.category + " "}
                     {box.box.subcategory+ " Box"}

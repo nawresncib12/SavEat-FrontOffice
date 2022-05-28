@@ -7,6 +7,7 @@ import CartModal from "./CartModal";
 import { Icon } from '@iconify/react';
 const Cart = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <div className={style.container}>
       {open && <CartModal setOpen={setOpen}></CartModal>}
@@ -14,6 +15,15 @@ const Cart = () => {
         <h1>CART</h1>
       </div>
       <div className={style.meriem}>
+       <div className={style.headers}>
+         <h2>Name </h2>
+         <div className={style.headerOpt}>
+         <h2 className={style.price}>Price</h2>
+         <h2>Amount</h2>
+         </div>
+         
+
+       </div>
         {cart.map((box, index) => {
           console.log(index)
           return (

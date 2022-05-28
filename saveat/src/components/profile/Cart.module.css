@@ -29,6 +29,29 @@
     }
 }
 
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerOpt {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.headers h2 {
+    color:#FFBCBC ;
+    font-size: 25px;
+    font-weight: 550;
+    
+}
+.headers .price {
+    
+    font-size: 25px;
+    font-weight: 550;
+    margin-right: 40px;
+    
+}
 .meriem {
     width: 97%;
     height: 80%;
