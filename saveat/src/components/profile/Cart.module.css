@@ -52,6 +52,13 @@
     
     align-items: center;
 }
+.cartBox .side .measure {
+    display: flex;
+    align-items: center;
+}
+.cartBox .side .measure h3 {
+    margin: 0 10px;
+}
 @media only screen and (max-width: 800px) {
   
     .container{
