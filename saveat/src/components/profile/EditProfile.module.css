@@ -1,20 +1,17 @@
-.title{
+.title {
     color: #4DAAAA;
     position: absolute;
     top: 4.54vw;
     left: 2.34vw;
-    
-    
 }
-.title h1{
+
+.title h1 {
     font-weight: 450;
     font-size: 2.2vw;
     letter-spacing: 0.1vw;
-    
-
 }
 
-.container{
+.container {
     width: 54vw;
     height: 100vh;
     position: relative;
@@ -25,62 +22,54 @@
     animation: roadRunnerOut 0.5s;
 }
 
-
-
 @keyframes roadRunnerOut {
     100% {
-      transform: translateX(0);
+        transform: translateY(0);
     }
     0% {
-      transform: translateX(-100vw) ;
+        transform: translateY(-100vh);
     }
-  }
-.formMiddle{
+}
+
+.formMiddle {
     width: 97%;
     height: 73%;
-    
-    padding:0  2.34vw;
-
-  
-   
-
+    padding: 0 2.34vw;
 }
+
 .inputGroup {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap:3%;
+    grid-gap: 3%;
 }
+
 .inputGroupA {
     display: grid;
     grid-template-columns: 1fr;
 }
+
 .submit {
-   margin-top: 2vw;
-    
+    margin-top: 2vw;
 }
+
 @media only screen and (max-width: 800px) {
-  
-    .container{
+    .container {
         width: 66vw;
     }
 }
+
 @media only screen and (max-width: 650px) {
-  
-    .container{
+    .container {
         width: 90vw;
     }
-
-
-.title{
-    color: #4DAAAA;
-    position: absolute;
-    top: 73px;
-    left: 13px;
-}
-.title h1{
-    font-weight: 350;
-    font-size: 2em;
-}
-
-
+    .title {
+        color: #4DAAAA;
+        position: absolute;
+        top: 73px;
+        left: 13px;
+    }
+    .title h1 {
+        font-weight: 350;
+        font-size: 2em;
+    }
 }

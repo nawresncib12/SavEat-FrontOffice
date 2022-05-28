@@ -1,58 +1,133 @@
-[
-    {
-        "box":{
-            "id":1,
-            "category":"canned",
-            "subcategory":"Regular",
-            "price":15,
-            "stock":"true",
-            
-            "items":[
-                {
-                    "id":1,
-                    "name":"potato",
-                    "category":"canned"
+[{
+        "box": {
+            "id": 1,
+            "category": "canned",
+            "subcategory": "Regular",
+            "price": 15,
+            "stock": "true",
+
+            "items": [{
+                    "id": 1,
+                    "name": "potato",
+                    "category": "canned"
                 },
                 {
-                    "id":2,
-                    "name":"potato",
-                    "category":"canned"
+                    "id": 2,
+                    "name": "potato",
+                    "category": "canned"
                 },
                 {
-                    "id":3,
-                    "name":"potato",
-                    "category":"canned"
+                    "id": 3,
+                    "name": "potato",
+                    "category": "canned"
                 }
             ]
         },
-        "amount":1
+        "amount": 1
     },
     {
-        "box":{
-            "id":1,
-            "category":"canned",
-            "subcategory":"Regular",
-            "price":15,
-            "stock":"true",
-            
-            "items":[
-                {
-                    "id":1,
-                    "name":"potato",
-                    "category":"canned"
+        "box": {
+            "id": 1,
+            "category": "canned",
+            "subcategory": "Regular",
+            "price": 15,
+            "stock": "true",
+
+            "items": [{
+                    "id": 1,
+                    "name": "potato",
+                    "category": "canned"
                 },
                 {
-                    "id":2,
-                    "name":"potato",
-                    "category":"canned"
+                    "id": 2,
+                    "name": "potato",
+                    "category": "canned"
                 },
                 {
-                    "id":3,
-                    "name":"potato",
-                    "category":"canned"
+                    "id": 3,
+                    "name": "potato",
+                    "category": "canned"
                 }
             ]
         },
-        "amount":3
+        "amount": 3
+    }, {
+        "box": {
+            "id": 1,
+            "category": "canned",
+            "subcategory": "Regular",
+            "price": 15,
+            "stock": "true",
+
+            "items": [{
+                    "id": 1,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 2,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 3,
+                    "name": "potato",
+                    "category": "canned"
+                }
+            ]
+        },
+        "amount": 3
+    }, {
+        "box": {
+            "id": 1,
+            "category": "canned",
+            "subcategory": "Regular",
+            "price": 15,
+            "stock": "true",
+
+            "items": [{
+                    "id": 1,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 2,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 3,
+                    "name": "potato",
+                    "category": "canned"
+                }
+            ]
+        },
+        "amount": 3
+    }, {
+        "box": {
+            "id": 1,
+            "category": "canned",
+            "subcategory": "Regular",
+            "price": 15,
+            "stock": "true",
+
+            "items": [{
+                    "id": 1,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 2,
+                    "name": "potato",
+                    "category": "canned"
+                },
+                {
+                    "id": 3,
+                    "name": "potato",
+                    "category": "canned"
+                }
+            ]
+        },
+        "amount": 3
     }
 ]
