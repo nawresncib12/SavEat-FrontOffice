@@ -1,7 +1,7 @@
 import classes from "./Features.module.css";
 import sideImage from "../../assets/hayer2.png";
-import { useState } from "react";
-const Features = () => {
+import { useState,useEffect,useRef } from "react";
+const Features = ({setScroll,scroll}) => {
   const steps = [
     "Like a scene in a movie or a verse in a song.Lorem ipsum dolor Lorem ipsum it, sed do eiusmod tempor. ",
     "Paragraphs are the building blocks of any good .Lorem ipsum dolor Lorem ipsum it, sed do eiusmod tempor.",
@@ -16,8 +16,18 @@ const Features = () => {
       setStep(step + 1);
     }
   };
+  
+  const features = useRef(null);
+  const executeScroll = () =>
+    features.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    useEffect(() => {
+      if (scroll) {
+        executeScroll();
+        setScroll(false);
+      }
+    }, [scroll, setScroll]);
   return (
-    <div className={classes.features}>
+    <div className={classes.features} ref={features}>
       <div className={classes.sideImage}>
         <img src={sideImage} alt="how" />
       </div>
