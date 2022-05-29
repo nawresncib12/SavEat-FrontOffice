@@ -1,0 +1,44 @@
+.homeHero {
+    position: relative;
+}
+
+.homeHero .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px 25px 100px;
+}
+
+.homeHero h3 {
+    color: #6CD6D6;
+    font-size: calc(25px + 1vmin);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.homeHero h1 {
+    color: #4DAAAA;
+    font-size: calc(35px + 1vmin);
+    text-transform: uppercase;
+}
+
+.homeHero p {
+    color: #A5A5A5;
+    font-size: calc(20px + 1vmin);
+    margin: calc(5px + 1vmin) 0;
+    font-weight: bolder;
+}
+
+.homeHero .button {
+    padding-top: calc(20px + 1vmin);
+}
+
+.homeHero .button button {
+    padding: calc(5px + 0.5vmin);
+}
+
+@media only screen and (max-width: 1000px) {
+    .homeHero .info {
+        padding: 0px 50px 10px 50px;
+    }
+}
