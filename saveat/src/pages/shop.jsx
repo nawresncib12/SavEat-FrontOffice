@@ -2,6 +2,7 @@ import { loggedIn } from "../api/api.user";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LoaderPage } from "./loader";
+import NavbarHead from "../components/home/NavbarHead";
 import { BoxContainer } from "../components/shop/BoxContainer";
 import Features from "../components/shop/Features";
 import Hero from "../components/shop/Hero";
@@ -29,6 +30,7 @@ const Shop = () => {
       ) : (
         <>
           <div>
+            <NavbarHead></NavbarHead>
               <Hero setShop={setShop} setScroll={setScroll}></Hero>
               <Features scroll={scroll} setScroll={setScroll}></Features>
               <BoxContainer  shop={shop} setShop={setShop}/>
