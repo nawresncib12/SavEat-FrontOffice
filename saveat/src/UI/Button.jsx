@@ -1,14 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import classes from "./Button.module.css";
+import   "./Button.module.css";
 
 export const Button = (props) => {
   const nothing = () => {};
   return (
-    <button
+    <button 
+
       type={props.type}
-      className={classes.btn}
+      key={props.clicked}
+      className = {classes.btn  }   
       style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
-      onClick={props.onClick || nothing}
+      onClick={   props.onClick || nothing}
     >
       {props.content}
       {props.children}
