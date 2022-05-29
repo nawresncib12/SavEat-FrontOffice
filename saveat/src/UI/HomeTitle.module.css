@@ -2,11 +2,26 @@
     font-size: calc(35px + 1vmin);
     color: #4DAAAA;
     display: inline-block;
+    padding-bottom: 20px;
 }
 
-.zigzag {
-    height: 30px;
-    background: linear-gradient(135deg, white 35%, transparent 35%) -15px 0, linear-gradient(225deg, white 35%, transparent 25%) -15px 0, linear-gradient(315deg, white 35%, transparent 25%), linear-gradient(45deg, white 35%, transparent 25%);
-    background-size: 30px 30px;
-    background-color: #FFBCBC;
+.bordered {
+    background-color: lighten(#FFBCBC, 30);
+    position: relative;
+}
+
+.bordered:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+
+.bordered:before {
+    background: linear-gradient(135deg, transparent, transparent 75%, #FFBCBC 75%, #FFBCBC), linear-gradient(225deg, transparent, transparent 75%, #FFBCBC 75%, #FFBCBC), linear-gradient(45deg, transparent, transparent 75%, #FFBCBC 75%, #FFBCBC), linear-gradient(315deg, transparent, transparent 75%, #FFBCBC 75%, #FFBCBC);
+    background-position: 10px 10px, 10px 10px, 0 10px, 0 10px;
+    background-size: 20px 20px;
+    left: 0;
+    height: 20px;
+    width: 100%;
 }
