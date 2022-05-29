@@ -30,6 +30,7 @@ const Cart = ({boxes}) => {
             
           );
         })}
+
        {(boxes.length>0 )? <Button
           onClick={() => {
             setOpen(true);

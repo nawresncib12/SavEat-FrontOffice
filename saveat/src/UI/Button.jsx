@@ -13,11 +13,13 @@ export const Button = (props) => {
       key={props.clicked}
       className = {(props.shake&&clicked) ? `${classes.btn } ${classes.shake}`:classes.btn   }   
       style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
-      onClick={ ()=>{ if(!clicked) {
+      onClick={ ()=>{ if(!clicked&&props.shake) {
         setClicked(true)
       
         
-        {props.onClick()||nothing();setClicked(true)}}
+        {props.onClick()||nothing();setClicked(true)}}else{
+          props.onClick()||nothing();
+        }
           }    }
     >
       {props.content}
