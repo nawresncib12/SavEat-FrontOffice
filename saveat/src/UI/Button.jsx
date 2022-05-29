@@ -4,15 +4,21 @@ import classes from "./Button.module.css";
 import   "./Button.module.css";
 
 export const Button = (props) => {
+  const [clicked, setClicked] = useState(false)
   const nothing = () => {};
   return (
     <button 
 
       type={props.type}
       key={props.clicked}
-      className = {classes.btn  }   
+      className = {(props.shake&&clicked) ? `${classes.btn } ${classes.shake}`:classes.btn   }   
       style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
-      onClick={   props.onClick || nothing}
+      onClick={ ()=>{ if(!clicked) {
+        setClicked(true)
+      
+        
+        {props.onClick()||nothing();setClicked(true)}}
+          }    }
     >
       {props.content}
       {props.children}

@@ -1,50 +1,36 @@
 
 import { ADD_TO_CART } from "../actions/actionTypes"
+import { REMOVE_FROM_CART } from "../actions/actionTypes"
+import { INCREMENT_QUANTITY } from "../actions/actionTypes"
 
-const myState = {
-    box_name : "",
-    id : "",
-    price:0,
-    quantity:0
-
-}
+const myState = []
 
 
 
 export  function cartReducer( state=myState ,action){
-let tmp=[]
 switch (action.type){
     case ADD_TO_CART:{
-        console.log(state);
-    //    var pos =  state.findIndex((el)=> { console.log(el.product.name); return el.product.name=== action.productInfo.name})
-    //     if(pos!=-1) {
-    //         console.log("includes");
-    //          tmp= [...state] 
-    //          tmp[pos].quantity = (tmp[pos].quantity)*1+ action.quantity*1
-    //     console.log(tmp);
-
-           
-    //         return tmp
-    //     }           
-       
-    //     else
-    //     return[
-    //             ...state,
-    //             {
-    //                 product:action.productInfo,
-    //                 quantity:action.quantity
-    //             }
-    //         ]
-        
+        let tmp = [...state] 
+        console.log(action.productInfo);
+      tmp.push(action.productInfo)
+        console.log(state)
+        return tmp
         }
-    // case REMOVE_FROM_CART : {
-    //     tmp= [...state] 
-    //     console.log(tmp,"tmp");
-    //     console.log(action.name,"name");
-    //       if(tmp.findIndex((el)=> { console.log(el.product.name,"el name"); return el.product.name === action.name})!= -1)
-    //       tmp.splice(tmp.findIndex((el)=> {  return el.product.name=== action.name}),1)
-    //     return tmp
-    // } 
+    case REMOVE_FROM_CART : {
+        console.log(state)
+        let tmp= [...state] 
+        tmp= tmp.filter(e=>   e.id!==action.id)
+
+         return tmp
+    } 
+    case INCREMENT_QUANTITY: {
+        console.log(action)
+        let tmp= [...state] 
+        let i= tmp.findIndex(e=>   e.id===action.id)
+        tmp[i].quantity+= action.step*1
+
+        return tmp
+    } 
 
 
     default : {

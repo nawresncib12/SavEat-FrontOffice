@@ -1,6 +1,8 @@
 import  {UPDATE_PROFILE_CARD} from "../actions/actionTypes"
 import  {UPDATE_EMAIL} from "../actions/actionTypes"
 import { ADD_TO_CART } from "./actionTypes"
+import { REMOVE_FROM_CART } from "./actionTypes"
+import { INCREMENT_QUANTITY  } from "./actionTypes"
 
 export function update_Profile_Card(data){ 
     return {
@@ -14,10 +16,27 @@ export function update_email(data){
         data
     }
 }
-export function addToCart(productInfo,quantity){ //action creator
+export function addToCart(productInfo){ 
     return {
         type :ADD_TO_CART,
         productInfo,
-        quantity
+        
+    }
+}
+
+export function removeFromCart(id){ 
+    return {
+        type : REMOVE_FROM_CART,
+        id 
+        
+    }
+}
+export function increment_quantity(id,step){ 
+    console.log("zstepz",step)
+    return {
+        type : INCREMENT_QUANTITY,
+        id ,
+        step
+        
     }
 }
