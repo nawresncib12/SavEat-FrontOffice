@@ -16,7 +16,7 @@
 }
 
 .homeNavbarHead .wave {
-    transform: rotate(180deg);
+    margin-top: -80px;
 }
 
 .homeNavbarHead .wave.hide {
@@ -158,5 +158,8 @@ h3.blue {
         top: 0;
         left: 0;
         padding: 10px 50px 10px 50px;
+    }
+    .homeNavbarHead .wave {
+        margin-top: 0px;
     }
 }

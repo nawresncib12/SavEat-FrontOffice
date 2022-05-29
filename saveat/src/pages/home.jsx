@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LoaderPage } from "./loader";
 import NavbarHead from "../components/home/NavbarHead";
+import Hero from "../components/home/Hero";
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -25,12 +26,7 @@ const Home = () => {
       ) : (
         <>
           <NavbarHead></NavbarHead>
-          <p>hi hi</p>
-          <p>hi hi</p>
-          <p>hi hi</p>
-          <p>hi hi</p>
-          <p>hi hi</p>
-          <p>hi hi</p>
+          <Hero></Hero>
         </>
       )}
     </>
