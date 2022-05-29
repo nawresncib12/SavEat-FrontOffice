@@ -1,0 +1,54 @@
+.boxesHome {
+    padding: 50px 100px 100px 100px;
+    background: linear-gradient(90deg, rgba(44, 58, 58, 0.65) 0%, rgba(44, 58, 58, 0.65) 100%), url("../../assets/food.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.boxesHome .boxes {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxesHome .wave {
+    width: 100vw;
+    position: absolute;
+    top: -150px;
+    left: 0;
+    z-index: 1;
+    transform: rotate(180deg);
+}
+
+.boxesHome .boxes .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    z-index: 5;
+}
+
+.welcome .button {
+    width: 50%;
+}
+
+.title h1 {
+    padding-top: 50px;
+    z-index: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+    .boxesHome {
+        padding: 50px 50px 100px 50px;
+    }
+    .boxesHome .wave {
+        top: -50px;
+    }
+}
