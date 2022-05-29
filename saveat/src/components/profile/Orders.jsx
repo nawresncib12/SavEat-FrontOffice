@@ -20,13 +20,13 @@ const Orders = () => {
         <div className={style.title}><h1>ORDERS</h1> </div>
         <div className={style.meriem}>
         {orders.map((orderItem,index) => {
-        console.log("ii",index)
           return (
             
-            <div>
+            <div key={orderItem._id}>
               <OrderLine order={orderItem} index={index} />
               {
-                index!== order.length-1 && <hr />
+                // index!== order.length-1 &&
+                 <hr />
               }
               
             </div>

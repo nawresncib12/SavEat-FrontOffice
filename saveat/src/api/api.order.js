@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { api } from "./config"
 export const addOrder = async(data) => {
-    console.log(data)
     const accessToken = localStorage.getItem('authToken');
 
     return await axios.post(`${api}/orders/addOrder`, data ,  { headers: {
@@ -9,7 +8,6 @@ export const addOrder = async(data) => {
     }
 })
         .then(res => {
-            console.log(res)
             if (res.data.status === 'success') {
                 return res.data
 
@@ -30,7 +28,7 @@ export const getMyOrders = async() => {
     }
 })
         .then(res => {
-            console.log(res)
+            
             if (res.data.status === 'success') {
                 return res.data
 

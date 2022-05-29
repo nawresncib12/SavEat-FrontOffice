@@ -46,7 +46,7 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
     onSubmit={async(values) => {
       setLoading(true) ;setUpdatedUser(false  );        
       const usr = await updateUser(values)
-      if (usr) {setLoading(false); setUpdatedUser(true);console.log(usr);update_Profile_Card(usr)}
+      if (usr) {setLoading(false); setUpdatedUser(true);update_Profile_Card(usr)}
     }}
     >
     {(formik) => (
@@ -91,7 +91,7 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
                   {loading && <div style={{height:"10px" ,display:"flex",alignItems:"center",marginBottom:"40px",justifyContent:"center",width:'100%'}}><ButtonLoader/></div> }
 
                   <div className={style.submit}>
-                    <Button color="#6CD6D6" content="Save" type="submit" />
+                    <Button color="#6CD6D6" content="Save" type="submit"  onClick={()=>{}}/>
                   </div>
             </Form>
 

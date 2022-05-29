@@ -6,10 +6,9 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/actions';
 
-const Box = ({id,category,subcategory,price,stock,items,addToCart,shake}) => {
-    console.log("stock",stock)
+const Box = ({id,category,subcategory,price,stock,items,addToCart}) => {
 
-  const [addedBox,setAddedBox] = useState(false);
+
   return (
     <div className={classes.box}>
         <h2 className={classes.title}>
@@ -19,9 +18,9 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,shake}) => {
         <h4 className={classes.note}>May Contain :</h4>
         <p className={classes.items}>
             {
-                items.map((item) => {
-                    return item.name+" ";
-                })
+                // items.map((item) => {
+                //     return item.name+" ";
+                // })
             }
         </p>
         <h4 className={classes.price}>{price+" "}DT</h4>
@@ -30,7 +29,7 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,shake}) => {
             <div>
               
                <Button shake={true} color="#4DAAAA" content={"Add To Cart" }  onClick={()=>{ 
-                   let quantity=1; console.log(category,subcategory,price,stock,items,id);
+                   let quantity=1; 
                if(stock) addToCart({category,subcategory,price,items,id,quantity})
             }}/> 
                
