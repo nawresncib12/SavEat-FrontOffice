@@ -30,8 +30,8 @@ return (
     <div ref={boxContainer} className={classes.boxContainer}>
       {box.map((box) => {
         return (
-          <div id={box.id} className={classes.boxItem}>
-            <Box
+          <div key={box._id} id={box._id} className={classes.boxItem} >
+            <Box 
               category={box.category}
               subcategory={box.subCategory}
               stock={box.stock}
