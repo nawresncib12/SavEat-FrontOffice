@@ -38,6 +38,7 @@ return (
               items={box.items}
               price={box.price}
               id={box._id}
+              shake={true}
             />
           </div>
         );

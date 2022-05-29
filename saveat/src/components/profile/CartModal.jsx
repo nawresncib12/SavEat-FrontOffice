@@ -118,7 +118,7 @@ const CartModal = (props) => {
                             <p className={classes.quntity}>
                               x{element.quantity}
                             </p>
-                            <p className={classes.price}>{element.price}</p>
+                            <p className={classes.price}>{element.price} Dt</p>
                           </div>
                         );
                       })}

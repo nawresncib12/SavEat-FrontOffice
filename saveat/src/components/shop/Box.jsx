@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/actions';
 
-const Box = ({id,category,subcategory,price,stock,items,addToCart,amount}) => {
+const Box = ({id,category,subcategory,price,stock,items,addToCart,shake}) => {
     console.log("stock",stock)
 
   const [addedBox,setAddedBox] = useState(false);
@@ -29,9 +29,10 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,amount}) => {
             stock > 0 ? 
             <div>
               
-               <Button  color="#4DAAAA" content={"Add To Cart" }  onClick={()=>{ let quantity=1; console.log(category,subcategory,price,stock,items,id);
+               <Button shake={true} color="#4DAAAA" content={"Add To Cart" }  onClick={()=>{ 
+                   let quantity=1; console.log(category,subcategory,price,stock,items,id);
                if(stock) addToCart({category,subcategory,price,items,id,quantity})
-            }}/> :
+            }}/> 
                
                
             </div> : 
