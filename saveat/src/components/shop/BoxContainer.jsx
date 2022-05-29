@@ -27,6 +27,7 @@ export const BoxContainer = ({ setShop, shop }) => {
               stock={box.stock}
               items={box.items}
               price={box.price}
+              id={box.id}
             />
           </div>
         );

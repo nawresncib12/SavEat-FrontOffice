@@ -7,6 +7,8 @@ import { Formik, Form } from "formik";
 import { loggedIn } from "../../api/api.user";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { connect } from 'react-redux';
+
 import * as Yup from "yup";
 const Backdrop = (props) => {
   return (
@@ -147,4 +149,12 @@ const CartModal = (props) => {
   );
 };
 
-export default CartModal;
+
+const mapStateToProps=(state)=>{
+  return {
+      boxes: state.cartReducer
+  }
+}
+
+
+export default  connect(mapStateToProps)(CartModal);

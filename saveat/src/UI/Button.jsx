@@ -4,6 +4,7 @@ import classes from "./Button.module.css";
 import   "./Button.module.css";
 
 export const Button = (props) => {
+  const [clicked, setClicked] = useState(false)
   const nothing = () => {};
   return (
     <button 
@@ -12,7 +13,8 @@ export const Button = (props) => {
       key={props.clicked}
       className = {classes.btn  }   
       style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
-      onClick={   props.onClick || nothing}
+      onClick={ ()=>{  if(!clicked) {props.onClick();setClicked(true)}}
+    }
     >
       {props.content}
       {props.children}

@@ -4,8 +4,10 @@ import cart from "../../common/data/cart.json";
 import CartLine from './CartLine';
 import Button from "../../UI/Button";
 import CartModal from "./CartModal";
+import { connect } from 'react-redux';
+
 import { Icon } from '@iconify/react';
-const Cart = () => {
+const Cart = ({boxes}) => {
   const [open, setOpen] = useState(false);
   return (
     <div className={style.container}>
@@ -14,8 +16,7 @@ const Cart = () => {
         <h1>CART</h1>
       </div>
       <div className={style.meriem}>
-        {cart.map((box, index) => {
-          console.log(index)
+        {boxes.map((box, index) => {
           return (
             
             <div>
@@ -28,17 +29,24 @@ const Cart = () => {
             
           );
         })}
-        <Button
+       {(boxes.length>0 )? <Button
           onClick={() => {
             setOpen(true);
           }}
           color="#4DAAAA"
         >
           Submit
-        </Button>
+        </Button> : <h2 style={{textAlign:"center"}}>
+          your cart is empty
+        </h2>
+          }
       </div>
     </div>
   );
 };
-
-export default Cart;
+const mapStateToProps=(state)=>{
+  return {
+      boxes: state.cartReducer
+  }
+}
+export default  connect(mapStateToProps)(Cart);

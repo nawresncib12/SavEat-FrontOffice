@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import style from "./CartLine.module.css";
 import avatar from "../../assets/avatar1.svg";
 import { Icon } from '@iconify/react';
-const Cart = ({box,index}) => {
+import Box from "../shop/Box";
+import { removeFromCart } from '../redux/actions/actions';
+import { connect } from 'react-redux';
+
+const Cart = ({box,index,removeFromCart}) => {
   
   const [amount,setAmount] = useState(1);
-  const [price,setPrice] = useState(box.box.price)
+  const [price,setPrice] = useState(box.price)
   const handlePlus = () => {
       setAmount(amount+1);
       setPrice(price*2)
@@ -24,8 +28,8 @@ const Cart = ({box,index}) => {
                 <div className={style.pic}>
                   <img src={avatar} alt="" />
                   <h2>
-                    {box.box.category + " "}
-                    {box.box.subcategory+ " Box"}
+                    {box.category + " "}
+                    {box.subcategory+ " Box"}
                   </h2>
                 </div>
                 <div className={style.boxContent}>
@@ -37,7 +41,7 @@ const Cart = ({box,index}) => {
                     <span>{amount}</span>
                     <Icon icon="akar-icons:circle-plus" color="#4DAAAA" width="25px" height="25px" style={{cursor:"pointer"}} onClick={handlePlus}/>
                     <div className={style.trash}>
-                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} />
+                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} onClick={()=>{removeFromCart(box.id);console.log("delete",box.id)}} />
                     </div>
                     
                   </div>
@@ -53,4 +57,10 @@ const Cart = ({box,index}) => {
 
 };
 
-export default Cart;
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    removeFromCart : (id)=> dispatch(removeFromCart(id))
+  }
+}
+
+export default  connect(null,mapDispatchToProps)(Cart);
