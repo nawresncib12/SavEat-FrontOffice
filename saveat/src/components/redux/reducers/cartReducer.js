@@ -1,6 +1,7 @@
 
 import { ADD_TO_CART } from "../actions/actionTypes"
 import { REMOVE_FROM_CART } from "../actions/actionTypes"
+import { INCREMENT_QUANTITY } from "../actions/actionTypes"
 
 const myState = []
 
@@ -18,10 +19,17 @@ switch (action.type){
     case REMOVE_FROM_CART : {
         console.log(state)
         let tmp= [...state] 
-        tmp.filter(e=> {  console.log(e.id+"===" +action.id) ; return e.id===action.id})
-        console.log("tmp",tmp)
+        tmp= tmp.filter(e=>   e.id!==action.id)
 
          return tmp
+    } 
+    case INCREMENT_QUANTITY: {
+        console.log(action)
+        let tmp= [...state] 
+        let i= tmp.findIndex(e=>   e.id===action.id)
+        tmp[i].quantity+= action.step*1
+
+        return tmp
     } 
 
 

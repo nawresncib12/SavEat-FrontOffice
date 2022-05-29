@@ -8,7 +8,7 @@ import { loggedIn } from "../../api/api.user";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
-
+import { addOrder } from "../../api/api.order";
 import * as Yup from "yup";
 const Backdrop = (props) => {
   return (
@@ -22,6 +22,7 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
+
   return (
     <div className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
@@ -31,15 +32,12 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("overlays");
 
 const CartModal = (props) => {
-  
-  const elements = [
-    { name: "Special mixed goods box", quantity: 2 },
-    { name: "Regular fresh goods box", quantity: 5 },
-    { name: "Regular canned goods box", quantity: 1 },
-    { name: "Special fresh goods box", quantity: 2 },
-  ];
-  const submitCheckout = (values) => {
-    console.log(values);
+
+  const submitCheckout = async(values) => {
+    const boxes_ids=[]
+    if(props.boxes) (props.boxes).map(e=>{ boxes_ids.push(e.id)})
+    const res =await addOrder({customer_address:values.address,customer_phone:values.phone, total:props.total,boxes:boxes_ids })
+
   };
   const validate = Yup.object({
     phone: Yup.string()
@@ -98,8 +96,8 @@ const CartModal = (props) => {
             <h2>Checkout</h2>
             <Formik
               initialValues={{
-                phone: "",
-                address: "",
+                phone: props.info.phone,
+                address: props.info.address,
               }}
               validationSchema={validate}
               onSubmit={(values) => {
@@ -113,29 +111,29 @@ const CartModal = (props) => {
                     <TextField label="Address" name="address" type="text" />
                     <div className={classes.order}>
                       <h3>Order Summary</h3>
-                      {elements.map((element, index) => {
+                      {props.boxes.map((element, index) => {
                         return (
                           <div key={index} className={classes.element}>
-                            <p className={classes.name}>{element.name}</p>
+                            <p className={classes.name}>{element.category} {element.subcategory} goods box</p>
                             <p className={classes.quntity}>
                               x{element.quantity}
                             </p>
-                            <p className={classes.price}>10 Dt</p>
+                            <p className={classes.price}>{element.price}</p>
                           </div>
                         );
                       })}
                       <div className={classes.line}></div>
                       <div className={classes.element}>
-                        <p className={classes.name}>Total</p>
+                        <p className={classes.name}>total</p>
                         <p className={classes.quntity}></p>
-                        <p className={classes.price}>40 Dt</p>
+                        <p className={classes.price}>{props.total} Dt</p>
                       </div>
                     </div>
                     <h5 className={classes.note}>
                       Lorem ipsum lorem ipsum lorem lorem lorem lorem.
                     </h5>
                     <div className={classes.submit}>
-                      <Button color="#4DAAAA" content="Submit" type="submit" />
+                      <Button color="#4DAAAA" content="Submit" type="submit" onClick={()=>{}} />
                     </div>
                   </Form>
                 </div>
@@ -152,7 +150,10 @@ const CartModal = (props) => {
 
 const mapStateToProps=(state)=>{
   return {
-      boxes: state.cartReducer
+      boxes: state.cartReducer,
+      total : state.cartReducer.reduce((a,b)=>{return a+b.price*b.quantity},0),
+      info: state.profileCardReducer,
+
   }
 }
 

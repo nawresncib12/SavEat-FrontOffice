@@ -12,7 +12,7 @@ const Order = ({order,index}) => {
               <div className={style.side}>
                 <div className={style.pic}>
                   <h2>
-                    {"Order N° "+order.order_num}
+                    {"Order N° "+ (index*1+1)}
                     
                   </h2>
                 </div>

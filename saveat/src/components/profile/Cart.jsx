@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 
 import { Icon } from '@iconify/react';
 const Cart = ({boxes}) => {
+  console.log("boxes",boxes)
   const [open, setOpen] = useState(false);
   return (
     <div className={style.container}>
@@ -17,7 +18,7 @@ const Cart = ({boxes}) => {
       </div>
       <div className={style.meriem}>
         {boxes.map((box, index) => {
-          return (
+          if(boxes.length>0 )return (
             
             <div>
               <CartLine box={box} index={index} />

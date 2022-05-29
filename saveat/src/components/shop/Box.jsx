@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/actions';
 
-const Box = ({id,category,subcategory,price,stock,items,addToCart}) => {
+const Box = ({id,category,subcategory,price,stock,items,addToCart,amount}) => {
+    console.log("stock",stock)
 
   const [addedBox,setAddedBox] = useState(false);
   return (
@@ -25,11 +26,11 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart}) => {
         </p>
         <h4 className={classes.price}>{price+" "}DT</h4>
         {
-            stock === "true" ? 
+            stock > 0 ? 
             <div>
               
-               <Button  color="#4DAAAA" content={"Add To Cart" }  onClick={()=>{  console.log(category,subcategory,price,stock,items,id);
-               if(stock) addToCart({category,subcategory,price,items,id})
+               <Button  color="#4DAAAA" content={"Add To Cart" }  onClick={()=>{ let quantity=1; console.log(category,subcategory,price,stock,items,id);
+               if(stock) addToCart({category,subcategory,price,items,id,quantity})
             }}/> :
                
                
@@ -46,6 +47,10 @@ const mapDispatchToProps=(dispatch)=>{
         addToCart : (productInfo)=> dispatch(addToCart(productInfo))
     }
   }
-
-export default connect(null,mapDispatchToProps) (Box);
+  const mapStateToProps=(state)=>{
+    return {
+        amount: state.cartReducer
+    }
+  }
+export default connect(mapStateToProps,mapDispatchToProps) (Box);
 

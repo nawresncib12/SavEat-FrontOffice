@@ -13,7 +13,7 @@ export const Button = (props) => {
       key={props.clicked}
       className = {classes.btn  }   
       style={{ backgroundColor: props.color , border:props.border,color:props.contentColor}}
-      onClick={ ()=>{  if(!clicked) {props.onClick();setClicked(true)}}
+      onClick={ ()=>{   if(!clicked) {props.onClick()||nothing();setClicked(true)}}
     }
     >
       {props.content}
