@@ -19,6 +19,10 @@
     transform: rotate(180deg);
 }
 
+.homeNavbarHead .wave.hide {
+    display: none;
+}
+
 .homeNavbarHead .header {
     width: calc( 100% - 150px);
     position: absolute;
@@ -27,7 +31,29 @@
     left: 0;
     padding: 25px 50px 25px 100px;
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 1fr 9fr 1fr;
+}
+
+.homeNavbarHead .header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(15px + 1vmin);
+}
+
+.homeNavbarHead .header .logo img {
+    max-width: 50%;
+}
+
+.homeNavbarHead h3 {
+    margin: 0;
+    line-height: calc(25px + 1vmin);
+    color: white;
+    font-weight: bolder;
+}
+
+h3.blue {
+    color: #4DAAAA;
 }
 
 .homeNavbarHead .buttonNav {
@@ -131,6 +157,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        padding: 10px 50px 10px 100px;
+        padding: 10px 50px 10px 50px;
     }
 }

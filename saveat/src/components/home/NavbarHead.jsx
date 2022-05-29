@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import classes from "./NavbarHead.module.css";
 import Navbar from "./Navbar";
-const NavbarHead = () => {
+import logo from "../../assets/welcomePic.png"
+const NavbarHead = (props) => {
   const [navbar, setNavbar] = useState("");
   const [name, setName] = useState("Menu");
   const target = useRef(null);
@@ -24,13 +25,20 @@ const NavbarHead = () => {
   }, []);
   return (
     <div className={classes.homeNavbarHead}>
-      {navbar==="opened" && <Navbar></Navbar>}
+      {navbar === "opened" && <Navbar></Navbar>}
       <div className={classes.header}>
-        <div className={classes.logo}></div>
+        <div className={classes.logo}>
+        <img src={logo} alt="logo" />
+        <h3 className={`${props.only?classes.blue:""}`}>SavEat</h3>
+        </div>
+        <div></div>
         <div className={classes.buttonNav}>
           <div
             className={`${classes.menu} ${
-              scrollPosition < height/1.3  || (navbar==="opened") ? "" : classes.scrolled
+              (scrollPosition < height / 1.3 && props.only !== true) ||
+              navbar === "opened"
+                ? ""
+                : classes.scrolled
             }`}
           >
             {name}
@@ -41,9 +49,9 @@ const NavbarHead = () => {
                 setNavbar("opened");
               } else {
                 if (navbar === "opened") {
-                 setNavbar("closed")
+                  setNavbar("closed");
                 } else {
-                  setNavbar("opened")
+                  setNavbar("opened");
                 }
               }
               setTimeout(() => {
@@ -55,19 +63,26 @@ const NavbarHead = () => {
               }, 2000);
             }}
             className={`${classes.navbarIcon} ${
-              scrollPosition < height / 1.3 ||  (navbar==="opened") ? "" : classes.scrolled
-            }  ${navbar==="" ? "" : classes[navbar]}`}
+              (scrollPosition < height / 1.3 && props.only !== true) ||
+              navbar === "opened"
+                ? ""
+                : classes.scrolled
+            }  ${navbar === "" ? "" : classes[navbar]}`}
           >
             <div
               className={`${classes.navbarHover} ${
-                scrollPosition < height / 1.3 ||  (navbar==="opened") ? "" : classes.scrolled
+                (scrollPosition < height / 1.3 && props.only !== true) ||
+                navbar === "opened"
+                  ? ""
+                  : classes.scrolled
               }`}
             ></div>
           </div>
         </div>
       </div>
       <svg
-        className={classes.wave}
+
+        className={`${classes.wave} ${ props.only!==true?"":classes.hide }`}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 280"
       >

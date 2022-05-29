@@ -7,13 +7,7 @@ const SideBar = ({fn}) => {
   const [svgColor, setSvgColor] = useState(green);
   return (
     <div className={style.container}>
-      <div className={style.logo}>
-        <div className={style.saveat}>
-            SavEat
-        </div>
-        <div style={{background:" rgba(177, 228, 228, 0.42)",borderRadius: "5px",width: "7.3vw",height: ".5vw",marginTop:'1.2vw'}} ></div>
-     
-      </div>
+      
       <div className={style.wrap}>
         <div className={style.SideBar}>
 
