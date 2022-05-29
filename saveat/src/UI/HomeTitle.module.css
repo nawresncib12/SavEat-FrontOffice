@@ -1,0 +1,12 @@
+.homeTitle {
+    font-size: calc(35px + 1vmin);
+    color: #4DAAAA;
+    display: inline-block;
+}
+
+.zigzag {
+    height: 30px;
+    background: linear-gradient(135deg, white 35%, transparent 35%) -15px 0, linear-gradient(225deg, white 35%, transparent 25%) -15px 0, linear-gradient(315deg, white 35%, transparent 25%), linear-gradient(45deg, white 35%, transparent 25%);
+    background-size: 30px 30px;
+    background-color: #FFBCBC;
+}

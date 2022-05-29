@@ -1,8 +1,12 @@
 .homeHero {
+    position: relative;
+}
+
+.homeHero .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 50pc 25px 100px;
+    padding: 0 50px 25px 100px;
 }
 
 .homeHero h3 {
@@ -20,12 +24,21 @@
 
 .homeHero p {
     color: #A5A5A5;
-    font-size: calc(15px + 1vmin);
+    font-size: calc(20px + 1vmin);
     margin: calc(5px + 1vmin) 0;
+    font-weight: bolder;
+}
+
+.homeHero .button {
+    padding-top: calc(20px + 1vmin);
+}
+
+.homeHero .button button {
+    padding: calc(5px + 0.5vmin);
 }
 
 @media only screen and (max-width: 1000px) {
-    .homeHero {
+    .homeHero .info {
         padding: 0px 50px 10px 50px;
     }
 }

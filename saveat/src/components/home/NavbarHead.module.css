@@ -7,14 +7,6 @@
     background-size: cover;*/
 }
 
-.homeNavbarHead .earth {
-    position: absolute;
-    bottom: 0;
-    max-width: 90vw;
-    left: 5vw;
-    right: 5vw;
-}
-
 .homeNavbarHead .wave {
     margin-top: -80px;
 }
