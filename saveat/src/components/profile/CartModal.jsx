@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
 import { addOrder } from "../../api/api.order";
 import * as Yup from "yup";
+import { clean_cart } from "../redux/actions/actions";
 import ButtonLoader from "../../UI/ButtonLoader";
 const Backdrop = (props) => {
   return (
@@ -39,7 +40,9 @@ const CartModal = (props) => {
     const boxes_ids=[]
     if(props.boxes) (props.boxes).map(e=>{ boxes_ids.push(e.id)})
     const res =await addOrder({customer_address:values.address,customer_phone:values.phone, total:props.total,boxes:boxes_ids })
+    props.clean_cart()
     props.setOpen(false)
+
   };
   const validate = Yup.object({
     phone: Yup.string()
@@ -161,6 +164,13 @@ const mapStateToProps=(state)=>{
 
   }
 }
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    clean_cart : ()=> dispatch(clean_cart()),
 
 
-export default  connect(mapStateToProps)(CartModal);
+  }
+}
+
+
+export default  connect(mapStateToProps,mapDispatchToProps)(CartModal);

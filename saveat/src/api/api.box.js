@@ -20,3 +20,4 @@ export const getAllBoxes = async(data) => {
             return false;
         });
 }
+

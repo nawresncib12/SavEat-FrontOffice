@@ -2,6 +2,7 @@
 import { ADD_TO_CART } from "../actions/actionTypes"
 import { REMOVE_FROM_CART } from "../actions/actionTypes"
 import { INCREMENT_QUANTITY } from "../actions/actionTypes"
+import { CLEAN_CART } from "../actions/actionTypes"
 
 const myState = []
 
@@ -26,7 +27,10 @@ switch (action.type){
         tmp[i].quantity+= action.step*1
         return tmp
     } 
-
+    case CLEAN_CART: {
+        
+        return []
+    } 
 
     default : {
         if(!state) return []

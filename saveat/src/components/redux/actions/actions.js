@@ -1,4 +1,4 @@
-import  {UPDATE_PROFILE_CARD} from "../actions/actionTypes"
+import  {CLEAN_CART, UPDATE_PROFILE_CARD} from "../actions/actionTypes"
 import  {UPDATE_EMAIL} from "../actions/actionTypes"
 import { ADD_TO_CART } from "./actionTypes"
 import { REMOVE_FROM_CART } from "./actionTypes"
@@ -38,5 +38,11 @@ export function increment_quantity(id,step){
         id ,
         step
         
+    }
+}
+export function clean_cart(){ 
+    
+    return {
+        type : CLEAN_CART,
     }
 }
