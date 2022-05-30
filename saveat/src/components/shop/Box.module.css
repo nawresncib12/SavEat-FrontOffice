@@ -20,7 +20,8 @@
     color: #4DAAAA;
     font-family: inherit;
     font-size: 25px;
-    text-align: start;
+    text-align: center;
+    
 }
 .box .note, .box .price {
     color:#FFBCBC;
@@ -29,6 +30,10 @@
     margin: 0;
     font-weight: 500;
     margin-bottom: 8px;
+}
+.box .price {
+    color:#4DAAAA;
+   
 }
 .box .error {
     color: red;

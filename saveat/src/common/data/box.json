@@ -2,8 +2,8 @@
     {
         "id":1,
         "category":"canned",
-        "subcategory":"Regular",
-        "price":15,
+        "subcategory":"regular",
+        "price":25,
         "stock":"true",
         
         "items":[
@@ -66,7 +66,7 @@
         "id":4,
         "category":"canned",
         "subcategory":"regular",
-        "price":15,
+        "price":10,
         "stock":"false",
         "items":[
             {
@@ -90,7 +90,7 @@
         "id":5,
         "category":"canned",
         "subcategory":"regular",
-        "price":15,
+        "price":5,
         "stock":"false",
         "items":[
             {
