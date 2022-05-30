@@ -10,21 +10,22 @@ import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
 import { addOrder } from "../../api/api.order";
 import * as Yup from "yup";
+import ButtonLoader from "../../UI/ButtonLoader";
 const Backdrop = (props) => {
   return (
     <div
-      onClick={() => {
-        props.setOpen(false);
-      }}
-      className={classes.backdrop}
+    onClick={() => {
+      props.setOpen(false);
+    }}
+    className={classes.backdrop}
     ></div>
-  );
-};
-
-const ModalOverlay = (props) => {
-
-  return (
-    <div className={classes.modal}>
+    );
+  };
+  
+  const ModalOverlay = (props) => {
+    
+    return (
+      <div className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
     </div>
   );
@@ -32,12 +33,13 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("overlays");
 
 const CartModal = (props) => {
+  const [loading, setloading] = useState(false)
 
   const submitCheckout = async(values) => {
     const boxes_ids=[]
     if(props.boxes) (props.boxes).map(e=>{ boxes_ids.push(e.id)})
     const res =await addOrder({customer_address:values.address,customer_phone:values.phone, total:props.total,boxes:boxes_ids })
-
+    props.setOpen(false)
   };
   const validate = Yup.object({
     phone: Yup.string()
@@ -102,6 +104,7 @@ const CartModal = (props) => {
               validationSchema={validate}
               onSubmit={(values) => {
                 submitCheckout(values);
+                setloading(true)
               }}
             >
               {(formik) => (
@@ -133,7 +136,9 @@ const CartModal = (props) => {
                       Lorem ipsum lorem ipsum lorem lorem lorem lorem.
                     </h5>
                     <div className={classes.submit}>
-                      <Button color="#4DAAAA" content="Submit" type="submit" onClick={()=>{}} />
+                    {loading ? <div style={{height:"10px" ,display:"flex",alignItems:"center",marginBottom:"40px",justifyContent:"center",width:'100%'}}><ButtonLoader/></div> :
+
+                      <Button color="#4DAAAA" content="Submit" type="submit" onClick={()=>{}} />}
                     </div>
                   </Form>
                 </div>

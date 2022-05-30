@@ -34,7 +34,9 @@ const Shop = () => {
               <Hero setShop={setShop} setScroll={setScroll}></Hero>
               <Features scroll={scroll} setScroll={setScroll}></Features>
               <BoxContainer  shop={shop} setShop={setShop}/>
-              <Link to ='/profile'>GO  TO CART</Link>
+              <Link to ='/profile'>
+                <h2 style={{textAlign:"center"}}>GO  TO CART</h2>
+                </Link>
           </div>
           
         </>
