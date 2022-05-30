@@ -1,5 +1,5 @@
 import { loggedIn } from "../api/api.user";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LoaderPage } from "./loader";
 import NavbarHead from "../components/home/NavbarHead";
@@ -35,6 +35,10 @@ const Shop = () => {
               <Hero setShop={setShop} setScroll={setScroll}></Hero>
               <Features scroll={scroll} setScroll={setScroll}></Features>
               <BoxContainer  shop={shop} setShop={setShop}/>
+
+              
+
+              <Link to ='/profile'>GO  TO CART</Link>
               <Footer />
           </div>
           

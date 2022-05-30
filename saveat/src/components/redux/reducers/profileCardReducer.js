@@ -9,7 +9,6 @@ const myState = {
     phone : +216999999999
 }
 export  function profileCardReducer(state = myState,action){
-console.log("ddd",action.data)
 switch (action.type){
     case UPDATE_PROFILE_CARD:{
         return {
@@ -29,7 +28,7 @@ switch (action.type){
         }
     }      
     default : {
-     return myState;
+     return state;
      }     
     }
 }

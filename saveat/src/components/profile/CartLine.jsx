@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import style from "./CartLine.module.css";
 import avatar from "../../assets/avatar1.svg";
 import { Icon } from '@iconify/react';
-const Cart = ({box,index}) => {
-  
+import Box from "../shop/Box";
+import { removeFromCart } from '../redux/actions/actions';
+import { increment_quantity } from '../redux/actions/actions';
+import { connect } from 'react-redux';
+
+const Cart = ({box,index,removeFromCart,increment_quantity,quantity}) => {
+  console.log(box.id)
   const [amount,setAmount] = useState(1);
-  const [price,setPrice] = useState(box.box.price)
+  const [price,setPrice] = useState(box.price)
   const handlePlus = () => {
-      setAmount(amount+1);
-      setPrice(price*2)
+
+  increment_quantity(box.id,1)
   }
   const handleMinus = () => {
-      if(amount >1 )
-        {setAmount(amount-1);
-        setPrice(price/2);}
-  }
-
+    if(quantity[index].quantity >1 )
+    increment_quantity(box.id,-1)
+}
 
   return (
 
@@ -24,20 +27,20 @@ const Cart = ({box,index}) => {
                 <div className={style.pic}>
                   
                   <h2>
-                    {box.box.category + " "}
-                    {box.box.subcategory+ " Box"}
+                    {box.category + " "}
+                    {box.subcategory+ " Box"}
                   </h2>
                 </div>
                 <div className={style.boxContent}>
                   <span className={style.price}>
-                    {price+" DT"}
+                    {price * quantity[index].quantity+" DT"}
                   </span>
                   <div className={style.options}>
                     <Icon icon="akar-icons:circle-minus" color="#4DAAAA" width="25px" height="25px" style={{cursor:"pointer"}} onClick={handleMinus} />
-                    <span>{amount}</span>
-                    <Icon icon="akar-icons:circle-plus" color="#4DAAAA" width="25px" height="25px" style={{cursor:"pointer"}} onClick={handlePlus}/>
+                    <span>{quantity[index].quantity}</span>
+                    <Icon icon="akar-icons:circle-plus" color="#4DAAAA" width="25px" height="25px" style={{cursor:"pointer"}} onClick={handlePlus} />
                     <div className={style.trash}>
-                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} />
+                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} onClick={()=>{removeFromCart(box.id);console.log("delete",box.id)}} />
                     </div>
                     
                   </div>
@@ -53,4 +56,17 @@ const Cart = ({box,index}) => {
 
 };
 
-export default Cart;
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    removeFromCart : (id)=> dispatch(removeFromCart(id)),
+    increment_quantity : (id,step)=> dispatch(increment_quantity(id,step))
+  }
+}
+const mapStateToProps=(state)=>{
+  return {
+    quantity: state.cartReducer
+  }
+}
+
+
+export default  connect(mapStateToProps,mapDispatchToProps)(Cart);
