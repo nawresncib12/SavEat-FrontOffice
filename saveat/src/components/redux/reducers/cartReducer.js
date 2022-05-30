@@ -8,7 +8,6 @@ const myState = []
 
 
 export  function cartReducer( state=myState ,action){
-    console.log(action.type)
 switch (action.type){
     case ADD_TO_CART:{
         let tmp = [...state] 
@@ -22,17 +21,14 @@ switch (action.type){
          return tmp
     } 
     case INCREMENT_QUANTITY: {
-        console.log("first")
         let tmp= [...state] 
         let i= tmp.findIndex(e=>   e.id===action.id)
         tmp[i].quantity+= action.step*1
-console.log(tmp)
         return tmp
     } 
 
 
     default : {
-        console.log("default")
         if(!state) return []
         return state;
     }

@@ -5,10 +5,11 @@ import avatar1 from '../../assets/avatar1.svg';
 import { connect } from 'react-redux';
 import { addToCart } from '../redux/actions/actions';
 import { increment_quantity } from '../redux/actions/actions';
+import { removeFromCart } from '../redux/actions/actions';
 import style from "../profile/CartLine.module.css";
 import { Icon } from '@iconify/react';
 
-const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quantity}) => {
+const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quantity,removeFromCart}) => {
 
     const [quantity, setQuantity] = useState(0)
     const handlePlus=()=>{
@@ -16,10 +17,15 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quan
         increment_quantity(id,1)
     }
     const handleMinus=()=>{
-        if(quantity>0){
+        if(quantity>1){
 
             setQuantity(quantity-1)
             increment_quantity(id,-1)
+
+        }
+        if(quantity==1){
+            removeFromCart(id)
+            setQuantity(quantity-1)
 
         }
     }
@@ -90,6 +96,7 @@ const mapDispatchToProps=(dispatch)=>{
     return {
         increment_quantity : (id,step)=> dispatch(increment_quantity(id,step)),
         addToCart : (productInfo)=> dispatch(addToCart(productInfo)),
+        removeFromCart : (id)=> dispatch(removeFromCart(id)),
 
     }
   }

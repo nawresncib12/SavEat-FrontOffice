@@ -19,7 +19,7 @@ const Cart = ({boxes}) => {
         {boxes.map((box, index) => {
           if(boxes.length>0 )return (
             
-            <div>
+            <div key={box.id}>
               <CartLine box={box} index={index} />
               {
                 // index !== cart.length-1 && 
