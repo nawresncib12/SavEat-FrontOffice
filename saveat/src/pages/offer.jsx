@@ -5,6 +5,7 @@ import { LoaderPage } from "./loader";
 import NavbarHead from "../components/home/NavbarHead";
 import OfferList from "../components/offer/OfferList";
 import Hero from "../components/offer/Hero";
+import Footer from "../components/shared/Footer";
 const Offer = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -29,6 +30,8 @@ const Offer = () => {
           <NavbarHead></NavbarHead>
           <Hero></Hero>
           <OfferList></OfferList>
+
+          <Footer />
         </>
       )}
     </>

@@ -8,22 +8,22 @@ import Features from "../components/shop/Features";
 import Hero from "../components/shop/Hero";
 import Footer from "../components/shared/Footer";
 const Shop = () => {
-  const [scroll,setScroll]=useState(false);
-  const [shop,setShop]=useState(false);
+  const [scroll, setScroll] = useState(false);
+  const [shop, setShop] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
       if (!(await loggedIn())) {
-        setLoading(false)
+        setLoading(false);
         navigate("/login");
-      }else{
-        setLoading(false)
+      } else {
+        setLoading(false);
       }
     }
     log();
   }, [navigate]);
-  
+
   return (
     <>
       {loading ? (
@@ -32,14 +32,12 @@ const Shop = () => {
         <>
           <div>
             <NavbarHead></NavbarHead>
-              <Hero setShop={setShop} setScroll={setScroll}></Hero>
-              <Features scroll={scroll} setScroll={setScroll}></Features>
-              <BoxContainer  shop={shop} setShop={setShop}/>
-              <Link to ='/profile'>
-                <h2 style={{textAlign:"center"}}>GO  TO CART</h2>
-                </Link>
+            <Hero setShop={setShop} setScroll={setScroll}></Hero>
+            <Features scroll={scroll} setScroll={setScroll}></Features>
+            <BoxContainer shop={shop} setShop={setShop} />
+
+            <Footer />
           </div>
-          
         </>
       )}
     </>

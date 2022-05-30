@@ -1,22 +1,24 @@
 .shopHero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
     padding: 0px 100px;
     position: relative;
     flex-wrap: wrap;
-    grid-gap:30px;
+    grid-gap: 30px;
     overflow-x: hidden;
 }
+
 .rightHero img {
     width: 100%;
 }
+
 .shopHero .wave {
     height: 25%;
     position: absolute;
     bottom: -25%;
     width: 100%;
 }
+
 .leftHero {
     display: flex;
     flex-direction: column;
@@ -39,6 +41,18 @@
     color: #C4C4C4;
 }
 
+.bttn {
+    display: flex;
+    gap: 15px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .bttn {
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .shopHero {
         padding: 0px 30px;
@@ -49,10 +63,10 @@
         bottom: -25%;
     }
 }
+
 @media only screen and (max-width: 850px) {
     .shopHero {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
     }
-  
 }

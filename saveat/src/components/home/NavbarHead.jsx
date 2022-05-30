@@ -61,7 +61,7 @@ const NavbarHead = (props) => {
               } else {
                 if (navbar === "opened") {
                   setNavbar("closed");
-                  document.body.style.overflow = "unset"
+                  document.body.style.overflow = "auto"
 
                 } else {
                   setNavbar("opened");
