@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../UI/Button";
+import { ButtonShake } from "../../UI/ButtonShake";
 import classes from "./Box.module.css";
 import avatar1 from "../../assets/avatar1.svg";
 import { connect } from "react-redux";
@@ -61,7 +61,7 @@ const Box = ({
       {mode !== "slider" && (stock > 0 ? (
         <div>
           {quantity == 0 ? (
-            <Button
+            <ButtonShake
               shake={true}
               color="#4DAAAA"
               content={"Add To Cart"}

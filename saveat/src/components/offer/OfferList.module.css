@@ -1,4 +1,12 @@
 .offerList {
+    padding: 25px 50px 100px 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .offerList {
+        padding: 10px 50px 100px 50px;
+    }
 }
