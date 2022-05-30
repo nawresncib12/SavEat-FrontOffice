@@ -9,7 +9,7 @@ import { removeFromCart } from '../redux/actions/actions';
 import style from "../profile/CartLine.module.css";
 import { Icon } from '@iconify/react';
 
-const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quantity,removeFromCart}) => {
+const Box = ({mode,id,category,subcategory,price,stock,items,addToCart,increment_quantity,removeFromCart}) => {
 
     const [quantity, setQuantity] = useState(0)
     const handlePlus=()=>{
@@ -45,7 +45,7 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quan
         </p>
         <h4 className={classes.price}>{price+" "}DT</h4>
         {
-            stock > 0 ? 
+            mode!== "slider" && (stock > 0 ? 
             <div>
 
              {(quantity==0)?
@@ -85,7 +85,7 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart,increment_quan
                
                
             </div> : 
-            <h5 className={classes.error}>Out Of Stock !</h5>
+            <h5 className={classes.error}>Out Of Stock !</h5>)
         }
 
     </div>

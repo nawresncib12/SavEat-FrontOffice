@@ -7,6 +7,7 @@ import NavbarHead from "../components/home/NavbarHead";
 import Hero from "../components/home/Hero";
 import Why from "../components/home/Why";
 import Box from "../components/home/Box";
+import Footer from "../components/shared/Footer";
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Home = () => {
           <WeOffer></WeOffer>
           <Why></Why>
           <Box></Box>
-          hiii
+          <Footer />
         </>
       )}
     </>
