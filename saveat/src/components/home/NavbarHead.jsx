@@ -15,7 +15,9 @@ const NavbarHead = (props) => {
     setScrollPosition(position);
   };
   const handleResize = () => {
-    const heigh = target.current.getBoundingClientRect().height;
+    var heigh = 0
+     if( target&&target.current)
+     heigh= target.current.getBoundingClientRect().height;
 
     if (window.innerWidth > 1000) {
       setHeight(heigh - 80);

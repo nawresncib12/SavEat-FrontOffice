@@ -16,7 +16,6 @@ const EditProfile = ({update_Profile_Card}) => {
   const [user, setUser] = useState(null)
   const [loading,setLoading] = useState(false);
   const [updatedUser,setUpdatedUser] = useState(false);
-
 useEffect(() => {
   async function log() {
     const usr =await loggedIn()
@@ -38,7 +37,7 @@ if(!user) return ( <div className={style.container} style={{animation:"none"}}><
       initialValues={{
       firstName: user.firstName,
       lastName:user.lastName,
-      birthday:user.birthday,
+      birthday: (user.birthday)?user.birthday.replace(/-/g ,"-").substring(0,10):"2000-08-14",
       phone:user.phone,
       address:user.address
     }
