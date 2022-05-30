@@ -3,7 +3,9 @@ import HomeTitle from "../../UI/HomeTitle";
 import box from "../../assets/heroShop.png";
 import Button from "../../UI/Button";
 import { BoxSlider } from "./BoxSlider";
+import { useNavigate } from 'react-router-dom';
 const Box = () => {
+  const navigate = useNavigate();
   return (
     <div className={classes.boxesHome}>
       <div className={classes.title}>
@@ -16,7 +18,7 @@ const Box = () => {
         <div className={classes.welcome}>
           <img src={box} alt="box" />
           <div className={classes.button}>
-            <Button color="#FFBCBC">See shop</Button>
+            <Button color="#FFBCBC" onClick={() => navigate('/shop') }>See shop</Button>
           </div>
         </div>
       </div>
