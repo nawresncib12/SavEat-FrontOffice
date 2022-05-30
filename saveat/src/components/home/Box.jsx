@@ -2,6 +2,7 @@ import classes from "./Box.module.css";
 import HomeTitle from "../../UI/HomeTitle";
 import box from "../../assets/heroShop.png";
 import Button from "../../UI/Button";
+import { BoxSlider } from "./BoxSlider";
 const Box = () => {
   return (
     <div className={classes.boxesHome}>
@@ -9,7 +10,9 @@ const Box = () => {
         <HomeTitle>Get a Box</HomeTitle>
       </div>
       <div className={classes.boxes}>
-        <div className={classes.slider}></div>
+        <div className={classes.slider}>
+          <BoxSlider />
+        </div>
         <div className={classes.welcome}>
           <img src={box} alt="box" />
           <div className={classes.button}>
