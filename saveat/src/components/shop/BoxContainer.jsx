@@ -4,6 +4,7 @@ import Box from "./Box";
 // import box from "../../common/data/box.json";
 import { useEffect, useRef } from "react";
 import { getAllBoxes } from "../../api/api.box";
+import HomeTitle from "../../UI/HomeTitle";
 export const BoxContainer = ({ setShop, shop }) => {
   const [box, setbox] = useState ([])
   const boxContainer = useRef(null);
@@ -27,7 +28,13 @@ export const BoxContainer = ({ setShop, shop }) => {
   }, [shop, setShop]);
 
 return (
+  <div className={classes.boxWrapper}>
+    <div className={classes.title}>
+      <HomeTitle>Our Box Collection</HomeTitle>
+    </div>
+    
     <div ref={boxContainer} className={classes.boxContainer}>
+      
       {box.map((box) => {
         return (
           <div key={box._id} id={box._id} className={classes.boxItem} >
@@ -44,5 +51,7 @@ return (
         );
       })}
     </div>
+  </div>
+    
   );
 };

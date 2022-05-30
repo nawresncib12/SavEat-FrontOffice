@@ -5,6 +5,16 @@
     justify-content: center;
     position: relative;
 }
+.boxWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    
+    
+}
+.boxWrapper .title {
+    text-align: center;
+}
 .boxItem {
    
 }
