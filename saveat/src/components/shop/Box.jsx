@@ -18,9 +18,9 @@ const Box = ({id,category,subcategory,price,stock,items,addToCart}) => {
         <h4 className={classes.note}>May Contain :</h4>
         <p className={classes.items}>
             {
-                // items.map((item) => {
-                //     return item.name+" ";
-                // })
+                items.map((item) => {
+                    return item.name+" ";
+                })
             }
         </p>
         <h4 className={classes.price}>{price+" "}DT</h4>
