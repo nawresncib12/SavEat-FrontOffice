@@ -16,7 +16,7 @@ const Hero = (props) => {
                 At closing hours , our partner restaurants offer special discounts.
             </p>
         </div>
-        <div style={{ display: "flex", gap: "15px" }}>
+        <div className={classes.bttn}>
           <Button
             onClick={() => {
               props.setShop(true);

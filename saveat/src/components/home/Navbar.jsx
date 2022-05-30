@@ -27,6 +27,7 @@ const Navbar = () => {
       <h1
         onClick={() => {
           navigate("/home");
+          document.body.style.overflow = "auto";
         }}
       >
         Home
@@ -34,6 +35,7 @@ const Navbar = () => {
       <h1
         onClick={() => {
           navigate("/shop");
+          document.body.style.overflow = "auto";
         }}
       >
         Box Shop
@@ -41,6 +43,7 @@ const Navbar = () => {
       <h1
         onClick={() => {
           navigate("/offers");
+          document.body.style.overflow = "auto";
         }}
       >
         Restaurant Offers
@@ -48,6 +51,7 @@ const Navbar = () => {
       <h1
         onClick={() => {
           navigate("/profile");
+          document.body.style.overflow = "auto";
         }}
       >
         Profile
@@ -58,6 +62,7 @@ const Navbar = () => {
             signout();
           } else {
             navigate("/login");
+            document.body.style.overflow = "auto";
           }
         }}
       >
