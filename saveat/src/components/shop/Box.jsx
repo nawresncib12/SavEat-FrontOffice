@@ -15,6 +15,7 @@ import specialfresh from "../../assets/specialfresh.png";
 import regularmixed from "../../assets/regularmixed.png";
 import specialmixed from "../../assets/specialmixed.png";
 const Box = ({
+  mode,
   id,
   category,
   subcategory,
@@ -56,7 +57,8 @@ const Box = ({
         })}
       </p>
       <h4 className={classes.price}>{price + " "}DT</h4>
-      {stock > 0 ? (
+
+      {mode !== "slider" && (stock > 0 ? (
         <div>
           {quantity == 0 ? (
             <Button
@@ -110,7 +112,7 @@ const Box = ({
         </div>
       ) : (
         <h5 className={classes.error}>Out Of Stock !</h5>
-      )}
+      ))}
     </div>
   );
 };
