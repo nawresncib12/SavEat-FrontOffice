@@ -1,0 +1,63 @@
+.whySection {
+    padding: 25px 50px 100px 100px;
+}
+
+.whySection .why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+.why .quote {
+    display: flex;
+    gap: 10%;
+}
+
+.why .quote svg {
+    fill: #4DAAAA;
+}
+
+.why .quote p {
+    color: #A5A5A5;
+    font-size: calc(20px + 1vmin);
+    font-weight: bolder;
+}
+
+.why .quote h5 {
+    color: #4DAAAA;
+    font-size: calc(20px + 1vmin);
+    font-weight: bolder;
+}
+
+.charts {
+    position: relative;
+}
+
+.chartBack {
+    width: 50%;
+    right: 50px;
+    padding-top: 50%;
+    border-radius: 15%;
+    transform: rotate(135deg);
+    position: absolute;
+    background-color: #4DAAAA;
+    top: 0;
+    z-index: -2;
+}
+
+.charts .chart {
+    background-color: white;
+    border-radius: 15%;
+    margin-right: 5%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .whySection {
+        padding: 10px 50px 100px 50px;
+    }
+    .whySection .why {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+    }
+}
