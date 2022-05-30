@@ -1,0 +1,61 @@
+.offerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.discount {
+    background-color: #4daaaa;
+    color: white;
+    font-size: calc(20px + 1vmin);
+    font-weight: bolder;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 20%;
+    padding: calc(2.5px + 0.5vmin);
+}
+
+.offerCard h1 {
+    color: #4daaaa;
+    font-size: calc(30px + 1vmin);
+}
+
+.offerCard h2 {
+    color: #6CD6D6;
+    font-size: calc(25px + 1vmin);
+}
+
+.offerCard p {
+    color: #A5A5A5;
+    font-size: calc(15px + 1vmin);
+}
+
+.offerCard .prices {
+    display: flex;
+    font-size: calc(20px + 1vmin);
+    gap: calc(20px + 1vmin);
+}
+
+.offerCard .old {
+    text-decoration: line-through #FFBCBC 4px;
+}
+
+.offerCard .new {
+    color: #4daaaa;
+}
+
+.offerCard .down {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(20px + 1vmin);
+    justify-content: center;
+    align-items: center;
+}
+
+.down h3 {
+    color: #FFBCBC;
+}
