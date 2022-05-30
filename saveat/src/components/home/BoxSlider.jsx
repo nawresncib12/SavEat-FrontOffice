@@ -21,8 +21,9 @@ export const BoxSlider = () => {
           </div>
         );
       };
+      const [slides,setSlides] = useState(3)
       const [boxIndex, setBoxIndex] = useState(0);
-  
+        
       const settings = {
         infinite: true,
         lazyLoad: true,

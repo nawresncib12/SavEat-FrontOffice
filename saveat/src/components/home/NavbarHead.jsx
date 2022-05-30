@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import classes from "./NavbarHead.module.css";
 import Navbar from "./Navbar";
 import logo from "../../assets/welcomePic.png";
+import { useNavigate } from "react-router-dom";
 const NavbarHead = (props) => {
+  const navigate = useNavigate();
   const [navbar, setNavbar] = useState("");
   const [name, setName] = useState("Menu");
   const target = useRef(null);
@@ -33,8 +35,8 @@ const NavbarHead = (props) => {
     <div className={classes.homeNavbarHead}>
       {navbar === "opened" && <Navbar></Navbar>}
       <div className={classes.header}>
-        <div className={classes.logo}>
-          <img src={logo} alt="logo" />
+        <div className={classes.logo} onClick={()=>{navigate("/home")}}>
+          <img src={logo} alt="logo"  />
           <h3 className={`${props.only ? classes.blue : ""}`}>SavEat</h3>
         </div>
         <div></div>

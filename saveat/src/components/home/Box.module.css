@@ -55,8 +55,13 @@
         position: relative;
         width: 100%;
     }
-    .boxesHome .boxes .welcome {
+    .boxesHome .boxes .welcome img {
         display: none;
+
+    }
+    .boxesHome .boxes {
+        display: flex;
+        flex-direction: column;
     }
 }
 @media only screen and (max-width: 1000px) {
