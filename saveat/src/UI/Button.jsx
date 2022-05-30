@@ -7,9 +7,7 @@ export const Button = (props) => {
   return (
     <button
       type={props.type}
-      className={
-        props.shake && clicked ? `${classes.btn} ${classes.shake}` : classes.btn
-      }
+      className={classes.btn}
       style={{
         backgroundColor: props.color,
         border: props.border,

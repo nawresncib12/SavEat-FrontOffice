@@ -4,7 +4,7 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 //import box from '../../common/data/box.json';
 import Box from '../shop/Box';
 import"./BoxSlider.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { getAllBoxes } from "../../api/api.box";
 export const BoxSlider = () => {
     const [box, setbox] = useState ([])
@@ -52,8 +52,8 @@ export const BoxSlider = () => {
     <div className="sliderBox">
          <Slider {...settings}>
             {box.map((box, idx) => (
-            <div className={idx === boxIndex ? "slide activeSlide" : "slide"}>
-                {<Box mode="slider" id={box.id} category={box.category} subcategory={box.subCategory} price={box.price} items={box.items} />}
+            <div key={idx} className={idx === boxIndex ? "slide activeSlide" : "slide"}>
+                {<Box  mode="slider" id={box.id} category={box.category} subcategory={box.subCategory} price={box.price} items={box.items} />}
            
             </div>
             ))}

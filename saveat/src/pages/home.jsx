@@ -10,35 +10,15 @@ import Box from "../components/home/Box";
 import Footer from "../components/shared/Footer";
 import Deals from "../components/home/Deals";
 const Home = () => {
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-  useEffect(() => {
-    async function log() {
-      if (!(await loggedIn())) {
-        setLoading(false);
-        navigate("/login");
-      } else {
-        setLoading(false);
-      }
-    }
-    log();
-  }, [navigate]);
-
   return (
     <>
-      {loading ? (
-        <LoaderPage />
-      ) : (
-        <>
-          <NavbarHead></NavbarHead>
-          <Hero></Hero>
-          <WeOffer></WeOffer>
-          <Why></Why>
-          <Box></Box>
-          <Deals></Deals>
-          <Footer />
-        </>
-      )}
+      <NavbarHead></NavbarHead>
+      <Hero></Hero>
+      <WeOffer></WeOffer>
+      <Why></Why>
+      <Box></Box>
+      <Deals></Deals>
+      <Footer />
     </>
   );
 };
