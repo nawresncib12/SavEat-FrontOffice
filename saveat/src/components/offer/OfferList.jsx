@@ -1,6 +1,10 @@
 import classes from "./OfferList.module.css";
 import OfferCard from "./OfferCard";
+import { useState } from "react";
+import OfferModal from "./OfferModal";
 const OfferList = () => {
+  const [open, setOpen] = useState(false);
+  const [offer, setOffer] = useState(null);
   const offers = [
     {
       name: "Joe's Pizza",
@@ -50,8 +54,16 @@ const OfferList = () => {
   ];
   return (
     <div className={classes.offerList}>
+      {open && <OfferModal offer={offer} setOpen={setOpen}></OfferModal>}
       {offers.map((offer, index) => {
-        return <OfferCard offer={offer} key={index}></OfferCard>;
+        return (
+          <OfferCard
+            setOpen={setOpen}
+            setOffer={setOffer}
+            offer={offer}
+            key={index}
+          ></OfferCard>
+        );
       })}
     </div>
   );
