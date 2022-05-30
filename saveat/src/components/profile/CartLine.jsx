@@ -24,7 +24,7 @@ const Cart = ({box,index,removeFromCart,increment_quantity,quantity}) => {
              <div key={index} className={style.cartBox}>
               <div className={style.side}>
                 <div className={style.pic}>
-                  <img src={avatar} alt="" />
+                  
                   <h2>
                     {box.category + " "}
                     {box.subcategory+ " Box"}

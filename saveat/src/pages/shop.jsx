@@ -6,6 +6,7 @@ import NavbarHead from "../components/home/NavbarHead";
 import { BoxContainer } from "../components/shop/BoxContainer";
 import Features from "../components/shop/Features";
 import Hero from "../components/shop/Hero";
+import Footer from "../components/shared/Footer";
 const Shop = () => {
   const [scroll,setScroll]=useState(false);
   const [shop,setShop]=useState(false);

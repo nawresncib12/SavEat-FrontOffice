@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { Icon } from '@iconify/react';
 const Cart = ({boxes}) => {
   const [open, setOpen] = useState(false);
+
   return (
     <div className={style.container}>
       {open && <CartModal setOpen={setOpen}></CartModal>}
