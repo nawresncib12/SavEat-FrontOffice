@@ -18,7 +18,7 @@ export const Button = (props) => {
       
         
         {props.onClick()||nothing();setClicked(true)}}else{
-          props.onClick()||nothing();
+          if(!clicked)props.onClick()||nothing();
         }
           }    }
     >

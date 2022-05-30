@@ -22,7 +22,8 @@ const Cart = ({boxes}) => {
             <div>
               <CartLine box={box} index={index} />
               {
-                index !== cart.length-1 && <hr />
+                // index !== cart.length-1 && 
+                <hr />
               }
               
             </div>

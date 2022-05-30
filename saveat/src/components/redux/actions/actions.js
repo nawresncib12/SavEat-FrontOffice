@@ -32,6 +32,7 @@ export function removeFromCart(id){
     }
 }
 export function increment_quantity(id,step){ 
+    
     return {
         type : INCREMENT_QUANTITY,
         id ,
