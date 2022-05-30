@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .shopHero {
     display: flex;
     justify-content: center;
@@ -13,7 +14,7 @@
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap:50px
+    grid-gap: 50px
 }
 
 .shopHero .wave {
@@ -26,7 +27,7 @@
 .leftHero h1 {
     font-size: calc(25px + 1vmin);
     color: #4DAAAA;
-    font-weight: 500;
+    font-weight: bolder;
 }
 
 .leftHero .highlighted {
@@ -37,34 +38,43 @@
     font-size: calc(15px + 1vmin);
     font-weight: normal;
     width: 70%;
-    color: #2C3A3A;
-}
-.heroImage {
-    position: relative;
-    
+    color: #A5A5A5;
+    font-weight: bolder;
 }
 
+.heroImage {
+    position: relative;
+}
 
 .heroImage img {
     z-index: 5;
     min-width: 80%;
     width: 100%;
-
 }
+
+.bttn {
+    display: flex;
+    gap: 15px;
+    width: 50%;
+}
+
 @media only screen and (max-width: 1000px) {
     .shopHero {
-        padding: 0px 50px;
+        padding: 0px 50px 50px;
     }
     .shopHero .wave {
         height: 25%;
         position: absolute;
         bottom: -25%;
     }
+    .bttn {
+        width: 80%;
+    }
 }
+
 @media only screen and (max-width: 650px) {
     .shopHero {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
-   
 }

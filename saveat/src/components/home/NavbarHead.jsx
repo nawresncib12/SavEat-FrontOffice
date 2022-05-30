@@ -57,11 +57,15 @@ const NavbarHead = (props) => {
             onClick={() => {
               if (navbar === "") {
                 setNavbar("opened");
+                document.body.style.overflow = "hidden"
               } else {
                 if (navbar === "opened") {
                   setNavbar("closed");
+                  document.body.style.overflow = "unset"
+
                 } else {
                   setNavbar("opened");
+                  document.body.style.overflow = "hidden"
                 }
               }
               setTimeout(() => {
