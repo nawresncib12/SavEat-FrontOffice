@@ -12,10 +12,10 @@ const Navbar = () => {
   };
   return (
     <div className={classes.navbar}>
-      <h1>Home</h1>
-      <h1>Box Shop</h1>
+      <h1 onClick={()=>{navigate("/home")}}>Home</h1>
+      <h1 onClick={()=>{navigate("/shop")}}>Box Shop</h1>
       <h1>Deals</h1>
-      <h1>My Profile</h1>
+      <h1 onClick={()=>{navigate("/profile")}}>My Profile</h1>
       <h1  onClick={signout} >Log out</h1>
     </div>
   );

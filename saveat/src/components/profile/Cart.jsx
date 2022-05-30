@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 
 import { Icon } from '@iconify/react';
 const Cart = ({boxes}) => {
-  console.log("boxes",boxes)
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,16 +20,18 @@ const Cart = ({boxes}) => {
         {boxes.map((box, index) => {
           if(boxes.length>0 )return (
             
-            <div>
+            <div key={box.id}>
               <CartLine box={box} index={index} />
               {
-                index !== cart.length-1 && <hr />
+                // index !== cart.length-1 && 
+                <hr />
               }
               
             </div>
             
           );
         })}
+
        {(boxes.length>0 )? <Button
           onClick={() => {
             setOpen(true);

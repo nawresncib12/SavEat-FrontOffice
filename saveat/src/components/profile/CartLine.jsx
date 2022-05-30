@@ -8,7 +8,6 @@ import { increment_quantity } from '../redux/actions/actions';
 import { connect } from 'react-redux';
 
 const Cart = ({box,index,removeFromCart,increment_quantity,quantity}) => {
-  console.log(box.id)
   const [amount,setAmount] = useState(1);
   const [price,setPrice] = useState(box.price)
   const handlePlus = () => {
@@ -40,7 +39,7 @@ const Cart = ({box,index,removeFromCart,increment_quantity,quantity}) => {
                     <span>{quantity[index].quantity}</span>
                     <Icon icon="akar-icons:circle-plus" color="#4DAAAA" width="25px" height="25px" style={{cursor:"pointer"}} onClick={handlePlus} />
                     <div className={style.trash}>
-                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} onClick={()=>{removeFromCart(box.id);console.log("delete",box.id)}} />
+                     <Icon icon="bi:trash-fill" color="#4DAAAA" width="20px" height="20px" style={{cursor:"pointer"}} onClick={()=>{removeFromCart(box.id)}} />
                     </div>
                     
                   </div>

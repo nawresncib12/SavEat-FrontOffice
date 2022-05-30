@@ -11,24 +11,19 @@ export  function cartReducer( state=myState ,action){
 switch (action.type){
     case ADD_TO_CART:{
         let tmp = [...state] 
-        console.log(action.productInfo);
       tmp.push(action.productInfo)
-        console.log(state)
         return tmp
         }
     case REMOVE_FROM_CART : {
-        console.log(state)
         let tmp= [...state] 
         tmp= tmp.filter(e=>   e.id!==action.id)
 
          return tmp
     } 
     case INCREMENT_QUANTITY: {
-        console.log(action)
         let tmp= [...state] 
         let i= tmp.findIndex(e=>   e.id===action.id)
         tmp[i].quantity+= action.step*1
-
         return tmp
     } 
 
@@ -45,28 +40,3 @@ switch (action.type){
 
 
 
-// export  function profileCardReducer(state = myState,action){
-// console.log("ddd",action.data)
-// switch (action.type){
-//     case UPDATE_PROFILE_CARD:{
-//         return {
-//             firstName : action.data.firstName,
-//             lastName : action.data.lastName,
-//             birthday:action.data.birthday,
-//             address:action.data.address,
-//             email:action.data.email,
-//             phone:action.data.phone
-//         }
-//     }      
-//     case UPDATE_EMAIL:{
-//         console.log(action)
-//         return {
-//         ...state,
-//         email : action.data
-//         }
-//     }      
-//     default : {
-//      return myState;
-//      }     
-//     }
-// }
