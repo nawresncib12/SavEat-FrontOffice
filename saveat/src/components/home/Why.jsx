@@ -116,7 +116,7 @@ const Why = () => {
         <div className={classes.charts}>
           <div className={classes.chartBack}></div>
 
-          <div className={classes.chart}>
+          <div  className={`${classes.chart}  ${isVisible ? classes.animate : ""}`}>
             <Bar
               data={state}
               options={{

@@ -11,7 +11,7 @@ import { Loader } from "../../UI/Loader";
 import ButtonLoader from "../../UI/ButtonLoader";
 import { connect } from "react-redux";
 import { update_Profile_Card } from "../redux/actions/actions";
-const EditProfile = ({ update_Profile_Card }) => {
+const EditProfile = ({ update_Profile_Card, avatar }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -46,11 +46,14 @@ const EditProfile = ({ update_Profile_Card }) => {
           : "2000-08-14",
         phone: user.phone,
         address: user.address,
+        imageId: user.imageId,
       }}
       onSubmit={async (values) => {
+        values.imageId = avatar;
         setLoading(true);
         setUpdatedUser(false);
         const usr = await updateUser(values);
+        console.log(usr);
         if (usr) {
           setLoading(false);
           setUpdatedUser(true);
@@ -61,7 +64,7 @@ const EditProfile = ({ update_Profile_Card }) => {
       {(formik) => (
         <div className={style.container}>
           <div className={style.title}>
-            <h1>PROFILE</h1>
+            <h1>EDIT PROFILE</h1>
           </div>
           <div className={style.formMiddle}>
             <Form autoComplete="false">
@@ -72,6 +75,7 @@ const EditProfile = ({ update_Profile_Card }) => {
               <div className={style.inputGroup}>
                 <TextField label="Phone Number" name="phone" type="number" />
                 <TextField label="Birthday" name="birthday" type="date" />
+                <input type="hidden" name="imageId" value={avatar} />
               </div>
               <div className={style.inputGroupA}>
                 <TextField
