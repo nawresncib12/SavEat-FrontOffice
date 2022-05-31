@@ -51,6 +51,23 @@
     margin-right: 5%;
 }
 
+.anim.animate {
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .whySection {
         padding: 10px 50px 100px 50px;
@@ -59,5 +76,12 @@
         display: flex;
         flex-direction: column;
         gap: 5%;
+    }
+    .anim.animate {
+        width: unset;
+        max-width: unset;
+        overflow: unset;
+        white-space: unset;
+        animation: unset;
     }
 }

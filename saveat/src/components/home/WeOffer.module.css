@@ -51,6 +51,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .weOffer .deco,
@@ -88,6 +90,77 @@
     max-width: unset;
 }
 
+.flap1 {
+    position: absolute;
+    background-color: white;
+    width: calc( 35% + 10px);
+    padding: 0 10px;
+    left: -50%;
+    height: 80%;
+}
+
+.flap1.animate {
+    animation: goLeft 1s ease-in;
+    animation-iteration-count: 1;
+}
+
+.flap2 {
+    position: absolute;
+    background-color: white;
+    width: calc( 40% + 10px);
+    padding: 0 10px;
+    height: 80%;
+    right: -50%;
+}
+
+.flap2.animate {
+    animation: goRight 1s ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes goRight {
+    from {
+        right: 0px;
+    }
+    to {
+        right: -50%;
+    }
+}
+
+@keyframes goLeft {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -50%;
+    }
+}
+
+.anim.animate {
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+.buttons.animate {
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .weOffer {
         padding: 10px 50px 10px 50px;
@@ -96,5 +169,29 @@
         padding: 10px 50px 10px 50px;
         display: flex;
         flex-wrap: wrap;
+    }
+    .weOffer .functions {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        position: relative;
+        gap: calc(5px + 0.5vmin);
+    }
+    .weOffer .back {
+        position: absolute;
+        top: 0;
+        left: calc(10% - 10px - 1vmin);
+        background-color: #4DAAAA;
+        width: 80%;
+        height: 100%;
+        z-index: -2;
+    }
+    .anim.animate,
+    .buttons.animate {
+        width: unset;
+        max-width: unset;
+        overflow: unset;
+        white-space: unset;
+        animation: unset;
     }
 }

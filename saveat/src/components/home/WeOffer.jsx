@@ -1,17 +1,41 @@
 import classes from "./WeOffer.module.css";
 import HomeTitle from "../../UI/HomeTitle";
 import Button from "../../UI/Button";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 const WeOffer = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    });
+  };
+  const options = {};
+  const myObserver = new IntersectionObserver(callback, options);
+  useEffect(() => {
+    myObserver.observe(domRef.current);
+  }, []);
   return (
     <div className={classes.weOffer}>
-      <div className={classes.description}>
-        <HomeTitle>What do we offer ? </HomeTitle>
+      <div ref={domRef} className={classes.description}>
+      <div  className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}>
+        <HomeTitle>What do we offer ? </HomeTitle></div>
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do tempor.</p>
-        <div className={classes.buttons}>
-          <Button color="#4DAAAA" border="1px solid #4DAAAA"
-            onClick={()=>{navigate("/shop")}}>
+        <div  className={`${classes.buttons}  ${isVisible ? classes.animate : ""}`}>
+          <Button
+            color="#4DAAAA"
+            border="1px solid #4DAAAA"
+            onClick={() => {
+              navigate("/shop");
+            }}
+          >
             Buy a box
           </Button>
 
@@ -19,7 +43,9 @@ const WeOffer = () => {
             color="white"
             contentColor="#4DAAAA"
             border="1px solid #4DAAAA"
-            onClick={()=>{navigate("/offers")}}
+            onClick={() => {
+              navigate("/offers");
+            }}
           >
             Get A deal
           </Button>
@@ -32,6 +58,16 @@ const WeOffer = () => {
           <h1>......</h1>
         </div>
         <div className={classes.func}>
+          <div
+            className={`${classes.flap1} 
+                  ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>
+          <div
+            className={`${classes.flap2} 
+                  ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>
           <h2>Get a deal</h2>
           <p>
             Restaurants approaching their closing hours offer to sell their last
@@ -39,6 +75,26 @@ const WeOffer = () => {
           </p>
         </div>
         <div className={classes.func}>
+          <div
+            className={`${classes.flap1} 
+                  ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>
+          <div
+            className={`${classes.flap2} 
+                  ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>{" "}
+          <div
+            className={`${classes.flap1} 
+                ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>
+          <div
+            className={`${classes.flap2} 
+                ${isVisible ? classes.animate : ""}`}
+            ref={domRef}
+          ></div>
           <h2>Order a box</h2>
           <p>
             Boxes of approaching its expiration are sold for minimal prices.
