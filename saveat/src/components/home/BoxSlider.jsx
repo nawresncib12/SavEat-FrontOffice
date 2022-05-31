@@ -1,12 +1,25 @@
 import {React, useState} from 'react'
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import box from '../../common/data/box.json';
+//import box from '../../common/data/box.json';
 import Box from '../shop/Box';
 import"./BoxSlider.css";
+import { useEffect, useRef } from "react";
+import { getAllBoxes } from "../../api/api.box";
 export const BoxSlider = () => {
+    const [box, setbox] = useState ([])
   
-    const NextArrow = ({ onClick }) => {
+     const getAll = async()=>{
+      const box = await getAllBoxes()
+      if(!box.length) setbox(box.data.boxes)
+    }
+  
+    useEffect(() => {
+      getAll()
+       
+    },[]);
+  
+      const NextArrow = ({ onClick }) => {
         return (
           <div className="arrow next" onClick={onClick}>
             <FaArrowRight />
@@ -21,7 +34,7 @@ export const BoxSlider = () => {
           </div>
         );
       };
-      const [slides,setSlides] = useState(3)
+    
       const [boxIndex, setBoxIndex] = useState(0);
         
       const settings = {
@@ -40,7 +53,7 @@ export const BoxSlider = () => {
          <Slider {...settings}>
             {box.map((box, idx) => (
             <div className={idx === boxIndex ? "slide activeSlide" : "slide"}>
-                {<Box mode="slider" id={box.id} category={box.category} subcategory={box.subcategory} price={box.price} items={box.items} />}
+                {<Box mode="slider" id={box.id} category={box.category} subcategory={box.subCategory} price={box.price} items={box.items} />}
            
             </div>
             ))}

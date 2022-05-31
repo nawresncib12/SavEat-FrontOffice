@@ -1,15 +1,16 @@
 import classes from "./Deals.module.css";
 import Button from "../../UI/Button";
-import herowave from "../../assets/herowave.png";
+import { useNavigate } from 'react-router-dom';
 import img from '../../assets/deals.png'
 import HomeTitle from "../../UI/HomeTitle";
 const Deals = () => {
-  return (
+    const navigate = useNavigate();
+    return (
       <div className={classes.deals}>
          <div className={classes.title}>
             <HomeTitle>Get A Deal</HomeTitle>
          </div>
-         <div className={classes.shopHero}>
+            <div className={classes.shopHero}>
      {/* <img className={classes.wave} src={herowave} alt="waves" />*/}
     
       <div className={classes.leftHero}>
@@ -24,6 +25,7 @@ const Deals = () => {
           <Button
             color="#4DAAAA"
             border="#4DAAAA 1px solid"
+            onClick={()=> navigate('/offers')}
           >
             Discover Our Offers
           </Button>
