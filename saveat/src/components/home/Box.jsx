@@ -9,7 +9,7 @@ const Box = () => {
   return (
     <div className={classes.boxesHome}>
       <div className={classes.title}>
-        <HomeTitle>Get a Box</HomeTitle>
+        <HomeTitle>Get A Box</HomeTitle>
       </div>
       <div className={classes.boxes}>
         <div className={classes.slider}>

@@ -1,12 +1,27 @@
+.footerContainer {
+    background: url("../../assets/cool-background.png") no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 20px;
+    padding: 20px 30px 0.05px 30px;
+}
+.footerContainer .copyrights {
+    color: #FFBCBC;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+.links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .footer {
     display: grid;
     grid-template-columns: 0.5fr 0.8fr 0.8fr 1fr;
     grid-gap:30px;
-    background: url("../../assets/cool-background.png") no-repeat center center fixed;
-    background-size: cover;
-    padding-top: 20px;
     overflow-x: hidden;
     width: 100%;
+    
 }
 .logo {
     width: 150px;
