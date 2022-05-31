@@ -32,80 +32,88 @@ export const signUp = async(data) => {
 }
 export const updateUser = async(data) => {
     const accessToken = localStorage.getItem('authToken');
-    return await axios.patch(`${api}/users/updateMe`, data, { headers: {
-        authorization: 'Bearer ' + accessToken
-    }
-    })
-    .then(res => {
-           
+    return await axios.patch(`${api}/users/updateMe`, data, {
+            headers: {
+                authorization: 'Bearer ' + accessToken
+            }
+        })
+        .then(res => {
+
             if (res.data.status === 'success') {
                 return res.data.data.updatedUser;
             } else if (res.data.status === 'error') {
                 return res.data.error;
             }
         })
-        .catch(err => {console.log(err)
+        .catch(err => {
+            console.log(err)
             return false;
         });
 }
 export const updatePassword = async(data) => {
     const accessToken = localStorage.getItem('authToken');
-    return await axios.patch(`${api}/users/updatePassword`, data, { headers: {
-        authorization: 'Bearer ' + accessToken
-    }
-})
-.then(res => {
-   
-    localStorage.setItem('authToken', res.data.token);
-    if (res.data.status === 'success') {
-      
-        return true;
-    } else if (res.data.status === 'error') {
-        return res.data.error;
-    }
-})
-.catch(err => {console.log(err)
-    return false;
+    return await axios.patch(`${api}/users/updatePassword`, data, {
+            headers: {
+                authorization: 'Bearer ' + accessToken
+            }
+        })
+        .then(res => {
+
+            localStorage.setItem('authToken', res.data.token);
+            if (res.data.status === 'success') {
+
+                return true;
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            return false;
         });
 }
 export const updateEmail = async(data) => {
-   
+
     const accessToken = localStorage.getItem('authToken');
-    return await axios.patch(`${api}/users/updateEmail`, data, { headers: {
-        authorization: 'Bearer ' + accessToken
-    }
-})
-.then(res => {
- 
-    if (res.data.status === 'success') {
-    
-        return true;
-    } else if (res.data.status === 'error') {
-        return res.data.error;
-    }
-})
-.catch(err => {console.log(err)
-    return false;
+    return await axios.patch(`${api}/users/updateEmail`, data, {
+            headers: {
+                authorization: 'Bearer ' + accessToken
+            }
+        })
+        .then(res => {
+
+            if (res.data.status === 'success') {
+
+                return true;
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            return false;
         });
 }
 export const verifyEmail = async(data) => {
 
     const accessToken = localStorage.getItem('authToken');
-    return await axios.patch(`${api}/users/verifyEmail`, data, { headers: {
-        authorization: 'Bearer ' + accessToken
-    }
-})
-.then(res => {
-    
-    if (res.data.status === 'success') {
-       
-        return res.data.data.updatedUser;
-    } else if (res.data.status === 'error') {
-        return res.data.error;
-    }
-})
-.catch(err => {console.log(err)
-    return false;
+    return await axios.patch(`${api}/users/verifyEmail`, data, {
+            headers: {
+                authorization: 'Bearer ' + accessToken
+            }
+        })
+        .then(res => {
+
+            if (res.data.status === 'success') {
+
+                return res.data.data.updatedUser;
+            } else if (res.data.status === 'error') {
+                return res.data.error;
+            }
+        })
+        .catch(err => {
+            console.log(err)
+            return false;
         });
 }
 
@@ -172,7 +180,7 @@ export const loggedIn = async() => {
             })
             .then(res => {
                 if (res.data.status === 'success') {
-                    
+
                     return res.data.user
 
                 } else {
@@ -192,7 +200,7 @@ export const loggedIn = async() => {
 
 
 export const resetPassword = async(password, params) => {
-  
+
     return await axios.patch(`${api}/users/resetPassword/${params.token}`, password)
         .then(res => {
             if (res.data.status === 'success') {

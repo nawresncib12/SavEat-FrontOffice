@@ -1,6 +1,6 @@
 import classes from "./Hero.module.css";
 import Button from "../../UI/Button";
-import earth from "../../assets/earth.png";
+import home from "../../assets/home.png";
 const Hero = () => {
   return (
     <div className={classes.homeHero}>
@@ -14,8 +14,20 @@ const Hero = () => {
           <Button color="#4DAAAA">Learn more about it</Button>
         </div>
       </div>
-
-      <div className={classes.earth}>
+      <div className={classes.right}>
+        <div className={classes.image}>
+          <img src={home} alt="home" />
+          <div className={classes.stats}>
+            <div className={classes.stat}>
+              <h3>1524</h3>
+              <p>TNDs saved by users from their food expences.</p>
+            </div>
+            <div className={classes.stat}>
+              <h3>185</h3>
+              <p>Meals rescued from the food waste cycle.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

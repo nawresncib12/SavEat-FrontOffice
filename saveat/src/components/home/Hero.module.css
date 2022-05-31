@@ -1,12 +1,18 @@
 .homeHero {
     position: relative;
+    padding: 0 50px 25px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    justify-content: center;
+    align-items: center;
 }
 
-.homeHero .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 50px 25px 100px;
+.homeHero .start {
+    text-align: center;
+}
+
+.homeHero .button {
+    width: 70%;
 }
 
 .homeHero h3 {
@@ -24,21 +30,61 @@
 
 .homeHero p {
     color: #A5A5A5;
-    font-size: calc(20px + 1vmin);
+    font-size: calc(18px + 1vmin);
     margin: calc(5px + 1vmin) 0;
     font-weight: bolder;
 }
 
 .homeHero .button {
-    padding-top: calc(20px + 1vmin);
+    padding: calc(15px + 1vmin) 0;
+    gap: calc(10px + 1vmin);
 }
 
 .homeHero .button button {
     padding: calc(5px + 0.5vmin);
 }
 
+.homeHero .center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeHero .stat:first-child h3 {
+    text-decoration-color: #FFBCBC;
+}
+
+.homeHero .stat h3 {
+    font-size: calc(20px + 1vmin);
+    color: #6CD6D6;
+    text-decoration: underline 5px;
+    text-underline-offset: 3px;
+    text-decoration-color: #1C7193;
+}
+
+.homeHero .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeHero .image img {
+    max-width: 50%;
+    margin: auto;
+}
+
 @media only screen and (max-width: 1000px) {
-    .homeHero .info {
+    .homeHero {
         padding: 0px 50px 10px 50px;
+    }
+    .homeHero {
+        position: relative;
+        padding: 0 50px 25px 100px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 }
