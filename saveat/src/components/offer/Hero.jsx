@@ -19,7 +19,7 @@ const Hero = (props) => {
         <div className={classes.bttn}>
           <Button
             onClick={() => {
-              props.setShop(true);
+              props.setScroll(true);
             }}
             type="submit"
             color="#4DAAAA"

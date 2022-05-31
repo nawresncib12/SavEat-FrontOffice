@@ -3,11 +3,21 @@ import HomeTitle from "../../UI/HomeTitle";
 import box from "../../assets/heroShop.png";
 import Button from "../../UI/Button";
 import { BoxSlider } from "./BoxSlider";
-import { useNavigate } from 'react-router-dom';
-const Box = () => {
+import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+const Box = ({ scroll, setScroll }) => {
   const navigate = useNavigate();
+  const slider = useRef(null);
+  const executeScroll = () =>
+    slider.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  useEffect(() => {
+    if (scroll) {
+      executeScroll();
+      setScroll(false);
+    }
+  }, [scroll, setScroll]);
   return (
-    <div className={classes.boxesHome}>
+    <div className={classes.boxesHome} ref={slider}>
       <div className={classes.title}>
         <HomeTitle>Get A Box</HomeTitle>
       </div>
@@ -18,7 +28,9 @@ const Box = () => {
         <div className={classes.welcome}>
           <img src={box} alt="box" />
           <div className={classes.button}>
-            <Button color="#FFBCBC" onClick={() => navigate('/shop') }>See shop</Button>
+            <Button color="#FFBCBC" onClick={() => navigate("/shop")}>
+              See shop
+            </Button>
           </div>
         </div>
       </div>

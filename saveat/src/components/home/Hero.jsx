@@ -1,7 +1,7 @@
 import classes from "./Hero.module.css";
 import Button from "../../UI/Button";
 import home from "../../assets/home.png";
-const Hero = () => {
+const Hero = ({setScroll}) => {
   return (
     <div className={classes.homeHero}>
       <div className={classes.info}>
@@ -11,7 +11,9 @@ const Hero = () => {
         <p>Save it while saving on it ..</p>
         <p>Eating cheaper while saving the planet.</p>
         <div className={classes.button}>
-          <Button color="#4DAAAA">Learn more about it</Button>
+          <Button color="#4DAAAA"  onClick={() => {
+              setScroll(true);
+            }}>Learn more about it</Button>
         </div>
       </div>
       <div className={classes.right}>

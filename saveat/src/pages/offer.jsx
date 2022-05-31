@@ -8,6 +8,7 @@ import Hero from "../components/offer/Hero";
 import Footer from "../components/shared/Footer";
 const Offer = () => {
   const [loading, setLoading] = useState(true);
+  const [scroll,setScroll]=useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     async function log() {
@@ -28,8 +29,8 @@ const Offer = () => {
       ) : (
         <>
           <NavbarHead></NavbarHead>
-          <Hero></Hero>
-          <OfferList></OfferList>
+          <Hero setScroll={setScroll}></Hero>
+          <OfferList setScroll={setScroll} scroll={scroll}></OfferList>
 
           <Footer />
         </>
