@@ -32,7 +32,21 @@
 .meriem {
     width: 97%;
     height: 80%;
-    background-color: beige;
+    background-color: #fff;
+}
+.dealHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+   
+}
+.dealHeader h2 {
+    color: #FFBCBC;
+    font-weight: 500;
+}
+.dealHeader h4 {
+    color: #000;
+    font-weight: normal;
 }
 
 @media only screen and (max-width: 800px) {

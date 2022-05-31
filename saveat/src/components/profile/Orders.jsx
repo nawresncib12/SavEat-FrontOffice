@@ -22,14 +22,18 @@ const Orders = () => {
         {orders.map((orderItem,index) => {
           return (
             
-            <div key={orderItem._id}>
-              <OrderLine order={orderItem} index={index} />
+            <div>
+              <div key={orderItem._id}>
+                <OrderLine order={orderItem} index={index} />
+                
+                
+              </div>
               {
-                // index!== order.length-1 &&
+                 index!== order.length-1 &&
                  <hr />
               }
-              
             </div>
+            
             
           );
         })}
