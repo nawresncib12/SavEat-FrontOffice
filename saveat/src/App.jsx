@@ -21,8 +21,9 @@ function App() {
           <Route exact path="/profile" element={<Profile/>} /> 
           <Route exact path="/shop" element={<Shop/>} /> 
           <Route exact path="/offers" element={<Offer/>} /> 
-          <Route exact path="/404" element={<NotFound/>} />
+          
           <Route exact path="/resetPassword/:token" element={<ResetPassword></ResetPassword>} />
+          <Route exact path="/*" element={<NotFound/>} />
         </Routes>
       </Router>
     </Provider>
