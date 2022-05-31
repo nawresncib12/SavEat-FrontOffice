@@ -1,6 +1,7 @@
 import classes from "./Why.module.css";
 import HomeTitle from "../../UI/HomeTitle";
 import { Bar } from "react-chartjs-2";
+import { useRef, useState, useEffect } from "react";
 import Chart from "chart.js/auto";
 const Why = () => {
   const state = {
@@ -36,10 +37,28 @@ const Why = () => {
       },
     ],
   };
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
 
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    });
+  };
+  const options = {};
+  const myObserver = new IntersectionObserver(callback, options);
+  useEffect(() => {
+    myObserver.observe(domRef.current);
+  }, []);
   return (
-    <div className={classes.whySection}>
-      <HomeTitle>Why is this so important ?</HomeTitle>
+    <div  className={classes.whySection}>
+      <div ref={domRef} className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}>
+        <HomeTitle>Why is this so important ?</HomeTitle>
+      </div>
       <div className={classes.why}>
         <div className={classes.quote}>
           <svg
@@ -91,7 +110,7 @@ const Why = () => {
               country has, at the same time, 600,000 Tunisians who suffer from
               malnutrition
             </p>
-            <h5>-- Tarek BEN JAZIA , Minister of commerce</h5>
+            <h5 className={`${classes.anim}  ${isVisible ? classes.animate : ""}`} >-- Tarek BEN JAZIA , Minister of commerce</h5>
           </div>
         </div>
         <div className={classes.charts}>

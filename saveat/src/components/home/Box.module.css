@@ -16,9 +16,10 @@
     justify-content: center;
     align-items: center;*/
 }
+
 .boxesHome .slider {
-    width:60%;
-    position:absolute;
+    width: 60%;
+    position: absolute;
 }
 
 .boxesHome .wave {
@@ -50,6 +51,23 @@
     z-index: 500;
 }
 
+.anim.animate {
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     .boxesHome .slider {
         position: relative;
@@ -57,18 +75,25 @@
     }
     .boxesHome .boxes .welcome img {
         display: none;
-
     }
     .boxesHome .boxes {
         display: flex;
         flex-direction: column;
     }
 }
+
 @media only screen and (max-width: 1000px) {
     .boxesHome {
         padding: 50px 50px 100px 50px;
     }
     .boxesHome .wave {
         top: -50px;
+    }
+    .anim.animate {
+        width: auto;
+        max-width: 100%;
+        overflow: unset;
+        white-space: wrap;
+        animation: unset;
     }
 }

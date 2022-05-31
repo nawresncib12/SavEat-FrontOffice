@@ -24,39 +24,39 @@ const Navbar = () => {
   };
   return (
     <div className={classes.navbar}>
-      <h1
+      <span
         onClick={() => {
           navigate("/home");
           document.body.style.overflow = "auto";
         }}
       >
         Home
-      </h1>
-      <h1
+      </span>
+      <span
         onClick={() => {
           navigate("/shop");
           document.body.style.overflow = "auto";
         }}
       >
         Box Shop
-      </h1>
-      <h1
+      </span>
+      <span
         onClick={() => {
           navigate("/offers");
           document.body.style.overflow = "auto";
         }}
       >
         Restaurant Offers
-      </h1>
-      <h1
+      </span>
+      <span
         onClick={() => {
           navigate("/profile");
           document.body.style.overflow = "auto";
         }}
       >
         Profile
-      </h1>
-      <h1
+      </span>
+      <span
         onClick={() => {
           if (logged) {
             signout();
@@ -67,7 +67,7 @@ const Navbar = () => {
         }}
       >
         {logged ? "Log out" : "Log in"}
-      </h1>
+      </span>
     </div>
   );
 };

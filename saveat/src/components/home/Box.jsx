@@ -3,11 +3,28 @@ import HomeTitle from "../../UI/HomeTitle";
 import box from "../../assets/heroShop.png";
 import Button from "../../UI/Button";
 import { BoxSlider } from "./BoxSlider";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Box = ({ scroll, setScroll }) => {
   const navigate = useNavigate();
   const slider = useRef(null);
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    });
+  };
+  const options = {};
+  const myObserver = new IntersectionObserver(callback, options);
+  useEffect(() => {
+    myObserver.observe(domRef.current);
+  }, []);
   const executeScroll = () =>
     slider.current.scrollIntoView({ behavior: "smooth", block: "center" });
   useEffect(() => {
@@ -18,7 +35,7 @@ const Box = ({ scroll, setScroll }) => {
   }, [scroll, setScroll]);
   return (
     <div className={classes.boxesHome} ref={slider}>
-      <div className={classes.title}>
+      <div ref={domRef} className={`${classes.title} ${classes.anim}  ${isVisible ? classes.animate : ""}`}>
         <HomeTitle>Get A Box</HomeTitle>
       </div>
       <div className={classes.boxes}>

@@ -7,6 +7,32 @@
     align-items: center;
 }
 
+.info.animate,
+.stat.animate h3 {
+    width: auto;
+    max-width: 100%;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
+.info p,
+.stat p.animate {
+    width: auto;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: appear 1s ease-in;
+}
+
 .homeHero .start {
     text-align: center;
 }
@@ -80,11 +106,26 @@
     }
     .homeHero {
         position: relative;
-        padding: 0 50px 25px 100px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+    }
+    .info.animate,
+    .stat.animate h3 {
+        width: unset;
+        max-width: unset;
+        white-space: unset;
+        overflow: unset;
+        animation: unset;
+    }
+    .info p,
+    .stat p.animate {
+        width: auto;
+        max-width: unset;
+        white-space: unset;
+        overflow: unset;
+        animation: unset;
     }
 }

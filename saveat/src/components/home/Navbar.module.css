@@ -16,8 +16,33 @@
     min-height: 100vh;
 }
 
-.navbar h1 {
+.navbar span {
     cursor: pointer;
+    font-size: calc(60px + 1vmin);
+    font-weight: bold;
+    padding: 20px;
+}
+
+span {
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+span:hover {
+    background-image: linear-gradient(#fff, #fff);
+    background-size: 200% 5px;
+    background-repeat: no-repeat;
+    animation: underline 0.5s ease-in;
+    background-position: left 0% bottom 0;
+}
+
+@keyframes underline {
+    0% {
+        background-position: right -100% bottom 0;
+    }
+    100% {
+        background-position: left 0 bottom 0;
+    }
 }
 
 @keyframes anim {
@@ -30,7 +55,7 @@
 }
 
 @media only screen and (max-height: 600px) {
-    .navbar h1 {
+    .navbar span {
         zoom: 40%;
     }
 }

@@ -58,6 +58,46 @@
     width: 50%;
 }
 
+.anim.animate {
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appear 1s ease-in;
+}
+
+.bttn {
+    display: flex;
+    gap: 15px;
+    width: 50%;
+}
+
+.bttn.animate {
+    max-width: 50%;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: appearButton 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
+@keyframes appearButton {
+    0% {
+        max-width: 0%;
+    }
+    100% {
+        max-width: 50%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .shopHero {
         padding: 0px 50px 50px;
@@ -69,6 +109,19 @@
     }
     .bttn {
         width: 80%;
+    }
+    .anim.animate {
+        width: auto;
+        max-width: 100%;
+        overflow: unset;
+        white-space: wrap;
+        animation: unset;
+    }
+    .bttn.animate {
+        max-width: 80%;
+        overflow: unset;
+        white-space: wrap;
+        animation: unset;
     }
 }
 
