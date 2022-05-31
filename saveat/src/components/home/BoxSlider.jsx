@@ -22,7 +22,7 @@ export const BoxSlider = () => {
       const NextArrow = ({ onClick }) => {
         return (
           <div className="arrow next" onClick={onClick}>
-            <FaArrowRight />
+            <FaArrowRight color='white' />
           </div>
         );
       };
@@ -30,7 +30,7 @@ export const BoxSlider = () => {
       const PrevArrow = ({ onClick }) => {
         return (
           <div className="arrow prev" onClick={onClick}>
-            <FaArrowLeft />
+            <FaArrowLeft  color='white'/>
           </div>
         );
       };

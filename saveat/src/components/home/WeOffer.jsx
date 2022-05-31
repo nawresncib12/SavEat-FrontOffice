@@ -1,14 +1,17 @@
 import classes from "./WeOffer.module.css";
 import HomeTitle from "../../UI/HomeTitle";
 import Button from "../../UI/Button";
+import { useNavigate } from "react-router-dom";
 const WeOffer = () => {
+  const navigate=useNavigate();
   return (
     <div className={classes.weOffer}>
       <div className={classes.description}>
         <HomeTitle>What do we offer ? </HomeTitle>
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do tempor.</p>
         <div className={classes.buttons}>
-          <Button color="#4DAAAA" border="1px solid #4DAAAA">
+          <Button color="#4DAAAA" border="1px solid #4DAAAA"
+            onClick={()=>{navigate("/shop")}}>
             Buy a box
           </Button>
 
@@ -16,6 +19,7 @@ const WeOffer = () => {
             color="white"
             contentColor="#4DAAAA"
             border="1px solid #4DAAAA"
+            onClick={()=>{navigate("/offers")}}
           >
             Get A deal
           </Button>

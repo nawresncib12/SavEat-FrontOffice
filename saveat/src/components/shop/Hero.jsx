@@ -35,7 +35,7 @@ const Hero = (props) => {
               props.setScroll(true);
             }}
           >
-            Lear about it
+            Learn about it
           </Button>
         </div>
       </div>
