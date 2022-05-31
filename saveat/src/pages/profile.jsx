@@ -34,7 +34,7 @@ const Profile = () => {
   const [active, setActive] = useState(window.screen.width > 650 ? 0 : -1);
   const [preactive, setPrective] = useState(active);
   const [phoneNav, setphoneNav] = useState(false);
-
+  const [avatar, setAvatar] = useState(0);
   const f = (x) => {
     if (x >= 0) {
       setActive(x);
@@ -55,16 +55,17 @@ const Profile = () => {
       >
         <ToggleButton fn={f} />
         <SideBar fn={f} />
-        {active === 0 && <EditProfile />}
+        {active === 0 && <EditProfile avatar={avatar} setAvatar={setAvatar} />}
         {active === 1 && <EditSettings />}
         {active === 2 && <Pereferences />}
         {active === 3 && <Cart />}
         {active === 4 && <Deals />}
         {active === 5 && <Orders />}
-        {!phoneNav && <ProfileCard />}
+        {!phoneNav && <ProfileCard  avatar={avatar} setAvatar={setAvatar}/>}
       </div>
     </>
   );
 };
+
 
 export default Profile;

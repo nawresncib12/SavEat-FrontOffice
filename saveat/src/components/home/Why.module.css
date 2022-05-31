@@ -59,6 +59,25 @@
     animation: appear 1s ease-in;
 }
 
+.charts .chart {
+    background-color: white;
+    border-radius: 15%;
+    margin-right: 5%;
+}
+
+.chart.animate {
+    animation: slide-in 0.5s ease-in;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translate(50vw, -50vh);
+    }
+    100% {
+        transform: translate(0vw, 0vh);
+    }
+}
+
 @keyframes appear {
     0% {
         max-width: 0%;

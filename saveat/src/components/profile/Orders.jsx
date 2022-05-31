@@ -19,6 +19,11 @@ const Orders = () => {
     <div className={style.container}>
         <div className={style.title}><h1>ORDERS</h1> </div>
         <div className={style.meriem}>
+        <div className={style.dealHeader}>
+            <h2>Order ID</h2>
+            <h2>Status</h2>
+            <h2>Total</h2>
+          </div>
         {orders.map((orderItem,index) => {
           return (
             

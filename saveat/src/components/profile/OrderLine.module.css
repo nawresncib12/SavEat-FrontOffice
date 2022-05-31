@@ -1,8 +1,10 @@
 .cartBox .side {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    color: rgb(73, 71, 71);
 }
+
 .cartBox .side .pic {
     display: flex;
     align-items: center;
@@ -12,23 +14,20 @@
     width: 90px;
     height: 90px;
 }
+
 .cartBox .side .pic h2 {
     font-weight: 550;
-    
-    font-size: 20px;
-}
-.cartBox .boxContent {
-  
-   
-}
-.cartBox .boxContent .price {
-    
-    color: #4DAAAA;
     font-size: 20px;
 }
 
+.cartBox .price {
+    color: rgb(73, 71, 71);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
 .status {
-    color: #FFBCBC;
+    color: rgb(73, 71, 71);
     font-size: 20px;
     font-weight: 600;
     margin-right: 20px;
