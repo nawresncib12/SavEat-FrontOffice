@@ -26,7 +26,7 @@ const Deals = () => {
               <h4>{dealItem.id}</h4>
               <h4>{dealItem.offer.restaurant}</h4>
               <h4>{dealItem.offer.product}</h4>
-              <h4>{dealItem.offer.new_price}</h4>
+              <h4>{dealItem.offer.new_price+" DT"}</h4>
               <h4>{dealItem.status}</h4>
              
            
