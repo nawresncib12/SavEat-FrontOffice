@@ -3,9 +3,9 @@ import sideImage from "../../assets/hayer2.png";
 import { useState,useEffect,useRef } from "react";
 const Features = ({setScroll,scroll}) => {
   const steps = [
-    "Like a scene in a movie or a verse in a song.Lorem ipsum dolor Lorem ipsum it, sed do eiusmod tempor. ",
-    "Paragraphs are the building blocks of any good .Lorem ipsum dolor Lorem ipsum it, sed do eiusmod tempor.",
-    "Piece of writing. Paragraphs lend a natural rhythm to your writing that makes it a joy to read. The question is, Lorem ipsum it, sed do eiusmod tempor.",
+    "A box includes fresh or canned goods at a bargain price ! ",
+    "You get to choose one of of three categories: canned goods , fresh goods or a mix of both with each category including a regular box or a special box.",
+    "A description of what you may find in the box is provided with each category.",
   ];
   const [step, setStep] = useState(0);
   var percent = parseFloat((100 / steps.length) * (step + 1)).toFixed(2) + "%";

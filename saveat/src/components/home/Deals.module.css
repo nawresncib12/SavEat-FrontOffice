@@ -44,6 +44,7 @@
 
 .heroImage {
     position: relative;
+    display: flex;
 }
 
 .heroImage img {

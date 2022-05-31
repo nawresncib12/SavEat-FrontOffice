@@ -10,10 +10,16 @@ const Hero = (props) => {
         <h1>
           Buy a <span className={classes.highlighted}>Box ,</span>
         </h1>
-        <h1>Save it and save on it.</h1>
+        <div className={classes.coolSave}>
+          <div className={classes.save}>Save it</div>
+          <div className={classes.saveRest}>
+            <span>and save on it</span>
+          </div>
+        </div>
+        
+        {/*<h1>Save it and save on it.</h1>*/}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor.
+          A box includes fresh or canned goods at a bargain price !
         </p>
         <div style={{ display: "flex", gap: "15px" }}>
           <Button
