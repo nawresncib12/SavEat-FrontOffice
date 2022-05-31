@@ -7,6 +7,9 @@ import { TextField } from "../auth/TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import ButtonLoader from "../../UI/ButtonLoader";
+import { connect } from 'react-redux';
+import { addDeal } from "../../api/api.deal";
+
 const Backdrop = (props) => {
   return (
     <div
@@ -28,11 +31,22 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("overlays");
 
 const OfferModal = (props) => {
+  console.log("props",props)
   const [loading, setloading] = useState(false);
+  const [val, setval] = useState(1);
   const offer = props.offer;
+  console.log(offer)
   const submitCheckout = async (values) => {
+    console.log(values)
+    const res =await addDeal({customer_address:values.address,customer_phone:values.phone, quantity:values.qauntity ,offer : offer._id})
+
     props.setOpen(false);
   };
+  const handleChange=(e)=>{
+    if(e.target.value>=1 && e.target.value<= props.offer.stock){
+      setval(e.target.value)
+    }
+  }
   const validate = Yup.object({
     phone: Yup.string()
       .required("Phone number is required !")
@@ -90,9 +104,9 @@ const OfferModal = (props) => {
             <h2>Make a deal</h2>
             <Formik
               initialValues={{
-                phone: "",
-                address: "",
-                quantity: 1,
+                phone:  props.info.phone,
+                address: props.info.address,
+                quantity: props.offer.stock,
               }}
               validationSchema={validate}
               onSubmit={(values) => {
@@ -105,28 +119,28 @@ const OfferModal = (props) => {
                   <Form>
                     <TextField label="Phone number" name="phone" type="text" />
                     <TextField label="Address" name="address" type="text" />
-                    <TextField label="Quantity" name="quantity" type="number" />
+                    <TextField label="Quantity" name="quantity" type="number"  onChange={e=>{handleChange(e)} }  value={val}/>
                     <h5 className={classes.note}>
-                      Maximum quantity :{offer.items}
+                      Maximum quantity :{offer.stock}
                     </h5>
                     <div className={classes.order}>
                       <h3>Order Summary</h3>
 
                       <div className={classes.element}>
                         <p className={classes.name}>{offer.product}</p>
-                        <p className={classes.name}>x 3</p>
-                        <p className={classes.qauntity}>{offer.oldPrice} DT</p>
+                        <p className={classes.name}>x {val}</p>
+                        <p className={classes.qauntity}>{offer.new_price} DT</p>
                       </div>
 
                       <div className={classes.line}></div>
                       <div className={classes.element}>
                         <p className={classes.name}>total</p>
                         <p className={classes.name}></p>
-                        <p className={classes.price}>{offer.oldPrice} Dt</p>
+                        <p className={classes.price}>{offer.new_price* val} Dt</p>
                       </div>
                     </div>
                     
-                    <h3 style={{fontSize:"calc(15px + 1vmin)"}}>You saved x DT !!</h3>
+                    <h3 style={{fontSize:"calc(15px + 1vmin)"}}>You saved {val*(offer.old_price-offer.new_price)} DT !!</h3>
                     <h5 className={classes.note}>
                       Submit to receive a confirmation phone call.
                     </h5>
@@ -165,5 +179,10 @@ const OfferModal = (props) => {
     </Fragment>
   );
 };
+const mapStateToProps=(state)=>{
+  return {
+      info: state.profileCardReducer,
+  }
+}
+export default  connect(mapStateToProps,null)(OfferModal);
 
-export default OfferModal;
