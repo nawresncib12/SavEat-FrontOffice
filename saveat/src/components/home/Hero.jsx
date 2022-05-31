@@ -22,7 +22,7 @@ const Hero = ({setScroll}) => {
           <div className={classes.stats}>
             <div className={classes.stat}>
               <h3>1524</h3>
-              <p>TNDs saved by users from their food expences.</p>
+              <p>TNDs saved by users from their food expenses.</p>
             </div>
             <div className={classes.stat}>
               <h3>185</h3>
