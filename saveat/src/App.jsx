@@ -9,6 +9,7 @@ import Offer from "./pages/offer";
 import { Provider } from 'react-redux';
 import store from './components/redux/store/store';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NotFound from "./pages/404";
 function App() {
   return (
     <Provider store={store}>
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/profile" element={<Profile/>} /> 
           <Route exact path="/shop" element={<Shop/>} /> 
           <Route exact path="/offers" element={<Offer/>} /> 
-        
+          <Route exact path="/404" element={<NotFound/>} />
           <Route exact path="/resetPassword/:token" element={<ResetPassword></ResetPassword>} />
         </Routes>
       </Router>
