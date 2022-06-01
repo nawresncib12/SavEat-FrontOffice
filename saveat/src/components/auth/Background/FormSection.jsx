@@ -24,13 +24,11 @@ const formVariants = {
   },
 };
 const FormSection = (props) => {
-  const text = ["Are You New Here ? Join Us", "Already A Member ? Sign In !"];
+  
   const [isClicked, setIsClicked] = useState(props.auth);
-  const [note, setNote] = useState(text[0]);
   const navigate = useNavigate();
   const handleClick = () => {
     setIsClicked(!isClicked);
-    note === text[0] ? setNote(text[1]) : setNote(text[0]);
     if (isClicked) {
       navigate("/login", { state: { toggle: true } });
     } else {
@@ -73,7 +71,6 @@ const FormSection = (props) => {
 
         <div className={classes.toggleSection}>
           <ToggleBox
-            note={note}
             isClicked={isClicked}
             handleClick={handleClick}
           />

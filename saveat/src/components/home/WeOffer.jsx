@@ -24,9 +24,9 @@ const WeOffer = () => {
     myObserver.observe(domRef.current);
   }, []);
   return (
-    <div className={classes.weOfferContainer}>
+    <div ref={domRef} className={classes.weOfferContainer}>
       <div className={classes.weOffer}>
-        <div ref={domRef} className={classes.description}>
+        <div  className={classes.description}>
           <div
             className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}
           >

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import style from "./SideBar.module.css";
-const SideBar = ({ fn }) => {
+const SideBar = ({ activated,fn }) => {
   const green = "#6CD6D6";
   const white = "#FFFFFF";
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(activated);
   const [svgColor, setSvgColor] = useState(green);
   return (
     <div className={style.container}>

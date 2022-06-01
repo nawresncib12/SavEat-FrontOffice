@@ -3,8 +3,10 @@ import OfferCard from "./OfferCard";
 import { useState, useEffect, useRef } from "react";
 import OfferModal from "./OfferModal";
 import { getAllOffers } from "../../api/api.offer";
-
-const OfferList = ({scroll,setScroll}) => {
+import { useNavigate } from "react-router-dom";
+import Button from "../../UI/Button";
+const OfferList = ({ scroll, setScroll }) => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [offer, setOffer] = useState(null);
 
@@ -40,6 +42,17 @@ const OfferList = ({scroll,setScroll}) => {
           ></OfferCard>
         );
       })}
+      <div className={classes.bttn}>
+        {" "}
+        <Button
+          color="#4daaaa"
+          onClick={() => {
+            navigate("/profile", { state: { activeSlide: 4 } });
+          }}
+        >
+          See deals
+        </Button>
+      </div>
     </div>
   );
 };

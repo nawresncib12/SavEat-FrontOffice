@@ -116,22 +116,22 @@ h3.blue {
 
 .homeNavbarHead .header .navbarIcon.opened .navbarHover {
     transform: scale(0.4);
-    animation: example 2s ease-in 0.5s;
+    animation: example 1S ease-in 0.5s;
 }
 
 .homeNavbarHead .header .navbarIcon.opened {
     transform: scale(1);
-    animation: example 2s ease-in 0.5s;
+    animation: example 1S ease-in 0.5s;
 }
 
 .homeNavbarHead .header .navbarIcon.closed .navbarHover {
     transform: scale(0.4);
-    animation: invexample 2s ease-in;
+    animation: invexample 1S ease-in;
 }
 
 .homeNavbarHead .header .navbarIcon.closed {
     transform: scale(1);
-    animation: invexample 2s ease-out;
+    animation: invexample 1S ease-out;
 }
 
 @keyframes example {

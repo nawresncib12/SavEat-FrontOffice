@@ -7,7 +7,7 @@ import { Formik, Form } from "formik";
 import { loggedIn } from "../../api/api.user";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { addOrder } from "../../api/api.order";
 import * as Yup from "yup";
 import { clean_cart } from "../redux/actions/actions";
@@ -15,18 +15,17 @@ import ButtonLoader from "../../UI/ButtonLoader";
 const Backdrop = (props) => {
   return (
     <div
-    onClick={() => {
-      props.setOpen(false);
-    }}
-    className={classes.backdrop}
+      onClick={() => {
+        props.setOpen(false);
+      }}
+      className={classes.backdrop}
     ></div>
-    );
-  };
-  
-  const ModalOverlay = (props) => {
-    
-    return (
-      <div className={classes.modal}>
+  );
+};
+
+const ModalOverlay = (props) => {
+  return (
+    <div className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
     </div>
   );
@@ -34,15 +33,22 @@ const Backdrop = (props) => {
 const portalElement = document.getElementById("overlays");
 
 const CartModal = (props) => {
-  const [loading, setloading] = useState(false)
+  const [loading, setloading] = useState(false);
 
-  const submitCheckout = async(values) => {
-    const boxes_ids=[]
-    if(props.boxes) (props.boxes).map(e=>{ boxes_ids.push(e.id)})
-    const res =await addOrder({customer_address:values.address,customer_phone:values.phone, total:props.total,boxes:boxes_ids })
-    props.clean_cart()
-    props.setOpen(false)
-
+  const submitCheckout = async (values) => {
+    const boxes_ids = [];
+    if (props.boxes)
+      props.boxes.map((e) => {
+        boxes_ids.push(e.id);
+      });
+    const res = await addOrder({
+      customer_address: values.address,
+      customer_phone: values.phone,
+      total: props.total,
+      boxes: boxes_ids,
+    });
+    props.clean_cart();
+    props.setOpen(false);
   };
   const validate = Yup.object({
     phone: Yup.string()
@@ -107,7 +113,7 @@ const CartModal = (props) => {
               validationSchema={validate}
               onSubmit={(values) => {
                 submitCheckout(values);
-                setloading(true)
+                setloading(true);
               }}
             >
               {(formik) => (
@@ -120,7 +126,9 @@ const CartModal = (props) => {
                       {props.boxes.map((element, index) => {
                         return (
                           <div key={index} className={classes.element}>
-                            <p className={classes.name}>{element.category} {element.subcategory} goods box</p>
+                            <p className={classes.name}>
+                              {element.category} {element.subcategory} goods box
+                            </p>
                             <p className={classes.quntity}>
                               x{element.quantity}
                             </p>
@@ -136,12 +144,31 @@ const CartModal = (props) => {
                       </div>
                     </div>
                     <h5 className={classes.note}>
-                      Lorem ipsum lorem ipsum lorem lorem lorem lorem.
+                      Submit to receive a confirmation phone call.
                     </h5>
+                    <h5 className={classes.note}>Payment is upon delivery.</h5>
                     <div className={classes.submit}>
-                    {loading ? <div style={{height:"10px" ,display:"flex",alignItems:"center",marginBottom:"40px",justifyContent:"center",width:'100%'}}><ButtonLoader/></div> :
-
-                      <Button color="#4DAAAA" content="Submit" type="submit" onClick={()=>{}} />}
+                      {loading ? (
+                        <div
+                          style={{
+                            height: "10px",
+                            display: "flex",
+                            alignItems: "center",
+                            marginBottom: "40px",
+                            justifyContent: "center",
+                            width: "100%",
+                          }}
+                        >
+                          <ButtonLoader />
+                        </div>
+                      ) : (
+                        <Button
+                          color="#4DAAAA"
+                          content="Submit"
+                          type="submit"
+                          onClick={() => {}}
+                        />
+                      )}
                     </div>
                   </Form>
                 </div>
@@ -155,22 +182,19 @@ const CartModal = (props) => {
   );
 };
 
-
-const mapStateToProps=(state)=>{
+const mapStateToProps = (state) => {
   return {
-      boxes: state.cartReducer,
-      total : state.cartReducer.reduce((a,b)=>{return a+b.price*b.quantity},0),
-      info: state.profileCardReducer,
-
-  }
-}
-const mapDispatchToProps=(dispatch)=>{
+    boxes: state.cartReducer,
+    total: state.cartReducer.reduce((a, b) => {
+      return a + b.price * b.quantity;
+    }, 0),
+    info: state.profileCardReducer,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
   return {
-    clean_cart : ()=> dispatch(clean_cart()),
+    clean_cart: () => dispatch(clean_cart()),
+  };
+};
 
-
-  }
-}
-
-
-export default  connect(mapStateToProps,mapDispatchToProps)(CartModal);
+export default connect(mapStateToProps, mapDispatchToProps)(CartModal);

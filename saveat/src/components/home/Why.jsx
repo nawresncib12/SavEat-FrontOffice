@@ -55,8 +55,8 @@ const Why = () => {
     myObserver.observe(domRef.current);
   }, []);
   return (
-    <div  className={classes.whySection}>
-      <div ref={domRef} className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}>
+    <div ref={domRef} className={classes.whySection}>
+      <div  className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}>
         <HomeTitle>Why is this so important ?</HomeTitle>
       </div>
       <div className={classes.why}>

@@ -6,7 +6,7 @@
     width: 100vw;
     z-index: 699;
     opacity: 0;
-    animation: anim 0.3s linear forwards 1s;
+    animation: anim 0.3s linear forwards 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;

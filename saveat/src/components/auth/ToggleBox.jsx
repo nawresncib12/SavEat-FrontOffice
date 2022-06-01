@@ -3,11 +3,14 @@ import classes from "./ToggleBox.module.css";
 import { Icon } from "@iconify/react";
 import { Circle } from "./Circle";
 
-
-export const ToggleBox = ({ note, isClicked, handleClick }) => {
+export const ToggleBox = ({ isClicked, handleClick }) => {
   return (
-    <div  onClick={handleClick} className={classes.toggleSection}>
-      <h5>{note}</h5>
+    <div onClick={handleClick} className={classes.toggleSection}>
+      <h5>
+        {isClicked
+          ? "Already A Member ? Sign In !"
+          : "Are You New Here ? Join Us"}
+      </h5>
       <div className={classes.toggleBox}>
         <div
           onClick={handleClick}
@@ -30,7 +33,6 @@ export const ToggleBox = ({ note, isClicked, handleClick }) => {
                 : "teenyicons:signin-outline"
             }`}
             color="white"
-            
             width="24px"
             height="24px"
           />
@@ -39,4 +41,3 @@ export const ToggleBox = ({ note, isClicked, handleClick }) => {
     </div>
   );
 };
-

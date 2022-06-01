@@ -5,6 +5,13 @@
     gap: 25px;
 }
 
+.offerList .bttn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1000px) {
     .offerList {
         padding: 10px 50px 100px 50px;
