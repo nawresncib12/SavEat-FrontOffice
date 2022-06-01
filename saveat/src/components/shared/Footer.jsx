@@ -19,7 +19,7 @@ const Footer = () => {
                 <Link to="/shop" className={classes.link}>
                     Save A Meal
                 </Link>
-                <Link to="/shop" className={classes.link}>
+                <Link to="/offers" className={classes.link}>
                     Get A Deal
                 </Link>
             </div>

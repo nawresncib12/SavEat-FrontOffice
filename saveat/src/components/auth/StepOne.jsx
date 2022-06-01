@@ -22,7 +22,7 @@ export const StepOne = (props) => {
         <TextField
           label="Confirm Password"
           name="confirmpassword"
-          type="confirmPassword"
+          type="password"
           form="signup"
           failed={props.failed}
         />
