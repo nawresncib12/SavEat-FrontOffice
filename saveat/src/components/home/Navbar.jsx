@@ -2,6 +2,7 @@ import classes from "./Navbar.module.css";
 import { logout, loggedIn } from "../../api/api.user";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomCursor from "../../UI/customCursor/CustomCursor";
 const Navbar = () => {
   const navigate = useNavigate();
   const [logged, setLogged] = useState(false);
@@ -24,6 +25,7 @@ const Navbar = () => {
   };
   return (
     <div className={classes.navbar}>
+      <CustomCursor></CustomCursor>
       <span
         onClick={() => {
           navigate("/home");

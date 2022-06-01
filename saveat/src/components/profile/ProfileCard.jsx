@@ -3,7 +3,7 @@ import style from "./ProfileCard.module.css";
 import avatar1 from "../../assets/avatar1.svg";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
-import logout from "../../assets/logout.svg";
+import logoutPic from "../../assets/logout.svg";
 import { getMydeals } from "../../api/api.deal";
 import { getMyOrders } from "../../api/api.order";
 import phoneImg from "../../assets/phone.svg";
@@ -12,7 +12,14 @@ import birthdayImg from "../../assets/birthday.svg";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import edit from "../../assets/edit.png";
+import { logout } from "../../api/api.user";
 const ProfileCard = ({ info, setAvatar, avatar }) => {
+  const signout = async () => {
+    const res = await logout();
+    if (res) {
+      navigate("/login");
+    }
+  };
   const [progressMessage, setProgressMessage] = useState(
     "You are halfway through !"
   );
@@ -22,7 +29,7 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
   const ref = useRef();
   const [orders, setorders] = useState([]);
   const [deals, setdeals] = useState([]);
-  const images = { avatar1,avatar2,avatar3 };
+  const images = { avatar1, avatar2, avatar3 };
   const getDeals = async () => {
     const res = await getMydeals();
     if (!deals.length) setdeals(res.data.deals);
@@ -41,8 +48,7 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
     getAll();
   }, []);
   useEffect(() => {
-    
-    setAvatar(info.imageId)
+    setAvatar(info.imageId);
     ref.current.style.setProperty("--width", percent + "%");
     let p = 0;
     if (info.firstName) p++;
@@ -57,7 +63,14 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
   return (
     <div className={style.container}>
       <div className={style.wrap}>
-        <img src={logout} alt="logout" className={style.logout} />
+        <img
+          src={logoutPic}
+          alt="logout"
+          className={style.logout}
+          onClick={() => {
+            signout();
+          }}
+        />
         {avatars && (
           <div className={style.avatars}>
             <div className={style.row}>
@@ -74,7 +87,7 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
               <div
                 className={style.column}
                 onClick={() => {
-                  setAvatar(2)
+                  setAvatar(2);
                   setAvatars(false);
                 }}
               >
@@ -84,7 +97,7 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
                 className={style.column}
                 style={{ borderRadius: " 0 10px 0 0 " }}
                 onClick={() => {
-                  setAvatar(3)
+                  setAvatar(3);
                   setAvatars(false);
                 }}
               >
@@ -94,7 +107,11 @@ const ProfileCard = ({ info, setAvatar, avatar }) => {
           </div>
         )}
         <div className={style.avatar}>
-          <img className={style.img} src={images['avatar'+avatar]} alt="avatar" />
+          <img
+            className={style.img}
+            src={images["avatar" + avatar]}
+            alt="avatar"
+          />
           <div
             className={style.edit}
             onClick={() => {

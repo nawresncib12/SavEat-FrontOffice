@@ -14,10 +14,10 @@
     color: white;
     font-size: calc(20px + 1vmin);
     min-height: 100vh;
+    cursor: none;
 }
 
 .navbar span {
-    cursor: pointer;
     font-size: calc(40px + 1vmin);
     font-weight: bold;
     padding: 20px;
