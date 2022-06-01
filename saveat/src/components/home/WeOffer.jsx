@@ -3,6 +3,8 @@ import HomeTitle from "../../UI/HomeTitle";
 import Button from "../../UI/Button";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+
+
 const WeOffer = () => {
   const navigate = useNavigate();
   const [isVisible, setVisible] = useState(false);
@@ -27,7 +29,7 @@ const WeOffer = () => {
       <div ref={domRef} className={classes.description}>
       <div  className={`${classes.anim}  ${isVisible ? classes.animate : ""}`}>
         <HomeTitle>What do we offer ? </HomeTitle></div>
-        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do tempor.</p>
+        <p>Rescuing fresh and canned  food from wholesalers that would have otherwise been thrown away.</p>
         <div  className={`${classes.buttons}  ${isVisible ? classes.animate : ""}`}>
           <Button
             color="#4DAAAA"

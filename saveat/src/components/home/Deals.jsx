@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import img from "../../assets/discount.png";
 import HomeTitle from "../../UI/HomeTitle";
+import Heart from "../../UI/Heart";
 const Deals = () => {
   const navigate = useNavigate();
   const [isVisible, setVisible] = useState(false);
@@ -34,7 +35,7 @@ const Deals = () => {
         <HomeTitle>Get A Deal</HomeTitle>
       </div>
       <div className={classes.shopHero}>
-        <div className={classes.leftHero}>
+        <div className={classes.leftHero} >
           <h1
             className={` ${classes.anim}  ${isVisible ? classes.animate : ""}`}
           >
@@ -64,8 +65,11 @@ const Deals = () => {
         </div>
         <div className={classes.rightHero}>
           <div className={classes.heroImage}>
+          <Heart></Heart>
             <img src={img} alt="" />
+            
           </div>
+          
         </div>
       </div>
     </div>

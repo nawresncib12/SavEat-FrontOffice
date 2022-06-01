@@ -2,6 +2,7 @@ import classes from "./Hero.module.css";
 import Button from "../../UI/Button";
 import home from "../../assets/home.png";
 import { useRef,useEffect,useState } from "react";
+import CountUp from 'react-countup';
 const Hero = ({ setScroll }) => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
@@ -44,12 +45,17 @@ const Hero = ({ setScroll }) => {
           <img src={home} alt="home" />
           <div className={classes.stats}>
             <div className={`${classes.stat}  ${isVisible ? classes.animate : ""}`} >
-              <h3>1524</h3>
+              <h3>
+                <CountUp end={1524} />
+              </h3>
+              
               <p className={` ${isVisible ? classes.animate : ""}`}>TNDs saved by users from</p>
               <p className={` ${isVisible ? classes.animate : ""}`}> their food expenses.</p>
             </div>
             <div className={`${classes.stat}  ${isVisible ? classes.animate : ""}`} >
-              <h3>185</h3>
+              <h3>
+                <CountUp end={185} />
+              </h3>
               <p className={` ${isVisible ? classes.animate : ""}`}>Meals rescued from the </p>
               <p className={` ${isVisible ? classes.animate : ""}`}> food waste cycle.</p>
             </div>

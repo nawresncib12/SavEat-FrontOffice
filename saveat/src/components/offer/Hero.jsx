@@ -6,14 +6,19 @@ const Hero = (props) => {
   return (
     <div className={classes.shopHero}>
    
-      <div className={classes.leftHero}>
+      <div className={classes.leftHero} >
           <div>
             <h1>
             Take an <span className={classes.highlighted}>Offer ,</span>
             </h1>
-            <h1>Save it and save on it.</h1>
+            <div className={classes.coolSave}>
+              <div className={classes.save}>Save it</div>
+              <div className={classes.saveRest}>
+                <span>and save on it</span>
+              </div>
+            </div>
             <p>
-                At closing hours , our partner restaurants offer special discounts.
+             Find deals from restaurants and bakeries near you and buy their offered items at much lower price.
             </p>
         </div>
         <div className={classes.bttn}>

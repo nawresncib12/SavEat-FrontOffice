@@ -16,6 +16,7 @@ const Home = () => {
       <Why></Why>
       <Box scroll={scroll} setScroll={setScroll}></Box>
       <Deals></Deals>
+      
       <Footer />
     </>
   );

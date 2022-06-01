@@ -52,7 +52,8 @@
     margin: 0;
     line-height: calc(25px + 1vmin);
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 h3.blue {
