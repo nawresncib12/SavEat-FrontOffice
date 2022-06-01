@@ -36,6 +36,10 @@
     grid-template-columns: 1fr 9fr 1fr;
 }
 
+.homeNavbarHead .header.lowPad {
+    padding: 25px 50px 0px 100px;
+}
+
 .homeNavbarHead .header .logo {
     display: flex;
     justify-content: center;
@@ -72,6 +76,7 @@ h3.blue {
     font-size: calc(15px + 1vmin);
     line-height: calc(25px + 1vmin);
     padding: 5px;
+    cursor: pointer;
 }
 
 .homeNavbarHead .header .navbarHover,
@@ -87,13 +92,19 @@ h3.blue {
     border: transparent;
 }
 
+.homeNavbarHead .header .navbarIcon {
+    border: 1px solid white;
+}
+
 .homeNavbarHead .header .navbarHover:hover,
-.homeNavbarHead .header .navbarIcon:hover .navbarHover {
+.homeNavbarHead .header .navbarIcon:hover .navbarHover,
+.homeNavbarHead .menu:hover+.navbarIcon .navbarHover {
     transform: scale(0.4);
     transition: transform 0.3s ease-in;
 }
 
-.homeNavbarHead .header .navbarIcon:hover {
+.homeNavbarHead .header .navbarIcon:hover,
+.homeNavbarHead .menu:hover+.navbarIcon {
     background-color: transparent;
     border: 1px solid white;
     transition: border 0.1s ease-out;
@@ -109,7 +120,8 @@ h3.blue {
     background-color: #4DAAAA;
 }
 
-.homeNavbarHead .header .navbarIcon.scrolled:hover {
+.homeNavbarHead .header .navbarIcon.scrolled:hover,
+.homeNavbarHead .menu:hover+.navbarIcon.scrolled {
     background-color: transparent;
     border: 1px solid #4DAAAA;
 }

@@ -1,0 +1,19 @@
+.appCursor {
+    z-index: 111000;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.8;
+    pointer-events: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0px, 0px);
+}
+
+.appCursor {
+    width: 100px;
+    height: 100px;
+    background: #0f9292;
+    mix-blend-mode: color-burn;
+}

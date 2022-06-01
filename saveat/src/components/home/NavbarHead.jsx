@@ -15,9 +15,9 @@ const NavbarHead = (props) => {
     setScrollPosition(position);
   };
   const handleResize = () => {
-    var heigh = 0
-     if( target&&target.current)
-     heigh= target.current.getBoundingClientRect().height;
+    var heigh = 0;
+    if (target && target.current)
+      heigh = target.current.getBoundingClientRect().height;
 
     if (window.innerWidth > 1000) {
       setHeight(heigh - 80);
@@ -26,30 +26,63 @@ const NavbarHead = (props) => {
     }
   };
   useEffect(() => {
-    setHeight(target.current.getBoundingClientRect().height-80)
+    setHeight(target.current.getBoundingClientRect().height - 80);
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
   return (
     <div className={classes.homeNavbarHead}>
       {navbar === "opened" && <Navbar></Navbar>}
-      <div className={classes.header}>
-        <div className={classes.logo} onClick={()=>{navigate("/home")}}>
-          <img src={logo} alt="logo"  />
+      <div className={`${classes.header}  ${
+        props.only
+          ? classes.lowPad
+          : ""
+      }`}
+      >
+        <div
+          className={classes.logo}
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
+          <img src={logo} alt="logo" />
           <h3 className={`${props.only ? classes.blue : ""}`}>SavEat</h3>
         </div>
         <div></div>
         <div className={classes.buttonNav}>
           <div
+          onClick={() => {
+            if (navbar === "") {
+              setNavbar("opened");
+              document.body.style.overflow = "hidden";
+            } else {
+              if (navbar === "opened") {
+                setNavbar("closed");
+                document.body.style.overflow = "auto";
+              } else {
+                setNavbar("opened");
+                document.body.style.overflow = "hidden";
+              }
+            }
+            setTimeout(() => {
+              if (name === "Menu") {
+                setName("Close");
+              } else {
+                setName("Menu");
+              }
+            }, 1000);
+          }}
             className={`${classes.menu} ${
               (scrollPosition < height && props.only !== true) ||
               navbar === "opened"
                 ? ""
                 : classes.scrolled
             }`}
+           
           >
             {name}
           </div>
@@ -57,15 +90,14 @@ const NavbarHead = (props) => {
             onClick={() => {
               if (navbar === "") {
                 setNavbar("opened");
-                document.body.style.overflow = "hidden"
+                document.body.style.overflow = "hidden";
               } else {
                 if (navbar === "opened") {
                   setNavbar("closed");
-                  document.body.style.overflow = "auto"
-
+                  document.body.style.overflow = "auto";
                 } else {
                   setNavbar("opened");
-                  document.body.style.overflow = "hidden"
+                  document.body.style.overflow = "hidden";
                 }
               }
               setTimeout(() => {
@@ -74,7 +106,7 @@ const NavbarHead = (props) => {
                 } else {
                   setName("Menu");
                 }
-              }, 2000);
+              }, 1000);
             }}
             className={`${classes.navbarIcon} ${
               (scrollPosition < height && props.only !== true) ||

@@ -31,13 +31,10 @@ const ModalOverlay = (props) => {
 const portalElement = document.getElementById("overlays");
 
 const OfferModal = (props) => {
-  console.log("props",props)
   const [loading, setloading] = useState(false);
   const [val, setval] = useState(1);
   const offer = props.offer;
-  console.log(offer)
   const submitCheckout = async (values) => {
-    console.log(values)
     const res =await addDeal({customer_address:values.address,customer_phone:values.phone, quantity:values.qauntity ,offer : offer._id})
 
     props.setOpen(false);
