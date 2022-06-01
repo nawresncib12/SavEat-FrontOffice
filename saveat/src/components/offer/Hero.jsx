@@ -12,9 +12,9 @@ const Hero = (props) => {
             Take an <span className={classes.highlighted}>Offer ,</span>
             </h1>
             <div className={classes.coolSave}>
-              <div className={classes.save}>Save it</div>
+              <div className={classes.save}>Save it </div>
               <div className={classes.saveRest}>
-                <span>and save on it</span>
+                <span> and save on it</span>
               </div>
             </div>
             <p>

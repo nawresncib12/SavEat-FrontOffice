@@ -1,20 +1,24 @@
 .boxContainer {
     display: grid;
-    grid-template-columns:repeat(auto-fit,minmax(15rem,20rem)) ;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
     grid-gap: 2rem;
     justify-content: center;
     position: relative;
 }
+
 .boxWrapper {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    
-    
 }
+
 .boxWrapper .title {
     text-align: center;
 }
-.boxItem {
-   
+
+.bttn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
