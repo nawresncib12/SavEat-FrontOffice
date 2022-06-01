@@ -45,6 +45,12 @@
     font-weight: 550;
     
 }
+.cartEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .headers .price {
     
     font-size: 25px;

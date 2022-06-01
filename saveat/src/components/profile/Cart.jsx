@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import style from "./Cart.module.css";
-import cart from "../../common/data/cart.json";
 import CartLine from './CartLine';
 import Button from "../../UI/Button";
 import CartModal from "./CartModal";
 import { connect } from 'react-redux';
-
-import { Icon } from '@iconify/react';
+import CartIcon from "../../UI/CartIcon";
+import { useNavigate } from "react-router-dom";
 const Cart = ({boxes}) => {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <div className={style.container}>
       {open && <CartModal setOpen={setOpen}></CartModal>}
@@ -39,9 +38,17 @@ const Cart = ({boxes}) => {
           color="#4DAAAA"
         >
           Submit
-        </Button> : <h2 style={{textAlign:"center"}}>
-          your cart is empty
-        </h2>
+        </Button> : 
+          <div className={style.cartEmpty}>
+            <h2 style={{textAlign:"center",color:"#FFBCBC"}}>You cart is empty </h2>
+            <CartIcon></CartIcon>
+            <div style={{width:"50%"}}>
+              <Button color="#4DAAAA" content="See Shop" onClick={() => navigate('/shop')} />
+            </div>
+            
+          </div>
+          
+       
           }
       </div>
     </div>
