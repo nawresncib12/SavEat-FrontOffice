@@ -5,6 +5,7 @@
     grid-template-columns: 1fr 1.5fr;
     justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 280px);
 }
 
 .info.animate,
@@ -100,6 +101,15 @@
     margin: auto;
 }
 
+.homeHero .wave {
+    width: 100vw;
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    z-index: -2;
+    transform: rotate(180deg);
+}
+
 @media only screen and (max-width: 1000px) {
     .homeHero {
         padding: 0px 50px 10px 50px;
@@ -127,5 +137,13 @@
         white-space: unset;
         overflow: unset;
         animation: unset;
+    }
+    .homeHero .wave {
+        width: 100vw;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        z-index: -2;
+        transform: rotate(180deg);
     }
 }
